@@ -1,0 +1,176 @@
+Для доказательства существования решения и его сходимости классически применяется метод мажорант.
+
+\begin{dfn}
+
+Будем говорить, что функция $f(x)$, вещественно-аналитическая в точке 0, мажорируется сходящимся степенным рядом 
+$$g(s) = \sum_{n=0}^{+\infty} g_n s^n, \quad s \ge 0 ,$$
+$$g_n \ge 0 \quad \forall n \ge 0,$$
+
+если:
+
+\quad Пусть разложение $f(x)$ в ряд Тейлора имеет вид:
+$$f(x) = \sum_{n=0}^{+\infty} f_n x^n.$$ 
+
+\quad Тогда
+$$\exists C>0: |f_n| \leq C \cdot g_n \quad \forall n \geq 0.$$
+Обозначается
+$$ f \prec g.$$
+
+%%%%%%%
+%Пусть $f(x), g(x)$ - две произвольные функции, вещественно-аналитические в точке 0.
+%Пусть их разложение в ряд Тейлора имеет вид:
+%$$f(x) = \sum_{n=0}^{+\infty} f_n x^n,$$
+%$$g(x) = \sum_{n=0}^{+\infty} g_n x^n.$$ 
+
+%Будем говорить, что функция $g(x)$ мажорирует функцию $f(x)$ если:
+%$$\exists C>0: |f_n| \leq C \cdot |g_n| \quad \forall n \geq 0$$
+%Обозначается
+%$$ f \prec g.$$
+\end{dfn}
+
+
+Введем константу $\varkappa$:
+\begin{multline*}
+\varkappa = \max \Bigg( 
+\sup_{p,q \in \mathbb{R}}\left( \left|\frac{1}{(p-q)i \omega - \xi} \right| \right), 
+\sup_{p,q \in \mathbb{R}}\left( \left|\frac{p-q}{(p-q)i \omega - \xi} \right| \right),\\
+\sup_{p,q \in \mathbb{R}}\left( \left|\frac{1}{(p-q)i \omega - i\omega} \right| \right), 
+\sup_{p,q \in \mathbb{R}}\left( \left|\frac{p-q}{(p-q)i \omega - i\omega} \right| \right) \Bigg) = \\
+= \max(\frac{1}{|\xi|}, \frac{1}{|\omega|}) = \frac{1}{|\xi|} = O \left( \frac{1}{\varepsilon} \right) \quad \text{при достаточно малых $\varepsilon$}.
+\end{multline*}
+
+Тогда, применяя эту оценку к (\ref{pq_eq}), получаем следующие неравенства для коэффициентов:
+\begin{equation}
+\begin{cases}
+|\{z\}_{p,q}| \le \varkappa |\{\v{\mathcal{G}}_z(z,\eta,a,b)\}_{p,q}| + \varkappa \sum_{r=1}^{+\infty}|{(p-q)\theta_r \{z\}_{p-r,q-r}}|, \\
+|\{\eta\}_{p,q}| \le \varkappa |\{\v{\mathcal{G}}_\eta(z,\eta,a,b)\}_{p,q}| + \varkappa \sum_{r=1}^{+\infty}|{(p-q)\theta_r \{\eta\}_{p-r,q-r}}|, \\
+|\{a\}_{p,q}| \le \varkappa |\{\v{\mathcal{G}}_a(z,\eta,a,b)\}_{p,q}| + \varkappa \sum_{r=1}^{+\infty}|{(p-q)\theta_r \{a\}_{p-r,q-r}}|, \\
+|\{b \}_{p,q}| \le \varkappa |\{\v{\mathcal{G}}_b(z,\eta,a,b)\}_{p,q}| + \varkappa \sum_{r=1}^{+\infty}|{(p-q)\theta_r \{b\}_{p-r,q-r}}|.
+\end{cases}
+\label{ineq_1}
+\end{equation}
+
+В оригинальной работе Зигеля и Мозера \cite{siegel} нелинейная добавка $\v{\mathcal{G}}$ к правой части диагонализованного уравнения мажорируется функцией вида
+\begin{align*}
+\v{\mathcal{G}}  \prec \frac{1}{1-s},
+\end{align*}
+где $s = |z|+|\eta|+|a|+|b|$.
+
+
+Однако такое предположение на $\v{\mathcal{G}}$ дает слишком грубую оценку для радиуса сходимости построенных рядов.
+
+В данном разделе опишем процедуру построения более точной оценки радиуса сходимости.
+
+Учитвая связь старых координат $(\Lambda, \lambda, x, y)$ и новых $(z, \eta, a,b)$ через матрицу $R$, введем новую величину $s$:
+%$$s = z + \eta + \varepsilon(a+b)$$
+$$s = |z| + |\eta| + \varepsilon(|a|+|b|).$$
+Тогда учитывая (\ref{old_var}) получаем:
+\begin{equation}
+\begin{cases}
+\Lambda \prec s,\\
+%\Lambda \le s\\
+\lambda \prec s,\\
+%\lambda \le s\\
+x \prec \varepsilon s,\\
+%x \le \varepsilon s\\
+y \prec \varepsilon s.\\
+%y \le \varepsilon s\\
+\end{cases}
+\label{s_major}
+\end{equation}
+
+Используя оценку (\ref{s_major}) и учтывая, что точка $0$ неподвижная, получаем следующую мажоранту для уравнения (\ref{fulltn}):
+\begin{equation*}
+    \begin{cases}
+        - U \sin \lambda + V \cos \lambda \prec (\varepsilon s + \varepsilon^2 s^2)e^{s}, \\
+        
+        \alpha \Lambda \prec s, \\
+        
+        -\varepsilon \big( 2Fy-\frac{\partial U}{\partial y} \cos \lambda - \frac{\partial V}{\partial y} \sin \lambda \big) \prec \varepsilon (\varepsilon s + \varepsilon^2 s^2)e^{s}, \\
+        
+        \varepsilon \big( 2F(x+\hat x_0)+e_JG -\frac{\partial U}{\partial x} \cos \lambda - \frac{\partial V}{\partial x} \sin \lambda \big) \prec \varepsilon (\varepsilon s + \varepsilon^2 s^2)e^{s}. \\
+    \end{cases}
+\end{equation*}
+
+Домножим слева эту оценку на матрицу $R^{-1}$, тогда имеем:
+
+\begin{equation}
+R^{-1} \v F \left(R\begin{pmatrix}
+z \\ \eta \\ a \\ b 
+\end{pmatrix} \right) \prec
+\begin{pmatrix}
+(\varepsilon s + \varepsilon^2 s^2)e^{s} + s  \\ 
+(\varepsilon s + \varepsilon^2 s^2)e^{s} + s  \\ 
+\frac{1}{\varepsilon} (\varepsilon s + \varepsilon^2 s^2)e^{s} + s \\ 
+\frac{1}{\varepsilon} (\varepsilon s + \varepsilon^2 s^2)e^{s} + s
+\end{pmatrix}.
+\label{almoust_g}
+\end{equation}
+
+Отбрасывая в (\ref{almoust_g}) линейные члены и мажорируя получившееся выражение, приходим к покомпонентной мажоранте для $\v{\mathcal{G}}$:
+\begin{equation}
+\begin{cases}
+\v{\mathcal{G}}_{z,\eta} &\prec \left( \varepsilon (s + \varepsilon s^2)e^{s} - \varepsilon s \right), \\
+\v{\mathcal{G}}_{a,b}    &\prec \left( (s + \varepsilon s^2)e^{s} - s \right).
+\label{res_g}
+\end{cases}
+\end{equation}
+Заметим, что слагаемое $-s$ компенсирует линейный член в ряде Тейлора $(s + \varepsilon s^2)e^{s}$ и потому ряд для $(s + \varepsilon s^2)e^{s} - s$ начинается с квадратичного члена.
+
+Для ряда $h$, зависящяго от $\varphi, \psi$, введем обозначение:
+$$||h|| = \sum_{p,q} |\{h\}_{p,q}| \varphi^p \psi^q$$.
+Также введем обозначения:
+\begin{equation*}
+\begin{cases}
+z^* = z - \varphi,\\
+\eta^* = \eta - \psi,\\
+a^*=a,\\
+b^*=b,\\
+\theta^* = \theta - \omega.
+\end{cases}
+\end{equation*}
+
+Сложим неравенства (\ref{ineq_1}) с весом $\varepsilon$ для $a$ и $b$, домножим на $\varphi^p \psi^q$ и просуммируем. Тогда получаем мажорантное соотношение не содержащее производных:
+\begin{equation}
+(\varphi+\psi) ||\theta^*|| + S  \prec \varkappa \big( ||\v{\mathcal{G}}_z||+||\v{\mathcal{G}}_\eta||+\varepsilon(||\v{\mathcal{G}}_a||+||\v{\mathcal{G}}_b||) + ||\theta^*||S \big),
+\label{major_eq}
+\end{equation}
+где $S = ||z^*||+||\eta^*||+\varepsilon (||a^*||+||b^*||)$.
+
+Для доказательства сходимости построенных решений достаточно показать, что сходятся ряды $S$ и $||\theta^*||$ в окрестности $\varphi=0, \psi=0$, а так как коэффициенты всех рядов неотрицательны достаточно рассмотреть случай $\varphi=\psi>0$.
+
+Подставим (\ref{res_g}) в (\ref{major_eq}):
+\begin{equation*}
+2\varphi ||\theta^*|| + S  \prec \varkappa \left( \left(\varepsilon (s + \varepsilon s^2)e^{s} - \varepsilon s \right) + ||\theta^*||S \right).
+\label{major_eq2}
+\end{equation*}
+
+Для $s$ верна оценка:
+$$s \prec ||s|| \prec 2 \varphi + S.$$
+
+Поскольку ряд $S$ начинается с квадратичных членов, введем ряд $Y$ с неотрицательными коэффициентами и начинающийся с линейного члена:
+$$Y = 2 ||\theta^*|| + \frac{1}{\varphi} S.$$
+
+Выражая $S$, приходим к
+$$S = \varphi Y - 2\varphi ||\theta^*|| \prec \varphi U.$$
+
+Возводем это  выражение в кдвадрат и выразим $||\theta^*|| S$. Тогда
+$$||\theta^*|| S = \frac{\varphi^2 Y^2}{4\varphi} - \frac{S^2}{4\varphi} - \frac{4 \varphi^2 ||\theta^*||^2}{4\varphi} \prec \frac{\varphi^2 Y^2}{4\varphi}.$$
+
+Собирая оценки вместе получаем:
+\begin{equation}
+Y \prec \frac{\varkappa}{4} \left( Y^2 + \varepsilon \left( (2+Y) + \varepsilon \varphi (2+Y)^2 \right) e^{ \varphi (2+Y)} - (2+Y) \right).
+\end{equation}
+
+В силу того, что $Y$ строится используя $S$ и $||\theta^*||$, для доказательства сходимости построенных решений достаточно показать, что ряд $Y$ сходится для достаточно малых $\varphi$. Для этого рассмотрим модельное уравнение:
+
+\begin{equation*}
+\hat Y = \frac{\varkappa}{4} \left( \hat Y^2 + \varepsilon \left( (2+\hat Y) + \varepsilon \varphi (2+\hat Y)^2 \right) e^{\varphi (2+\hat Y)} - (2+\hat Y) \right),
+\end{equation*}
+
+решением которого является неизвестный ряд:
+$$\hat Y = \hat Y(\varphi) = \sum_{k=1}^{+\infty} \gamma_k \varphi^k.$$
+
+Исследуя уравнение можно показать что радиус сходимости $R$ этого ряда равен:
+$$R =O \left( \frac{1}{\varepsilon \varkappa^2} \right) = \mathcal{O}(\varepsilon).$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

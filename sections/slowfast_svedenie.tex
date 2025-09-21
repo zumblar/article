@@ -1,0 +1,32 @@
+Следует отметить, что уравнения резонансной системы (\ref{Ham_res}) могут быть приведены к виду быстро-медленной системы. Для этого сделаем несимплектическую замену $\Lambda = \sqrt \nu \Lambda_{new}$, $t_{new} = \sqrt \nu t$, после которой канонические уравнения системы примут вид:
+
+\begin{equation*}
+    \left\{
+    \begin{aligned}
+        \frac{d \Lambda_{new}}{dt_{new}} &= U  \sin \lambda - V \cos \lambda, 
+        &\quad
+        \frac{d \lambda}{dt_{new}} &= \alpha \Lambda_{new}, \\[1.5ex]
+        \frac{dx}{dt_{new}} &= -\sqrt \nu \big( 2Fy+\frac{\partial U}{\partial y} \cos \lambda + \frac{\partial V}{\partial y} \sin \lambda \big), 
+        &\quad
+        \frac{dy}{dt_{new}} &= \sqrt \nu \big( 2Fx+e_JG +\frac{\partial U}{\partial x} \cos \lambda + \frac{\partial V}{\partial x} \sin \lambda \big).
+    \end{aligned}
+    \right.
+\end{equation*}
+
+В дальнейшем для удобства мы будем опускать индекс $new$. Введем новый малый параметр $\varepsilon = \sqrt \nu$. Тогда уравнения принимают итоговый вид (точка обозначает производную по $t$):
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \dot \Lambda &= U \sin \lambda - V \cos \lambda,
+        &\quad
+        \dot \lambda &= \alpha \Lambda, \\[1.5ex]
+        \dot x &= -\varepsilon \big( 2Fy+\frac{\partial U}{\partial y} \cos \lambda + \frac{\partial V}{\partial y} \sin \lambda \big),
+        &\quad
+        \dot y &= \varepsilon \big( 2Fx+e_JG +\frac{\partial U}{\partial x} \cos \lambda + \frac{\partial V}{\partial x} \sin \lambda \big). \\
+    \end{aligned}
+    \right.
+    \label{fullt}
+\end{equation}
+
+Пару переменных $\lambda$ и $\Lambda$ будем называть быстрыми переменными, а пару $x$ и $y$ называть медленными переменными.

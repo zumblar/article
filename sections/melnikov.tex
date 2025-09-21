@@ -1,0 +1,115 @@
+%\subsection{Трансверсальные пересечения устойчивого и неустойчивого многообразий}
+
+Трансверсальные гомоклинические и гетероклиническое траектории являются важными объектами в теории гладких динамических систем. Наличие таких траекторий приводит к сложной хаотической динамике и, как следствие, к неинтегрируемости исследуемой системы. 
+
+Для нахождения пересечений устойчивого и неустойчивого многообразий применим метод Мельникова. Рассмотрим систему уравнений вида:
+\begin{equation}
+    \begin{cases}
+        \frac{dX}{dt} = J D_X H_1(X,I) + \varepsilon g^X(X,I), \\
+        \frac{dI}{dt} = \varepsilon g^I(X,I),
+    \end{cases}
+    \label{wiggs}
+\end{equation}
+$$X \in \mathbb{R}^2, I \in \mathbb{R}^m,$$
+
+
+где $D_X, D_I$ - градиенты по соответствующим переменным, $J$ - симплектическая единица:
+$$
+ J = \begin{pmatrix}
+  0  & 1 \\
+  -1 & 0
+ \end{pmatrix}.
+$$
+
+\begin{thm}
+\textbf{(Функция Мельникова \cite{wiggins}):}
+
+Пусть $V \subset M_0$ - инвариантное гиперболическое подмножество медленного многообразия $M_0$ системы (\ref{wiggs}), за $V_\varepsilon$ обозначено локально инвариантное множество лежашее в $\varepsilon$-окрестности $V$, существовние которго гарантирует теорема Феничеля.
+
+$$\Gamma = W^s(V) \cap W^u(V) \setminus V$$
+
+%Пусть $X = \gamma(I)$ - параметризация $V$.
+
+Пусть $X_0^I(t-t_0,I)$ - сепаратриса быстрой системы, соответствующей (\ref{wiggs}).
+
+Тогда расстояние между $W^s(V_\varepsilon)$ и $W^u(V_\varepsilon)$ вблизи любой точки $p \in \Gamma$ задается выражением:
+
+$$d^I(p, t_0, \varepsilon) = \varepsilon\frac{M^I(p,t_0)}{||D_X H(X_0^I, I)||} + O(\varepsilon^2),$$
+где $M^I$ - функция Мельникова, равная:
+
+$$M^I(p,t_0) = \int_{-\infty}^{\infty} \Big( <D_X H_1, g^X> + <D_X H_1, (D_I J D_X)\int_{t_0}^t g^I dt > \Big) \big(X_0^I(t-t_0,I),I \big)dt = $$
+$$= \int_{- \infty}^{\infty} \Big( <D_X H_1, g^X> + <D_I H_1, g^I> \Big)\big(X_0^I(t-t_0,I), I \big)dt - $$
+$$ -<D_I H_1 \big(v(I), I \big), \int_{- \infty}^{\infty} g^I \big(X_0^I(t-t_0,I), I \big)dt>,$$
+здесь $X = v(I)$ - параметризация $V$, $<,>$ - стандартное скалярное произведение в $\mathbb{R}^2$.
+\end{thm}
+\textbf{Доказательство \cite{wiggins}:}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Зафиксируем точку $p \in \Gamma = W^s(V) \cap W^u(V) \setminus V$ и рассмотрим $\Pi_p$ гиперплоскость натянутую на вектор $D_X H_1(p)$.
+
+Тогда в силу теоремы Феничеля (Теорема 3) существуют точки $p_\varepsilon^u \equiv (X_\varepsilon^u, I_\varepsilon^u) \in W^{u}(V_\varepsilon) \cap \Gamma \cap \Pi_p$ и $p_\varepsilon^s \equiv (X_\varepsilon^s, I_\varepsilon^s) \in W^{s}(V_\varepsilon) \cap \Gamma \cap \Pi_p$, причем $I_\varepsilon^s = I_\varepsilon^u$.  
+
+Введем расстояние между $W^s(V_\varepsilon)$ и $W^u(V_\varepsilon)$ как:
+
+$$d(p,t_0, \varepsilon) = ||p_\varepsilon^u - p_\varepsilon^s|| = ||X_\varepsilon^u - X_\varepsilon^s|| = \frac{<D_X H_1 \big(X_0^I(t-t_0,I),I \big),X_\varepsilon^u - X_\varepsilon^s>}{||D_X H_1 \big(X_0^I(t-t_0,I), I \big)||}.$$
+
+Раскладывая его в ряд по $\varepsilon$ в окрестности нуля и учитывая, что $d(p,0) = 0$ в силу того, что $p \in W^s(V) \cap W^u(V)$, получаем:
+
+$$d(p,t_0, \varepsilon) = \varepsilon \frac{<D_X H_1 \big(X_0^I(t-t_0,I),I \big), \frac{\partial X_\varepsilon^u}{\partial \varepsilon}\big|_{\varepsilon = 0} - \frac{\partial X_\varepsilon^s}{\partial \varepsilon}\big|_{\varepsilon = 0}>}{||D_X H_1 \big( X_0^I(t-t_0,I), I \big)||} + O(\varepsilon^2).$$
+
+Числитель дроби называется функцией Мельникова:
+$$M^I(p,t_0) = <D_X H_1 \big(X_0^I(t-t_0,I),I \big), \frac{\partial X_\varepsilon^u}{\partial \varepsilon} \Big|_{\varepsilon = 0} - \frac{\partial X_\varepsilon^s}{\partial \varepsilon}\Big|_{\varepsilon = 0}>.$$
+
+Рассмотрим 
+$$M(t,t_0) = <D_X H_1 \big(X_0^I(t-t_0,I),I \big), \frac{\partial X_\varepsilon^u(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0} - \frac{\partial X_\varepsilon^s(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0}> = \Delta^u(t) - \Delta^s(t),$$
+$$\Delta^{u,s}(t) = <D_X H_1 \big(X_0^I(t-t_0,I),I \big), \frac{\partial x_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0}>.$$
+
+Производные по $\varepsilon$ в скалярном произведении описываются вариационными уравнениями:
+
+$$\frac{d}{dt} \frac{\partial X_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0} = J D_X^2 H_1 \frac{\partial X_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0} + D_I J D_X H_1 \frac{\partial I_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0} + g^X \big(X_0^I(t-t_0,I), I \big),$$
+$$\frac{d}{dt} \frac{\partial I_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0} = g^I \big(X_0^I(t-t_0,I), I \big).$$
+
+Тогда обозначив:
+$$x_1^{u,s}(t) = \frac{\partial X_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0},$$
+$$I_1^{u,s}(t) = \frac{\partial I_\varepsilon^{u,s}(t)}{\partial \varepsilon}\Big|_{\varepsilon = 0},$$
+получаем:
+$$\frac{d}{dt} \Delta^{u,s}(t) = <\frac{d}{dt} \Big(D_X H_1 \big(X_0^I(t-t_0,I),I\big) \Big), x_1^{u,s}> + <D_X H_1 \big(X_0^I(t-t_0,I),I \big), \frac{d}{dt} x_1^{u,s}> = $$
+$$=<D_X H_1, (J D_X^2 H_1) x_1^{u,s}> + <D_X H_1, (D_I J D_X H_1) I_1^{u,s}> + $$
+$$ + <D_X H_1, g^X> + <(D_X^2 H_1)(JD_X H_1),x_1^{u,s}>.$$
+
+Учитывая равенство
+$$<D_X H_1, (J D_X^2 H_1) x_1^{u,s}> + <(D_X^2 H_1)(JD_X H_1),x_1^{u,s}> = 0,$$
+получаем:
+$$\frac{d}{dt} \Delta^{u,s}(t) =  <D_X H_1, (D_I J D_X H_1) I_1^{u,s}> + <D_X H_1, g^X>.$$
+
+Из уравнения в вариациях следует:
+$$I_1^s(t) = I_1^u(t) = \int_{t_0}^t g^I \big(X_0^I(t-t_0,I), I \big) dt.$$
+
+Проинтегриуем полученные уравнения по $t$:
+
+$$\Delta^u(0) - \Delta^u(-T^u) = \int_{-T^u}^0 \Big( <D_X H_1, g^X> + <D_X H_1, (D_I J D_X)\int_{t_0}^t g^I dt > \Big) \big(X_0^I(t-t_0,I),I \big)dt,$$
+
+$$\Delta^s(T^s) - \Delta^s(0) = \int_{0}^{T^s} \Big( <D_X H_1, g^X> + <D_X H_1, (D_I J D_X)\int_{t_0}^t g^I dt > \Big) \big(X_0^I(t-t_0,I),I \big)dt.$$
+
+В силу локальной инвариантности многообразий $W^{s,u}(V)$ невозможно устремить $T^{s,u}$ к бесконечности, однако, их можно сделать сколь угодно большими. А именно, для любого $\delta>0$ существует $\varepsilon_0$ такое, что для любого 
+положительного $\varepsilon < \varepsilon_0$ имеет место оценка $T^{s,u}>\frac{1}{\delta}$.
+
+Заметим, что по построению:
+$$M^I(p,t_0) = M^I(t=0,t_0),$$
+тогда:
+$$M^I(p,t_0) = M^I(t=0,t_0) \approx $$
+$$ \approx \int_{-T^u}^{T^s} \Big( <D_X H_1, g^X> + <D_X H_1, (D_I J D_X)\int_{t_0}^t g^I dt > \Big) \big(X_0^I(t-t_0,I),I \big)dt + \Delta^u(-T^u) - \Delta^s(T^s).$$
+
+%\qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thm}
+\textbf{(Нули функции Мельникова, \cite{wiggins}):}
+
+Если при некоторых значениях аргумента функции Мельникова верно: 
+$$M^I = 0,$$
+$$\nabla M^I \neq 0.$$
+Тогда при достаточно малом $\varepsilon > 0$ $W^s(V_\varepsilon)$ и $W^u(V_\varepsilon)$ пересекаются трансверсально.
+
+В случаях когда и сама функция, и ее градиент обращаются в ноль нужно рассматривать члены при старших степенях $\varepsilon$ в разложении $d^I$ для определения трансверсальности пересечения.
+
+\end{thm}

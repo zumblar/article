@@ -1,0 +1,378 @@
+Так как радиус сходимости рядов для периодических решений имеет порядок $\mathcal{O}(\varepsilon)$ ($|h| \le R(\varepsilon) = \mathcal{O}(\varepsilon)$), введем масштабированный параметр $\mu$:
+$$h = \mu \varepsilon$$
+$$|\mu| \le \frac{R(\varepsilon)}{\varepsilon} = \mathcal{O}(1)$$
+
+Рассмотрим подробнее возмущение в системе (\ref{final_avg_ham}):
+$$\langle H \rangle_0(\v z) = H_{old}(\v z) + \hat H(\v z, h, \varepsilon),$$
+
+\begin{multline}
+\hat H(\v z, h, \varepsilon) \equiv -h^2 \theta_1 H_{old}(\v z) + 2F \langle x^* \rangle_0 z_x - \langle \cos \lambda^* -1 \rangle_0 \Big( U(z_x,z_y) \cos z_\lambda + V(z_x,z_y) \sin z_\lambda \Big) - \\
+- \cos z_\lambda \Big( (2C \hat x_0 + e_J D) \langle y^* \sin \lambda^* \rangle_0 + 2C z_x \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle_0 \Big) - \\
+- \sin z_\lambda \Big( 2C z_y \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) \Big) + \mathcal{O}(h^4).
+\label{H_perturb}
+\end{multline}
+
+Перейдем в (\ref{H_perturb}) к параметру $\mu$ и сгруппируем слагаемые по степеням $\varepsilon$:
+
+\begin{multline*}
+\hat H(\v z, h, \varepsilon) \equiv -\mu^2 \varepsilon^2 \theta_1 H_{old}(\v z) + 
+    2F \underbrace{\langle x^* \rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^2)} z_x - 
+    \underbrace{\langle \cos \lambda^* -1 \rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^2)} \Big( 
+        U(z_x,z_y) \cos z_\lambda + 
+        V(z_x,z_y) \sin z_\lambda \Big) - \\
+    - \cos z_\lambda \Big( 
+        (2C \hat x_0 + e_J D) \underbrace{\langle y^* \sin \lambda^* \rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^4)} + 
+        2C z_x \left( 
+            \underbrace{\left\langle x^* \cos \lambda^* \right\rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^2)} + 
+            \underbrace{\left\langle y^* \sin \lambda^* \right\rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^4)} \right) + 
+            \underbrace{\left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^2)}
+        \Big) - \\
+    - \sin z_\lambda \Big( 
+        2C z_y \left( 
+            \underbrace{\left\langle x^* \cos \lambda^* \right\rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^2)} + 
+            \underbrace{\left\langle y^* \sin \lambda^* \right\rangle_0}_{\mu^2 \mathcal{O}(\varepsilon^4)} 
+        \right) \Big) = \\
+= \varepsilon^2 \mu^2 \Bigg( - H_{old}(\v z) +
+    2F z_x \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} - \\ - \underbrace{\frac{1}{4}\left( \frac{2(\xi^2-\alpha U_0)}{(2C \hat x_0 + e_J D)} \right)^2}_{\mathcal{O}(1)}\Big( 
+        U(z_x,z_y) \cos z_\lambda + 
+        V(z_x,z_y) \sin z_\lambda \Big) - \\
+    - \cos z_\lambda
+        \left(2C z_x +(2C \hat x_0 + e_J D) \right) \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)}
+    - \sin z_\lambda
+        2C z_y \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)}
+    \Bigg) + \mathcal{O}(\varepsilon^4).
+\end{multline*}
+
+Введем обозначение $[ \cdot ]_0$ для свободного коэффициента в разложении по степеням $\varepsilon$ и рассмотрим возмущающую фукцию $H_1(\v z)$, не зависящую от $\mu$ и $\varepsilon$:  
+\begin{multline*}
+H_1(\v z) \equiv \Bigg[ -\theta_1 H_{old}(\v z) + 2F z_x \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} - \underbrace{\frac{1}{4}\left( \frac{2(\xi^2-\alpha U_0)}{(2C \hat x_0 + e_J D)} \right)^2}_{\mathcal{O}(1)}\Big( 
+        U(z_x,z_y) \cos z_\lambda + 
+        V(z_x,z_y) \sin z_\lambda \Big) - \\
+    - \cos z_\lambda
+        \left(2C z_x +(2C \hat x^0 + e_J D) \right) \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)}
+    - \sin z_\lambda
+        2C z_y \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} \Bigg]_0.
+\end{multline*}
+
+Тогда получаем:
+\begin{equation}
+\left\langle H \right\rangle_0 = H_{old}(\v z) + \varepsilon^2 \mu^2 H_1(\v z) + \mathcal{O}(\varepsilon^4).
+\label{ready_avg_ham}
+\end{equation}
+
+\begin{equation*}
+\hat H (\v z) = \varepsilon^2 \mu^2 H_1(\v z) + \mathcal{O}(\varepsilon^4).
+\end{equation*}
+
+
+Будем искать формальное решение системы (\ref{ready_avg_ham}) в виде аналогичном (\ref{predst}):
+\begin{equation}
+    \begin{cases}
+z_{\Lambda}^{s,u}(\tau, \mu) = \sum_{k=0}^\infty \varepsilon^k z_{\Lambda,k}^{s,u}(\tau, \mu),\\
+z_\lambda^{s,u}(\tau, \mu) = \sum_{k=0}^\infty \varepsilon^k z_{\lambda,k}^{s,u}(\tau, \mu),\\
+z_x^{s,u}(\tau, \mu) =       \sum_{k=0}^\infty \varepsilon^k z_{x,k}^{s,u}(\tau, \mu),\\
+z_y^{s,u}(\tau, \mu) =       \sum_{k=0}^\infty \varepsilon^k z_{y,k}^{s,u}(\tau, \mu),\\
+\end{cases}
+    \label{predst_h}
+\end{equation}
+удовлетворяющие следующим граничным условиям:
+\begin{itemize}
+\item Решения принадлежащие $W^s(0)$:
+\begin{equation*}
+    \begin{cases}
+        z_\Lambda^{s}(+ \infty) = 0, \\
+        z_\lambda^{s}(+ \infty) = 0,\\
+        z_x^{s}(+ \infty) = 0, \\
+        z_y^{s}(+ \infty) = 0,
+    \end{cases}
+    \label{border_h}
+\end{equation*}
+\item Решения принадлежащие $W^u(0)$:
+\begin{equation*}
+    \begin{cases}
+        z_\Lambda^{u}(- \infty) = 0, \\
+        z_\lambda^{u}(- \infty) = 0,\\
+        z_x^{u}(- \infty) = 0, \\
+        z_y^{u}(- \infty) = 0.
+    \end{cases}
+\end{equation*}
+\end{itemize}
+
+Подставим представление (\ref{predst_h}) в уравнения Гамильтона системы (\ref{ready_avg_ham})
+
+\begin{equation}
+    \begin{dcases}
+        \dot z_\Lambda = - U \sin z_\lambda + V \cos z_\lambda - \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_\lambda} + \mathcal{O}(\varepsilon^4), \\
+        \dot z_\lambda = \alpha z_\Lambda + \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_\Lambda} + \mathcal{O}(\varepsilon^4), \\
+        \dot z_x = -\varepsilon \left( \big( 2Fz_y-\frac{\partial U}{\partial z_y} \cos z_\lambda - \frac{\partial V}{\partial z_y} \sin z_\lambda \big) + \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_y}  + \mathcal{O}(\varepsilon^4) \right), \\
+        \dot z_y = \varepsilon \left( \big( 2F(z_x+\hat x_0)+e_JG -\frac{\partial U}{\partial z_x} \cos z_\lambda - \frac{\partial V}{\partial z_x} \sin z_\lambda \big) + \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial x}  + \mathcal{O}(\varepsilon^4) \right), \\
+    \end{dcases}
+    \label{fulltn2}
+\end{equation}
+ и приравняем коэффициенты при одинаковых степенях $\varepsilon$.
+
+Уравнения на нулевое приближение в точности совпадают с уравнениями медленной системы. В качестве их решения выберем сепаратрису медленной системы:
+\begin{equation*}
+    \begin{cases}
+        z_{\Lambda,0}(\tau) = 0 , \\
+        
+        z_{\lambda,0}(\tau) = \lambda_- (x_{sep}(\tau),y_{sep}(\tau)), \\
+        
+        z_{x,0}(\tau) = x_{sep}(\tau) - \hat x_0, \\
+        
+        z_{y,0}(\tau) = y_{sep}(\tau).\\
+    \end{cases}
+    %\label{fulltint}
+\end{equation*}
+
+Аналогично уравнения на $(z_{\Lambda,1},z_{\lambda,1},z_{x,1},z_{y,1})$ являются алгебраичекими по переменным $(z_{\Lambda,1},z_{\lambda,1})$:
+    
+\begin{equation*}
+    \begin{cases}
+        z_{\Lambda,1}(\tau) = z_{\lambda,0}', \\
+        
+        z_{\lambda,1}(\tau) = \frac1\beta \Big( z_{x,1} \big( (2Cz_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\
+        +z_{y,1} \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2Cz_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big) \Big),
+    \end{cases}
+    %\label{fulltint}
+\end{equation*}
+и однородными дифференциальным по переменным $(z_{x,1},z_{y,1})$:
+\begin{equation*}
+\frac{d}{d\tau} \begin{pmatrix} z_{x,1} \\ z_{y,1} \end{pmatrix} = \mathcal{A}(\tau) \begin{pmatrix} z_{x,1} \\ z_{y,1} \end{pmatrix}
+\end{equation*}
+
+Здесь матрица $\mathcal{A}(\tau)$ - матрица введенная в (\ref{xy_eq}). Базисом решений этой системы является пара вектор-функций $\v u_1 (\tau), \v{ \tilde{u_1}} (\tau)$.
+
+По \textit{утверждению 10} $W^s$ и $W^u$ одномерны, поэтому при их параметризации достаточно рассматривать лишь одно частное решение. Для простоты выберем тривиальное решение однородного уравнения:
+$$\left(z_{\Lambda,1}(\tau), z_{\lambda,1}(\tau), z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0,0,0)$$
+
+%По \textit{утверждению 10} $W^s$ и $W^u$ одномерны, поэтому при их параметризации достаточно рассматривать лишь одно частное решение. Для простоты выберем:
+%$$\begin{pmatrix} z_{x,1} \\ z_{y,1} \end{pmatrix} = 1 \cdot \v u_1$$
+
+Так как в нулевом и первом приближении ни уравнения, ни их решения не содержат $\mu$, их зависимость от $\mu$ будем опускать.
+
+Во втором приближении уравнения на $(z_{x,2},z_{y,2})$ становятся неоднородными дифференциальными, причем неоднородности обретают зависимость от $\mu$:
+
+\begin{equation}
+\frac{d}{d\tau} \begin{pmatrix} z_{x,2} \\ z_{y,2} \end{pmatrix} = 
+\mathcal{A}(\tau) \begin{pmatrix} z_{x,2} \\ z_{y,2} \end{pmatrix} + \begin{pmatrix} \tilde G_2^x(\tau) \\ \tilde G_2^y(\tau) \end{pmatrix} + 
+\mu^2 \begin{pmatrix} 
+\mathfrak{G}_2^x(\tau) \\ 
+\mathfrak{G}_2^y(\tau)
+\end{pmatrix},
+\label{xy_eq_new}
+\end{equation}
+где:
+\begin{multline*}
+\mathfrak{G}_2^x = \frac{\partial H_1}{\partial z_y} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big),
+\end{multline*}
+\begin{multline*}
+\mathfrak{G}_2^y = \frac{\partial H_1}{\partial z_x} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -(2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big).
+\end{multline*}
+
+\begin{equation*}
+    \begin{dcases}
+        z_{\Lambda,2}(\tau) = \frac{1}{\alpha} z_{\lambda,1}'(\tau), \\
+        z_{\lambda,2}(\tau) = \frac1\beta \Big( \alpha^{-1} z_{\lambda,0}'' 
+        %- G_2^\Lambda
+         + \frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} + \\ +z_{x,2} \big( (2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\
++ z_{y,2} \big( -2C z_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big) \Big).\\
+    \end{dcases}
+\end{equation*}
+
+Заметим, что по построению $\mathfrak{G}_2^x(\tau)$ -- нечетная, а $\mathfrak{G}_2^y(\tau)$ -- четная.
+
+Кроме того, выражения $\tilde G_2^x, \tilde G_2^y$ вычисляются с использованием $\v z_0, \v z_1$:
+\begin{equation*}
+\tilde{G}_2^x = -\beta^{-1} \left(\alpha^{-1} z_{\lambda,0}'' \right) \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big),
+\end{equation*}
+\begin{equation*}
+\tilde{G}_2^y = -\beta^{-1} \left(\alpha^{-1} z_{\lambda,0}'' \right) \big( -(2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big).
+\end{equation*}
+
+
+В силу того, что новые уравнения (\ref{xy_eq_new}) отличаются от уравнений (\ref{xy_eq}) только добавкой к неоднородности, решения (\ref{xy_eq_new}) можно искать в виде:
+\begin{equation*}
+    \begin{dcases}
+        z_{x,2}(\tau,\mu) = z_{x,2}^0(\tau) + \hat z_{x,2}(\tau, \mu), \\
+        z_{y,2}(\tau,\mu) = z_{y,2}^0(\tau) + \hat z_{y,2}(\tau, \mu),
+    \end{dcases}
+\end{equation*}
+где $(z_{x,2}^0, z_{y,2}^0)$ - некоторое решение для второго приближения системы (\ref{xy_eq}), а $(\hat z_{x,2},\hat z_{y,2})$ - решение системы:
+
+\begin{equation*}
+\frac{d}{d\tau} \begin{pmatrix} \hat z_{x,2} \\ \hat z_{y,2} \end{pmatrix} = 
+\mathcal{A}(\tau) \begin{pmatrix} \hat z_{x,2} \\ \hat z_{y,2} \end{pmatrix} +  
+\mu^2 \begin{pmatrix} 
+\mathfrak{G}_2^x(\tau) \\ 
+\mathfrak{G}_2^y(\tau)
+\end{pmatrix},
+\label{xy_eq_new2}
+\end{equation*}
+
+Обозначим для краткости $\v u_2 = (x_2,y_2)$, $\v u_2^0 = (x_2^0,y_2^0)$, $\v {\hat u_2} = (\hat x_2, \hat y_2)$.
+Тогда $\v {\hat u_2^{s,u}}$ строятся по известным формулам (индексы $s$ и $u$ обозначают выполнение соответствующих граничных условий):
+\begin{equation*}
+    \begin{cases}
+        \v {\hat u_2^u} = 
+        \mu^2 \v u_1(\tau)\bigint_{\text{ } \tau^u}^\tau \left( \tilde y_1(\tau) \mathfrak{G}_2^x(\tau) - \tilde x_1(\tau) \mathfrak{G}_2^y(\tau) \right) d \tau + 
+        \mu^2 \v{ \tilde{u_1}}(\tau) \bigint_{-\infty}^\tau \left( x_1(\tau) \mathfrak{G}_2^y(\tau) - y_1(\tau) \mathfrak{G}_2^x(\tau) \right) d \tau,\\
+        \\
+        
+        \v {\hat u_2^s} = 
+        \mu^2 \v u_1(\tau)\bigint_{\text{ } \tau^s}^{\tau} \left( \tilde y_1(\tau) \mathfrak{G}_2^x(\tau) - \tilde x_1(\tau) \mathfrak{G}_2^y(\tau) \right) d \tau - 
+        \mu^2 \v{ \tilde{u_1}}(\tau) \bigint_{\text{ } \tau}^{+\infty} \left( x_1(\tau) \mathfrak{G}_2^y(\tau) - y_1(\tau) \mathfrak{G}_2^x(\tau) \right) d \tau. \\
+    \end{cases}
+    \label{neodnor_h}
+\end{equation*}
+
+Для того, чтобы исследовать вопрос существования пересечения $W^u(\Gamma_{h_1})$ и $W^s(\Gamma_{h_2})$, рассмотрим разность 
+\begin{equation}
+\v u_2^u (\tau_1,\mu_1) - \v u_2^s (\tau_2,\mu_2) = \left(\v u_2^{0,u} (\tau_1) - \v u_2^{0,s} (\tau_2)\right) + \left(\v {\hat u_2^u} (\tau_1, \mu_1) - \v {\hat u_2^s} (\tau_2, \mu_2)\right).
+\label{rasshep_h}
+\end{equation}
+
+%В силу утверждения 4 для любых $\tau_1, \tau_2$ можно выбрать соответствующие решения (\ref{xy_eq}) $\v u_2^{0,u},\v u_2^{0,s}$, такие, что $\v u_2^{0,u} (\tau_1) - \v u_2^{0,s} (\tau_2)=0$.
+
+Подставим явный вид $\v {\hat u_2^u},\v {\hat u_2^s}$ в (\ref{rasshep_h}) и перепишем это уравнение в матричной форме:
+\begin{equation}
+\small
+B(\tau_1, \tau_2) \cdot
+\begin{pmatrix} 
+\mu_1^2 \\ \mu_2^2
+\end{pmatrix} = 
+\begin{pmatrix} 
+f_1(\tau_1,\tau_2) \\ f_2(\tau_1,\tau_2)
+\end{pmatrix},
+\label{hetero_sol}
+\end{equation}
+
+$$B_{1,1} = x_1(\tau_1)\int_{\text{ } \tau^u}^{\tau_1} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
+        \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+
+$$B_{1,2} = - x_1(\tau_2)\int_{\text{ } \tau^s}^{\tau_2} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
+        \tilde x_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+
+$$B_{2,1} = y_1(\tau_1)\int_{\text{ } \tau^u}^{\tau_1} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
+        \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+        
+$$B_{2,2} = -y_1(\tau_2)\int_{\text{ } \tau^s}^{\tau_2} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
+        \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+     
+\begin{multline*}
+f_1 = - x_2^{0,u}(\tau_1) + x_2^{0,s}(\tau_1) = \\
+= - x_1(\tau_1)\int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
+        \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau + \\
+  + x_1(\tau_2)\int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
+        \tilde x_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau,
+\end{multline*}     
+
+\begin{multline*}
+f_2 = - y_2^{0,u}(\tau_1) + y_2^{0,s}(\tau_1) = \\
+= - y_1(\tau_1)\int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
+        \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau + \\
+  + y_1(\tau_2)\int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
+        \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau.
+\end{multline*}     
+
+Таким образом, получаем линейное алгебраическое уравнение (\ref{hetero_sol}) на $\mu_1^2, \mu_2^2$, коэффициенты которого зависят от набора параметров 
+$\{ \tau_1, \tau_2, \tau^s, \tau^u, \tau_2^s, \tau_2^u \}$.
+ 
+Условием разрешимости неоднородного уравнения (\ref{hetero_sol}) является $\det B(\tau_1,\tau_2) \neq 0$.
+
+Положим $\tau^u = \tau_1$, $\tau^s = \tau_2$, тогда:
+\begin{multline*}
+\det B(\tau_1,\tau_2) = 
+\int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau 
+\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau
+\left( \tilde x_1(\tau_1) \tilde y_1(\tau_2) - \tilde x_1(\tau_2) \tilde y_1(\tau_1) \right) \equiv \\
+\equiv F(\tau_1, \tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau 
+\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,
+\end{multline*}
+
+$$B_{1,1} = \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+
+$$B_{1,2} = \tilde x_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+
+$$B_{2,1} = \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+        
+$$B_{2,2} = \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau.$$
+
+%Также необходимо требовать 
+%$$\frac{-B_{1,1}}{B_{1,2}} = \frac{\tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}{\tilde x_1(\tau_2) \int_{-\infty}^{\tau_2} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} > 0$$
+%для положительности $\mu_1^2, \mu_2^2$ (чтобы $\mu_1,\mu_2$ были вещественными).
+
+%Заметим, что условие разрешимости будет выполнено, если при некоторых $\tau_1, \tau_2$:
+%$$F(\tau_1,\tau_2) \equiv \tilde x_1(\tau_1) \tilde y_1(\tau_2) - \tilde x_1(\tau_2) \tilde y_1(\tau_1) = 0$$
+
+%\begin{utv}
+%Если $\exists \tau_1 \in \mathbb{R}$:
+%$$\frac{\partial F}{\partial \tau_2} \Big|_{\tau_1,\tau_1} \neq 0$$
+%Тогда по теореме о неявной функции существует $\tau_2$:
+%$$F(\tau_1,\tau_2) = 0$$
+%\end{utv}
+
+%Заметим, что
+%\begin{equation}
+%\frac{\partial F}{\partial \tau_2} \Big|_{\tau_1,\tau_1} = \tilde x_1(\tau_1) \tilde y_1'(\tau_1) - \tilde x_1'(\tau_1) \tilde y_1(\tau_1) = \det \begin{pmatrix} \tilde x_1(\tau_1) & \tilde x_1'(\tau_1) \\ \tilde y_1(\tau_1) & \tilde y_1'(\tau_1) \end{pmatrix} = \det \begin{pmatrix} \v {\tilde u_1}(\tau_1) & \mathcal{A}(\tau_1) \cdot \v {\tilde u_1}(\tau_1) \end{pmatrix}
+%\end{equation}
+
+%Данное выражение будет отлично от нуляв точке $\tau_1$, если
+%\begin{itemize}
+%\item $\mathcal{A}(\tau_1)$ не антисимметрична,
+%\item $\v {\tilde u_1}(\tau_1)$ не является собственным вектором $\mathcal{A}(\tau_1)$.
+%\end{itemize}
+
+%Это достаточно сильные условия и можно считать, что такая точка $\tau_0$ существует
+
+Так как предполагается, что $\mu_1, \mu_2 > 0$, необходимо чтобы обе компоненты решения (\ref{hetero_sol}) были положительны  $\mu_1^2>0, \mu_2^2>0$. Для этого необходимо выполнение следующих неравенств на коэффициенты:
+
+$$\frac{B_{1,1}f_2 - B_{2,1}f_1}{\det B} > 0,$$
+$$\frac{B_{2,2}f_1 - B_{1,2}f_2}{\det B} > 0,$$
+
+\begin{multline*}
+B_{1,1}f_2 - B_{2,1}f_1 = \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau \Bigg(\\
+  \int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau \Big( 
+        \underbrace{x_1(\tau_1) \tilde y_1(\tau_1) - \tilde x_1(\tau_1) y_1(\tau_1)}_{W(\v u_1, \v{\tilde u_1}) = 1}
+    \Big)+\\
++ \int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau\Big( 
+        \tilde x_1(\tau_1) y_1(\tau_2) - \tilde y_1(\tau_1) x_1(\tau_2)
+    \Big)+\\
++ \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau\Big( 
+        \underbrace{\tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2)}_{-F(\tau_1,\tau_2)}
+    \Big)
+\Bigg),
+\end{multline*}
+
+\begin{multline*}
+B_{2,2}f_1 - B_{1,2}f_2 = \int_{\tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau \Bigg(\\
+  \int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau \Big( 
+        \tilde x_1(\tau_2) y_1(\tau_1) - \tilde y_1(\tau_2) x_1(\tau_1)
+    \Big)+\\
++ \int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau\Big( 
+        \underbrace{x_1(\tau_2) \tilde y_1(\tau_2) - \tilde x_1(\tau_2) y_1(\tau_2)}_{W(\v u_1, \v{\tilde u_1}) = 1}
+    \Big)+\\
++ \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau\Big( 
+        \underbrace{\tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2)}_{-F(\tau_1,\tau_2)}
+    \Big)
+\Bigg).
+\end{multline*}
+
+Таким образом, получаем итоговые требования на коэффициенты:
+
+\begin{multline*}
+\frac{B_{1,1}f_2 - B_{2,1}f_1}{\det B} = 
+- \frac{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + 
+\frac{\int_{\tau_2^u}^{\tau_1} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau}{F(\tau_1,\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + \\
++ \frac{\int_{\tau_2^s}^{\tau_2} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau \left( \tilde x_1(\tau_1) y_1(\tau_2) - \tilde y_1(\tau_1) x_1(\tau_2) \right)}{F(\tau_1,\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} > 0,
+\end{multline*}
+
+\begin{multline*}
+\frac{B_{2,2}f_1 - B_{1,2}f_2}{\det B} = 
+- \frac{\int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + 
+\frac{\int_{\tau_2^s}^{\tau_2} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau}{F(\tau_1,\tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + \\
++ \frac{\int_{\tau_2^u}^{\tau_1} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau \left( \tilde x_1(\tau_2) y_1(\tau_1) - \tilde y_1(\tau_2) x_1(\tau_1) \right)}{F(\tau_1,\tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} > 0,
+\end{multline*}
+
+$$F(\tau_1,\tau_2) \equiv \tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2).$$
+

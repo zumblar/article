@@ -1,0 +1,96 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{../sections/preamble}
+
+\begin{document}
+
+    % Титульная информация (можно вынести в отдельный файл, если она громоздкая)
+    \title{Хаотическая динамика и трансверсальные гомоклинические структуры в окрестности резонанса 3:1 в плоской эллиптической ограниченной задаче трех тел}
+    %\author{И.~О.~Фамилия}
+    \date{\today}
+    \maketitle
+
+
+    \tableofcontents
+
+    % Аннотация и ключевые слова
+    %\begin{abstract}
+    %    \input{sections/00_abstract} % Можно и тут написать, но лучше вынести
+    %\end{abstract}
+    %\keywords{ключевое слово1, ключевое слово2}
+
+    % Начинаем включать основные разделы
+    \section{Введение}
+        \subsection{Ограниченная эллиптическая задача трех тел и пояс астероидов}
+        \input{../sections/introduction_3bp}
+
+        \subsection{Окрестность резонанса}
+        \input{../sections/introduction_resonance}
+
+        \subsection{Практические применения и классичский метод исследования}
+        \input{../sections/introduction_application}
+
+    \section{Быстро-медленные системы, медленное многообразие}
+        \subsection{Представление плоской эллиптической ограниченной задачи трех тел в окрестности резонанса 3:1 в виде быстро-медленной системы}
+        \input{../sections/slowfast_svedenie}
+
+        \subsection{Медленное многообразие}
+        \input{../sections/m0}
+
+        \subsection{Динамика быстрой системы}
+        \input{../sections/slowfast_fast}
+
+        \subsection{Динамика медленной системы на медленном многообразии}
+        \input{../sections/slowfast_slow}
+
+        \subsection{Неподвижные точки полной системы}
+        \input{../sections/slowfast_fp}
+       
+        
+    \section{Динамика в окрестности неустойчивого листа}
+        \subsection{Инвариантные многообразия}
+        \input{../sections/invar}
+
+
+        \subsection{Метод Мельникова}
+        \input{../sections/melnikov}
+
+        \subsection{Применение теории Мельникова к плоской эллиптической ограниченной задаче трех тел}
+        \input{../sections/melnikov_application}
+
+        \subsection{Результаты для неустойчивого листа}
+        \input{../sections/unstable_result}
+    
+
+    \section{Динамика в окрестности устойчивого листа}
+        \input{../sections/stable_introduction}
+        
+        \subsection{Устойчивое и неустойчивое многообразия положения равновесия}
+        \input{../sections/Wu_Ws}
+            \subsubsection{Метод разложения по малому параметру}
+            \input{../sections/small_param_exp}
+
+            \subsubsection{Построение сепаратрисы полной системы}
+            \input{../sections/full_separatrix}
+
+        \subsection{Периодические траектории в окрестности положения равновесия}
+        \input{../sections/periodic_introduction}
+            \subsubsection{Построение периодических траекторий}
+            \input{../sections/periodic}
+
+            \subsubsection{Радиус сходимости рядов}
+            \input{../sections/conv_radius}
+
+        \subsection{Устойчивое и нестойчивое многообразия периодических траекторий}
+        \input{../sections/periodic_W.tex}
+            \subsubsection{Гетероклническое пересечение $W^s$ и $W^u$}
+            \input{../sections/heteroclinic}
+
+
+    \section{Заключение}
+
+    % Библиография
+    %\bibliographystyle{plain} % или unsrt, alpha, etc.
+    %\bibliography{bibliography} % Указываем имя файла без .bib
+
+\end{document}

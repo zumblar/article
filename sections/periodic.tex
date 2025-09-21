@@ -1,0 +1,159 @@
+Рассмотрим систему (\ref{fulltn}) с положением равновесия в точке $0$.
+Обозначим правую часть уравнений как
+\begin{align*}
+\v F(\Lambda,\lambda,x,y) = 
+\begin{pmatrix}
+- U(x,y) \sin \lambda + V(x,y) \cos \lambda \\
+\alpha \Lambda \\
+-\varepsilon \big( 2Fy-\frac{\partial U}{\partial y} \cos \lambda - \frac{\partial V}{\partial y} \sin \lambda \big) \\
+\varepsilon \big( 2F(x+\hat x_0)+e_JG -\frac{\partial U}{\partial x} \cos \lambda - \frac{\partial V}{\partial x} \sin \lambda \big)
+\end{pmatrix}.
+\end{align*}
+
+Линейный вклад в правую часть в окрестности положения равновесия задается матрицей:
+
+\begin{align*}
+\begin{pmatrix}
+0 & -U_0 & 0 & (2C \hat x_0 + e_J D) \\
+\alpha & 0 & 0 & 0 \\
+0 & \varepsilon (2C \hat x_0 + e_J D) & 0 & -\varepsilon (2F+2C) \\
+0 & 0 & \varepsilon (2F-2C) & 0 
+\end{pmatrix}.
+\end{align*}
+
+Данная матрица диагонализуема и ее диагонализующая матрица равна (здесь $\pm i \omega, \pm \xi$ - собственные числа):
+
+\begin{align}
+R = 
+\begin{pmatrix}
+\frac{i \omega (\xi^2+\alpha U_0)}{\alpha (2C \hat x_0 + e_J D)} & -\frac{i \omega (\xi^2+\alpha U_0)}{\alpha (2C \hat x_0 + e_J D)} & -\frac{\xi (\omega^2 - \alpha U_0)}{\alpha  (2C \hat x_0 + e_J D)} & \frac{\xi (\omega^2 - \alpha U_0)}{\alpha (2C \hat x_0 + e_J D)} \\
+\frac{\xi^2+\alpha U_0}{ (2C \hat x_0 + e_J D)} & \frac{\xi^2+\alpha U_0}{ (2C \hat x_0 + e_J D)} & -\frac{\omega^2 - \alpha U_0}{(2C \hat x_0 + e_J D)} & -\frac{\omega^2 -\alpha U_0}{(2C \hat x_0 + e_J D)} \\
+-i \omega \varepsilon & i \omega \varepsilon & -\xi \varepsilon & \xi \varepsilon \\
+2\varepsilon^2(C-F) & 2\varepsilon^2(C-F) & 2\varepsilon^2(C-F) & 2\varepsilon^2(C-F) 
+\end{pmatrix}.
+\end{align}
+
+Введем новые координаты $(z,\eta,a,b)$, в которых линейный вклад в правую часть будет иметь диагональный вид:
+
+\begin{align}
+\begin{pmatrix}
+z \\ \eta \\ a \\ b 
+\end{pmatrix} = R^{-1} \begin{pmatrix}
+\Lambda \\ \lambda \\ x \\ y 
+\end{pmatrix}.
+\end{align}
+
+В новых переменных уравнения примут вид:
+
+\begin{align}
+\frac{d}{dt}
+\begin{pmatrix}
+z \\ \eta \\ a \\ b 
+\end{pmatrix} = \text{diag}(i \omega, -i \omega, \xi, -\xi) \cdot
+\begin{pmatrix}
+z \\ \eta \\ a \\ b 
+\end{pmatrix} + \v{\mathcal{G}}(z,\eta,a,b),
+\label{new_eq},
+\end{align}
+
+\begin{align*}
+\v{\mathcal{G}} \equiv R^{-1} \v F \left(R\begin{pmatrix}
+z \\ \eta \\ a \\ b 
+\end{pmatrix} \right) - \text{diag}(i \omega, -i \omega, \xi, -\xi) \cdot 
+\begin{pmatrix}
+z \\ \eta \\ a \\ b 
+\end{pmatrix},
+\end{align*}
+
+где $\v{\mathcal{G}}$ - нелинейный остаток.
+
+Будем искать решение в виде рядов по степеням функций $\phi(t), \psi(t)$, следуя методу,
+изложенному в \cite{siegel}. Положим:
+$$\varphi(t) = \varphi_0 e^{i \theta (\varphi_0, \psi_0) t},$$
+$$\psi(t) = \varphi_0 e^{-i \theta (\varphi_0, \psi_0) t}.$$
+Причем частота $\theta (\varphi_0, \psi_0)$ сама является функцией амплитуд $\varphi_0, \psi_0$:
+$$\theta(\varphi_0, \psi_0) = \omega + \sum_{k=1}^{+\infty}{\theta_k \cdot (\varphi_0 \psi_0)^k}.$$
+
+Анзац для искомого решения имеет вид:
+
+\begin{equation}
+\begin{cases}
+z(\varphi,\psi) = \varphi + \sum_{k,j=1}^{+\infty}{ \{z\}_{k,j} \varphi^k \psi^j },\\
+\eta(\varphi,\psi) = \psi + \sum_{k,j=1}^{+\infty}{ \{\eta\}_{k,j} \varphi^k \psi^j },\\
+a(\varphi,\psi) = \sum_{k,j=1}^{+\infty}{ \{a\}_{k,j} \varphi^k \psi^j },\\
+b(\varphi,\psi) = \sum_{k,j=1}^{+\infty}{ \{b\}_{k,j} \varphi^k \psi^j }.\\
+\end{cases}
+\label{predst3}
+\end{equation}
+
+Дополнительно потребуем, чтобы ряд $z$ не содержал степеней $(\varphi \psi)^k \varphi$, а ряд $\eta$ не содержал степеней $(\varphi \psi)^k \psi$. Данное требование необходимо для однознчной разрешимости уравнений на коэффициенты при соответветствующих степенях $\varphi,\psi$ \cite{siegel}. 
+
+Подставив анзац в уравнения (\ref{new_eq}) получается система уравнений на коэффициенты:
+\begin{equation}
+\begin{cases}
+\left((p-q)i\omega - i\omega \right)\{z\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{z\}_{p-r,q-r}} = \{\v{\mathcal{G}}_z(z,\eta,a,b)\}_{p,q}, \\
+\left((p-q)i\omega + i\omega \right)\{\eta\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{\eta\}_{p-r,q-r}} = \{\v{\mathcal{G}}_\eta(z,\eta,a,b)\}_{p,q}, \\
+\left((p-q)i\omega - \xi \right)\{a\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{a\}_{p-r,q-r}} = \{\v{\mathcal{G}}_a(z,\eta,a,b)\}_{p,q}, \\
+\left((p-q)i\omega + \xi \right)\{b\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{b\}_{p-r,q-r}} = \{\v{\mathcal{G}}_b(z,\eta,a,b)\}_{p,q}. \\
+\end{cases}
+\label{pq_eq}
+\end{equation}
+
+Под $\{\v{\mathcal{G}}_\rho(z,\eta,a,b)\}_{p,q}, \rho \in \{z,\eta,a,b\}$ здесь подразумевается коэффициент в разложении при $\varphi^p \psi^q$ соответствующей компоненты вектора $\v{\mathcal{G}}$.
+
+В оставшихся случаях когда $p=q+1, p+q>1$ для $z$ получаем, что $\{z\}_{p,q}=0$. Аналогично при $q=p+1$ для $\eta$ получаем, что $\{\eta\}_{p,q}=0$ (здесь используется требование об отсутствии слагаемых вида $(\varphi \psi)^k \varphi$ в $z$ и слагаемых вида $(\varphi \psi)^k \psi$ в $\eta$). В то же время $\{z\}_{1,0} = \{\eta\}_{0,1} = 1$. Следовательно,
+\begin{equation*}
+\begin{cases}
+\theta_p = \{ \v{\mathcal{G}}_z\}_{p,q} \quad p=q+1>1, \\
+\theta_q = - \{ \v{\mathcal{G}}_\eta \}_{p,q} \quad q=p+1>1.
+\end{cases}
+\end{equation*}
+
+
+Решая эти уравнения, получаем следующие первые коэффициенты:
+\begin{equation*}
+\begin{dcases}
+\{z\}_{1,1} = - \{\eta\}_{1,1} = i \frac{(\xi^2+\alpha U_0)(\omega^2-\alpha U_0)(\xi^2 + \alpha U_0 - 8 \varepsilon^2 C (C-F))}{4\omega(C-F)(\xi^2+\omega^2)(2C \hat x_0 + e_J D) \varepsilon} = \mathcal{O}(\varepsilon) \in i \mathbb{R},\\
+\{a\}_{1,1} = - \{b\}_{1,1} = \frac{-(\xi^2+\alpha U_0)(\xi^2 + \alpha U_0 - 8 \varepsilon^2 C (C-F))}{4\xi(C-F)(\xi^2+\omega^2)(2C \hat x_0 + e_J D) \varepsilon} = \mathcal{O} \left(\frac{1}{\varepsilon^2} \right) \in \mathbb{R},
+\end{dcases}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+\theta_1 = &\frac{\left(\xi ^2+\alpha U_0\right)}{8 (2C \hat x_0 + e_J D)^2 \omega (C-F) \left(\xi ^2+\omega ^2\right)^2} \times \\
+&\Bigg[
+\alpha U_0 \bigg(-4 \alpha \xi ^2 (2C \hat x_0 + e_J D) \varepsilon ^2 (C-F) \left(8 c^2 \hat x_0-C (2C \hat x_0 + e_J D)+3 f (2C \hat x_0 + e_J D)\right) \\
+&\quad +2 \omega ^2 \left(\xi ^4 (C+2 F)-6 \alpha (2C \hat x_0 + e_J D)^2 \varepsilon ^2 (C-F) (C+F)+2 \alpha \xi ^2 (2C \hat x_0 + e_J D)^2\right) \\
+&\quad +\xi ^4 \left(8 C \varepsilon ^2 (C-F) (C+3 F)+\alpha (2C \hat x_0 + e_J D) (6 C \hat x_0+(2C \hat x_0 + e_J D))\right) \\
+&\quad +4 \omega ^4 \left(\xi ^2 (C+F)-2 C \varepsilon ^2 (C-F) (C+3 F)\right)-4 C \xi ^6-2 C \omega ^6\bigg) \\
+&+\alpha \xi ^2 (2C \hat x_0 + e_J D) \bigg(-4 \xi ^2 \varepsilon ^2 (C-F) \left(4 C^2 \hat x_0+C (2C \hat x_0 + e_J D)+3 f (2C \hat x_0 + e_J D)\right) \\
+&\quad +16 C (2C \hat x_0 + e_J D) \varepsilon ^4 (C-F)^2 (C+3 F)+\xi ^4 (2 C \hat x_0+(2C \hat x_0 + e_J D))\bigg) \\
+&+\alpha ^2 U_0^2 \bigg(8 C^3 \varepsilon ^2 \left(\xi ^2-2 \alpha (2C \hat x_0 + e_J D) \hat x_0+\omega ^2\right) \\
+&\quad +8 C^2 \varepsilon ^2 \left(2 F \left(\xi ^2+\omega ^2\right)+2 \alpha F (2C \hat x_0 + e_J D) \hat x_0+\alpha (2C \hat x_0 + e_J D)^2\right) \\
+&\quad -2 C \left(12 F^2 \varepsilon ^2 \left(\xi ^2+\omega ^2\right)+4 \alpha F (2C \hat x_0 + e_J D)^2 \varepsilon ^2+4 \xi ^4+2 \xi ^2 \omega ^2-3 \alpha \xi ^2 (2C \hat x_0 + e_J D) \hat x_0-2 \omega ^4\right) \\
+&\quad +2 F \omega ^2 \left(\xi ^2+\omega ^2\right)-\alpha (2C \hat x_0 + e_J D)^2 \left(\xi ^2-2 \omega ^2\right)\bigg) \\
+&+\alpha D e_J (2C \hat x_0 + e_J D) \left(\xi ^2+\alpha U_0\right)^2 \left(8 C \varepsilon ^2 (F-C)+\xi ^2+\alpha U_0\right) \\
+&+2 \omega ^4 \left(2 \alpha C (2C \hat x_0 + e_J D)^2 \varepsilon ^2 (C-F)-4 C \xi ^2 \varepsilon ^2 (C-F) (C+3 F)+F \xi ^4\right) \\
+&+2 \omega ^2 \bigg(\xi ^6 (C+F)+8 \alpha C (2C \hat x_0 + e_J D)^2 \varepsilon ^4 (C-F)^2 (C+3 F) \\
+&\quad +\xi ^4 \left(\alpha (2C \hat x_0 + e_J D)^2-4 C \varepsilon ^2 (C-F) (C+3 F)\right)-2 \alpha \xi ^2 (2C \hat x_0 + e_J D)^2 \varepsilon ^2 (C-F) (2 C+3 F)\bigg) \\
+&-2 C \xi ^2 \omega ^6-\alpha ^3 U_0^3 \left(4 C \left(\xi ^2+\omega ^2\right)-2 \alpha C (2C \hat x_0 + e_J D) \hat x_0+\alpha (2C \hat x_0 + e_J D)^2\right)
+\Bigg] = \mathcal{O}(1)  \in \mathbb{R}.
+\end{split}
+\end{equation*}
+
+Учитывая выражение для матрицы $R^{-1}$, заметим, что старые переменные не содержат особенность по $\varepsilon$:
+
+\begin{equation*}
+\begin{aligned}
+\Lambda &= (z-\eta)\underbrace{\frac{i\omega(\xi^2+\alpha U_0)}{\alpha (2C \hat x_0 + e_J D)}}_{\mathcal{O}(1)} + (a-b) \underbrace{\frac{-\xi(\omega^2-\alpha U_0)}{\alpha (2C \hat x_0 + e_J D)}}_{\mathcal{O}(\varepsilon^3)},\\
+\lambda &= (z+\eta)\underbrace{\frac{(\xi^2+\alpha U_0)}{(2C \hat x_0 + e_J D)}}_{\mathcal{O}(1)} + (a+b) \underbrace{\frac{-(\omega^2-\alpha U_0)}{(2C \hat x_0 + e_J D)}}_{\mathcal{O}(\varepsilon^2)},\\
+x &= (z-\eta)\underbrace{(-i\omega\varepsilon)}_{\mathcal{O}(\varepsilon)}+(a-b) \underbrace{(-\varepsilon \xi)}_{\mathcal{O}(\varepsilon^2)},\\
+y &= 2(C-F)\varepsilon^2 (z+\eta+a+b).
+\end{aligned}
+\label{old_var}
+\end{equation*}
+
+Потребовав вещественность старых переменных $(\Lambda,\lambda,x,y)$, получаем, что амплитуды экспонент должны быть вещественные и равные:
+$$\varphi_0 = \psi_0 \equiv h.$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

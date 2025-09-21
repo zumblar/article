@@ -1,0 +1,28 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1.\relax }Введение}{0}{section.1}%
+\contentsline {subsection}{\numberline {1.1.\relax }Ограниченная эллиптическая задача трех тел и пояс астероидов}{0}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2.\relax }Окрестность резонанса}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3.\relax }Практические применения и классичский метод исследования}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2.\relax }Быстро-медленные системы, медленное многообразие}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1.\relax }Представление плоской эллиптической ограниченной задачи трех тел в окрестности резонанса 3:1 в виде быстро-медленной системы}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2.\relax }Медленное многообразие}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3.\relax }Динамика быстрой системы}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4.\relax }Динамика медленной системы на медленном многообразии}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5.\relax }Неподвижные точки полной системы}{10}{subsection.2.5}%
+\contentsline {section}{\numberline {3.\relax }Динамика в окрестности неустойчивого листа}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1.\relax }Инвариантные многообразия}{10}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1.\relax }Основные понятие и теоремы}{10}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2.\relax }Метод Мельникова}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3.\relax }Применение теории Мельникова к плоской эллиптической ограниченной задаче трех тел}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4.\relax }Расщепление сепаратрис}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5.\relax }Результаты для неустойчивого листа}{16}{subsection.3.5}%
+\contentsline {section}{\numberline {4.\relax }Динамика в окрестности устойчивого листа}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1.\relax }Устойчивое и неустойчивое многообразия положения равновесия}{17}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.\relax }Метод разложения по малому параметру}{17}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.\relax }Построение сепаратрисы полной системы}{28}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2.\relax }Периодические траектории в окрестности положения равновесия}{31}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1.\relax }Построение периодических траекторий}{31}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.\relax }Радиус сходимости рядов}{34}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3.\relax }Устойчивое и нестойчивое многообразия периодических траекторий}{36}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1.\relax }Гетероклническое пересечение $W^s$ и $W^u$}{41}{subsubsection.4.3.1}%
+\contentsline {section}{\numberline {5.\relax }Заключение}{46}{section.5}%

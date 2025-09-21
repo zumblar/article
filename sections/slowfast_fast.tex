@@ -1,0 +1,53 @@
+Устремив в (\ref{fullt}) $\varepsilon$ к нулю, получаем так называемую "быструю"\, систему:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \dot \Lambda &= U(x,y) \sin \lambda - V(x,y) \cos \lambda,
+        &\quad
+        \dot \lambda &= \alpha \Lambda, \\[1.5ex]
+        \dot x &= 0,
+        &\quad
+        \dot y &= 0.
+    \end{aligned}
+    \right.
+    \label{fastreal}
+\end{equation}
+
+В силу тривиальной динамики переменных $(x, y)$ зависимость функций $U, V$ от медленных переменных будем опускать. Продифференцировав $\lambda$ второй раз по $t$ и подставляя выражение для $\dot \Lambda$, получаем уравнение:
+$$\ddot \lambda - \alpha U \sin \lambda + \alpha V \cos \lambda = 0,$$
+которое приводится (учитывая $\alpha < 0$) к стандартному уравнению маятника:
+$$\ddot \lambda - \alpha \beta \sin \big( \lambda - \lambda_{+}(x,y) \big) = 0, \quad \beta(x,y) \equiv \sqrt{U^2+V^2} > 0.$$
+
+Отметим, что по определению медленное многообразие является множеством неподвижных точек (положений равновесия) "быстрой"\, системы, а именно 
+$(\lambda, \Lambda)  = (\lambda_{\pm}(x,y), 0)$. Для определения типа этих положений равновесия разложим правую часть уравнений (\ref{fastreal}) по формуле Тейлора в окрестности положений равновесия:
+$$\begin{pmatrix}
+  U \sin \lambda - V \cos \lambda \\
+  \alpha \Lambda
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  0 & \alpha \\
+  \pm \beta(x,y) & 0
+ \end{pmatrix}
+ \begin{pmatrix}
+  \lambda - \lambda_{\pm}\\
+  \Lambda
+ \end{pmatrix} + O((\lambda - \lambda_{\pm})^2, \Lambda^2).
+$$
+
+Тогда собственные числа линеаризованной системы имеют вид:
+\newline
+для листа $M_{0,+}$:
+$$\zeta = \pm i \sqrt{|\alpha| \beta},$$
+\newline
+для листа $M_{0,-}$:
+$$\zeta = \pm \sqrt{|\alpha| \beta}.$$
+В первом случае собственные значения чисто мнимые, а во втором - вещественные. 
+
+Таким образом, лист $M_{0,+}$ состоит из устойчивых положений равновесия быстрой системы,  а лист $M_{0,-}$  - из неустойчивых положений равновесия. Неустойчивое положение равновесия обладает двумерной сепаратрисой, заполненной решениями вида:
+\begin{align*}
+&\lambda(t, t_0) = \pm 2 \arctan \sinh \big( \alpha \beta (t-t_0) \big) + \lambda_{-}(x,y),\\
+&\Lambda(t, t_0) = \frac{\pm 2 \beta}{\cosh \big( \alpha \beta (t-t_0) \big)},
+\end{align*}
+здесь $t_{0}\in \mathbb{R}$, а выбор знака определяет направление движения по сепаратрисе.
