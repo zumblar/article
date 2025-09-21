@@ -16,6 +16,8 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: build/main.tex  # замените на ваш главный .tex файл
+          latexmk_use_xelatex: true
+          args: -cd
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
