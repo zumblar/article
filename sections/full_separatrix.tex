@@ -1,0 +1,185 @@
+Построим выделенное формальное решение для полной системы, которое будем называть \textit{каноническим} и обозначать верхним индексом $0$.
+
+Система уравнений на первый порядок является однородной, поэтому для рассматриваемого случая выберем тривиальное решение:
+\begin{align*}
+    \v u^0_1(\tau) \equiv \begin{pmatrix} x^0_1(\tau) \\ y^0_1(\tau) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+\end{align*}
+
+В силу этого $(\lambda^0_1(\tau), \Lambda^0_1(\tau)) = (0,0)$. В таком случае:
+$$\mathfrak{D}_1 = 0 \cdot \quad \text{ - оператор умножения на 0},$$
+$$G_2^\rho = \frac12 \mathfrak{D}_1^2 g^\rho = \frac12 (x^0_1)^2 g^\rho_{xx} + \frac12 x^0_1 y^0_1 g^\rho_{xy} + ... = 0,$$
+
+$$\tilde G_2^x  = \frac{1}{\alpha \beta} \lambda_0''(\tau) \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right) \text{ - нечетная},$$
+
+$$\tilde G_2^y  = \frac{1}{\alpha \beta} \lambda_0''(\tau) \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right) \text{ - четная}.$$
+
+При построении $\v u_2^u,\v u_2^s$ выберем $\tau^u_2 = \tau^s_2 = 0$:
+\begin{equation*}
+    \begin{cases}
+        \v u_2^u = 
+        \v u_1(\tau)\bigint_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau + 
+        \v{ \tilde{u_1}}(\tau) \bigint_{-\infty}^\tau \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau,\\
+        \\
+        
+        \v u_2^s = 
+        \v u_1(\tau)\bigint_{\text{ } 0}^{\tau} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau - 
+        \v{ \tilde{u_1}}(\tau) \bigint_{\text{ } \tau}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau. \\
+    \end{cases}
+\end{equation*}
+
+Тогда по \textit{Следствию 1} $\v u_2^s(\tau) = \v u_2^u(\tau) \equiv \v u_2^0(\tau)$
+
+Т.к. $G_k^\rho$ и $\hat G_k^\rho$ отличаются только нормировкой то вырождаются они одновременно. В таком случае:
+
+$$G_3^\rho = \frac12 (\mathfrak{D}_1 \mathfrak{D}_2 + \mathfrak{D}_2 \mathfrak{D}_1)g^\rho + \mathfrak{D}_1 \hat G_2^\rho = 0,$$
+\begin{equation*}
+\begin{aligned}
+\tilde G_3^x  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_1)''(\tau)}_0 \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right) =0,
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\tilde G_3^y  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_1)''(\tau)}_0 \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right) = 0.
+\end{aligned}
+\end{equation*}
+
+То есть в 3 порядке неоднородность вырождается и уравнение становится однородным. Выберем тривиальное решение:
+\begin{align*}
+    \v u^0_3(\tau) \equiv \begin{pmatrix} x^0_3(\tau) \\ y^0_3(\tau) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+\end{align*}
+
+$$(\lambda^0_3(\tau), \Lambda^0_3(\tau)) = (0,0).$$
+
+Продолжая данное построение по индукции получаем следующее
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv} Для любого целого $k\ge 0$ имеем
+
+$$G_{2k+1}^\rho = 0, \rho \in \{\Lambda,\lambda,x,y\},$$
+$$G_{2k+2}^x, y_{2k+2} \text{ -- нечетные},$$
+$$G_{2k+2}^y, x_{2k+2} \text{ -- четные},$$
+$$({\lambda^0_{2k+1}, \Lambda^0_{2k+1}, x^0_{2k+1}, y^0_{2k+1}}) = (0,0,0,0).$$
+
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+
+База индукции описана ранее.
+Индукционное предположение:
+$$G_{2k-1}^\rho = 0,$$
+$$G_{2k}^x, y_{2k} \text{ -- нечетные},$$
+$$G_{2k}^y, x_{2k} \text{ -- четные},$$
+$$({\lambda^0_{2k-1}, \Lambda^0_{2k-1}, x^0_{2k-1}, y^0_{2k-1}}) = (0,0,0,0).$$
+
+По \textit{Утверждению 5} 
+\begin{equation}
+G_{2k+1}^\rho = \frac12 \sum_{m=1}^{2k} \mathfrak{D}_m \mathfrak{D}_{2k+1-m} g^\rho + \sum_{m=1}^{2k} \mathfrak{D}_m \hat G_{2k+1-m}^\rho.
+\label{G_nechet}
+\end{equation}
+
+В силу индукционного предположения, для всех нечетных $j \leq 2k-1$ операторы $\mathfrak{D}_{j}$ это операторы умножения на $0$.
+
+Первая сумма в (\ref{G_nechet}) состоит из произведений $\mathfrak{D}_m \mathfrak{D}_{2k+1-m} g^\rho$, сумма индексов которых должна быть нечетна и равна $2k+1$. Следовательно, либо $\mathfrak{D}_m$, либо $\mathfrak{D}_{2k+1-m}$ имеет нечетный индекс.  
+Тогда $\mathfrak{D}_m \mathfrak{D}_{2k+1-m} g^\rho = 0 \quad \forall m \leq 2k$.
+
+Аналогично во второй сумме в (\ref{G_nechet}) нечетный индекс имеет либо $\mathfrak{D}_m$, либо $\hat G^\rho_{2k+1-m}$. Но поскольку для нечетных $j \le 2k-1$ функции $\hat G^\rho_{j} \equiv 0$, то все слагаемые во второй сумме также обращаются в 0. 
+
+Также в силу индукционного предположения и (\ref{G_nechet}) неоднородность в нечетных уравнениях также будет нулевой:
+\begin{equation*}
+\begin{aligned}
+\tilde G_{2k+1}^x  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_{2k-1})''(\tau)}_0 \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right) =0,
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\tilde G_{2k+1}^y  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_{2k-1})''(\tau)}_0 \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right) = 0.
+\end{aligned}
+\end{equation*}
+
+Тогда можно выбрать:
+$$({\lambda^0_{2k+1}, \Lambda^0_{2k+1}, x^0_{2k+1}, y^0_{2k+1}}) = (0,0,0,0).$$
+
+Заметим, что оператор $\mathfrak{D}_{2k}$ сохраняет четность:
+
+\begin{equation*}
+\begin{aligned}
+\mathfrak{D}_{2k}g^\rho = \underbrace{x^0_{2k}}_{\text{чет.}} g^\rho_x|_{\lambda_0,\Lambda_0,x_0,y_0} + \underbrace{y^0_{2k}}_{\text{нечет.}} g^\rho_y|_{\lambda_0,\Lambda_0,x_0,y_0} + \underbrace{\lambda^0_{2k}}_{\text{нечет.}} g^\rho_\lambda|_{\lambda_0,\Lambda_0,x_0,y_0} + \underbrace{\Lambda^0_{2k}}_{(\lambda^0_{2k-1})' = 0} g^\rho_\Lambda|_{\lambda_0,\Lambda_0,x_0,y_0}
+\end{aligned}
+\end{equation*}
+
+$\frac{\partial}{\partial x}|_{\lambda_0,\Lambda_0,x_0,y_0}$ не меняет четность, $\frac{\partial}{\partial y}|_{\lambda_0,\Lambda_0,x_0,y_0}, \frac{\partial}{\partial \lambda}|_{\lambda_0,\Lambda_0,x_0,y_0}$ меняют четность.
+
+
+Тогда, как следствие \textit{Утверждения 5}, $G_{2k}^\rho$ наследует четность $G_{2k-2}^\rho$.
+$\blacksquare$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+В итоге построенное \textit{каноническое} решение имеет вид:
+
+\begin{equation*}
+\begin{cases}
+\lambda^0(\tau) = (\lambda_0(\tau) - \pi) + \sum_{k=1}^{+\infty} \varepsilon^{2k} \lambda^0_{2k}(\tau),\\
+\Lambda^0(\tau) = \frac{1}{\alpha} \sum_{k=1}^{+\infty} \varepsilon^{2k} (\lambda^0_{2k-1})'(\tau),\\
+x^0(\tau) = x_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} x^0_{2k}(\tau),\\
+y^0(\tau) = y_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} y^0_{2k}(\tau),
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+\begin{cases}
+        x^0_{2k}(\tau) = 
+        x_1(\tau)\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde x_1(\tau) \tilde G_{2k}^y(\tau) \right) d \tau + 
+        \tilde {x_1}(\tau) \int_{-\infty}^\tau \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau, \\
+        
+        y^0_{2k}(\tau) = 
+        y_1(\tau)\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde x_1(\tau) \tilde G_{2k}^y(\tau) \right) d \tau + 
+        \tilde {y_1}(\tau) \int_{-\infty}^\tau \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau,
+\end{cases}
+\end{equation*}
+
+$$\tilde G_{2k}^x  = \frac{1}{\alpha \beta} (\lambda^0_{2k-2})''(\tau) \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right),$$
+
+$$\tilde G_{2k}^y  = \frac{1}{\alpha \beta} (\lambda^0_{2k-2})''(\tau) \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right).$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thm}
+\begin{samepage}
+Существуют решения системы (\ref{fulltn}):
+\begin{itemize}
+\item $(\Lambda^s(\tau),\lambda^s(\tau),x^s(\tau),y^s(\tau)) \in W^s(0),$
+\item $(\Lambda^u(\tau),\lambda^u(\tau),x^u(\tau),y^u(\tau)) \in W^u(0),$
+\end{itemize}
+
+асимптотика которых совпадает в любом порядке по $\varepsilon$ и равна $(\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau))$.
+\end{samepage}
+То есть $\exists \quad c>0:$
+$$(\Lambda^s(\tau),\lambda^s(\tau),x^s(\tau),y^s(\tau)) = (\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau)) + \mathcal{O}(e^{-\frac{c}{\varepsilon}}),$$
+$$(\Lambda^u(\tau),\lambda^u(\tau),x^u(\tau),y^u(\tau)) = (\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau)) + \mathcal{O}(e^{-\frac{c}{\varepsilon}}).$$
+
+\end{thm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+
+Функции 
+$$\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde x_1(\tau) \tilde G_{2k}^y(\tau) \right) d \tau,$$
+равномерно ограничены $\forall k \in \mathbb{N}$, т.к. подынтегральное выражение принадлежит классу $\mathcal{F}_{s_0}$.
+
+В силу нечетности подынтегрального выражения (по \textit{Утверждению 7}) следущие интегралы равны 0:
+$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau, \quad k \in \mathbb{N}$$
+
+Тогда, учитывая что подынтегральное выражение принадлежит классу $\mathcal{F}_{3s_0}$, функции
+$$\int_{-\infty}^{\tau} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau$$
+будут принадлежать классу $\mathcal{F}_{2s_0}$. Причем их убывание будет подавлять рост $\v{ \tilde{u_1}}$.
+
+Таким образом, $(\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau))$ стремится к нулю при $\tau \to \pm \infty$.
+
+Заметим, что правая часть $(g^\Lambda, g^\lambda, g^x, g^y)$ системы (\ref{fulltn}) является вещественно аналитической по $(\Lambda, \lambda, x, y)$ и $\varepsilon>0$. Также отметим, что все производные $(g^\Lambda, g^\lambda, g^x, g^y)$ по $(\Lambda, \lambda, x, y)$ равномерно ограничены. Такие свойства правой части гарантируют вещественную аналитичность решений.
+
+Выберем два решения, принадлежащих $W^s(0)$ и $W^u(0)$ соответсвенно и имеющих одинаковую асимптотику $(\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau))$. Тогда по лемме Ватсона их разность будет экспоненциально мала.
+
+
+$\blacksquare$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{consequence}
+Расщепление сепаратрис положения равновесия седло-центр в системе (\ref{fulltn}) не более чем экспоненциально мало. 
+\end{consequence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

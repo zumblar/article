@@ -1,0 +1,92 @@
+%\documentclass[a4paper, 12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.5cm,bindingoffset=0cm]{geometry}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage{mathtools}
+\usepackage[english,russian]{babel}
+\usepackage{misccorr}                                    %точка после номера секции
+\usepackage{graphicx}
+%\usepackage{caption}                                     %подпись плавающих             обьектов            
+\usepackage{ upgreek }                    
+%\captionsetup{labelformat=default,labelsep=period,labelfont=bf}
+\usepackage{indentfirst}                                 % Красная строка
+\usepackage{float}                                       % можно использовать Н в плавающих обьектах
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{lettrine}
+\usepackage{fancybox,fancyhdr}
+\usepackage{bigints}
+\usepackage{verbatim}
+\bibliographystyle{unsrt}
+
+\usepackage{amsthm, amssymb}
+
+
+\geometry{a4paper, left=20mm, right=10mm, top=20mm, bottom=20mm}
+
+%\mathindent=1em 
+%\sloppy 
+\textwidth = 17 cm 
+%\oddsidemargin = -0.5cm 
+\topmargin = -2cm \textheight = 25cm 
+\setcounter{page}{0}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+\bibliographystyle{plain}
+
+\usepackage[T2A]{fontenc} % Поддержка русских букв
+\usepackage[utf8]{inputenc} % Кодировка utf8
+%\usepackage{pscyr} % Нормальные шрифты
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\renewcommand{\v}[1]{\boldsymbol{#1}}
+
+\newtheorem{utv}{Утверждение}
+\newtheorem{thm}{Теорема}
+\newtheorem{prf}{Доказательство}
+\newtheorem{dfn}{Определение}
+\newtheorem{consequence}{Следствие}
+
+
+% Цвета для гиперссылок
+\definecolor{linkcolor}{HTML}{4B0082} % цвет ссылок
+\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+%\usepackage[
+%backend=biber, 
+%sorting=nyt,
+%bibstyle=gost-authoryear,
+%citestyle=gost-authoryear
+%]{biblatex}
+%\addbibresource{library}
+
+\setcounter{tocdepth}{4} 
+
+%\renewcommand{\thesection}{(\roman{section})}
+%\renewcommand{\thesection}{\Roman{section}}
+
+%\renewcommand{\thesubsection}{(\roman{subsection})}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+% переименовываем  список литературы в "список используемой литературы"
+\renewcommand\refname{СПИСОК ЛИТЕРАТУРЫ}
+\usepackage{amsthm}
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Лемма} 
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема} 
+
+\theoremstyle{definition}
+\newtheorem{definition}{Условие} 
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание} 

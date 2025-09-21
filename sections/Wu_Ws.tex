@@ -1,0 +1,30 @@
+В данной главе рассматривается исключительно устойчивый лист медленного многообразия. Поэтому для упрощения обозначений индексы, указывающие на принадлежность к устойчивому или неустойчивому листу, будут опущены: все функции и константы подразумеваются заданными на устойчивом листе, если не оговорено иное.
+
+Также для удобства сместим положение равновесия \textit{седло-центр} системы в точку $0$, при этом все обозначения оставим прежними:
+$$\Lambda \rightarrow \Lambda,$$
+$$\lambda \rightarrow \lambda - \lambda_+(\hat x_0,0) = \lambda - \pi,$$
+$$x \rightarrow x - \hat x_0,$$
+$$y \rightarrow y.$$
+
+В новых переменных уравнения имеют вид:
+\begin{equation}
+    \begin{cases}
+        \dot \Lambda = - U \sin \lambda + V \cos \lambda \equiv g^\Lambda(\Lambda,\lambda,x,y), \\
+        \dot \lambda = \alpha \Lambda \equiv g^\lambda(\Lambda,\lambda,x,y), \\
+        \dot x = -\varepsilon \big( 2Fy-\frac{\partial U}{\partial y} \cos \lambda - \frac{\partial V}{\partial y} \sin \lambda \big) \equiv g^x(\Lambda,\lambda,x,y), \\
+        \dot y = \varepsilon \big( 2F(x+\hat x_0)+e_JG -\frac{\partial U}{\partial x} \cos \lambda - \frac{\partial V}{\partial x} \sin \lambda \big) \equiv g^y(\Lambda,\lambda,x,y), \\
+    \end{cases}
+    \label{fulltn}
+\end{equation}
+
+$$U(x,y) = U_0 + x(2C \hat x_0+e_JD)+C(x^2-y^2),$$
+$$V(x,y) = 2Cxy+y(2C \hat x_0+e_JD).$$
+
+Заметим, что система (\ref{fulltn}) является гамильтоновой относительно симплектической формы
+$$\Omega = d \Lambda \wedge d \lambda + \varepsilon^{-1} dx \wedge dy.$$
+
+Гамильтониан системы равен:
+\begin{equation}
+H = \frac{\alpha \Lambda^2}{2} - U(x,y)\cos{\lambda} - V(x,y)\sin{\lambda} + F \left((x+\hat x_0)^2+y^2 \right) + e_J G x. 
+\label{H}
+\end{equation}
