@@ -1,0 +1,108 @@
+В данной главе рассмотрим вопрос %существования гомоклинических и гетероклинических орбит
+пересечения устойчивого и неустойчивого многообразий построенных ранее периодических траекторий в окрестности положения равновесия \textit{седло-центр}.
+
+Обозначим построенные ранее Ляпуновские периодические решения как: 
+$$\Gamma_h(t)=(\Lambda^*(h,t),\lambda^*(h,t),x^*(h,t),y^*(h,t)).$$
+
+Будем искать формальные решения, принадлежащие $W^{s,u}(\Gamma_h)$, в следующем виде:
+\begin{equation}
+    \begin{cases}
+        \Lambda^{s,u}(h,t) = \Lambda^*(h,t) + z^{s,u}_\Lambda(h,t), \qquad \qquad
+        \lambda^{s,u}(h,t) = \lambda^*(h,t) + z^{s,u}_\lambda(h,t),\\
+        x^{s,u}(h,t) = x^*(h,t) + z_x^{s,u}(h,t), \text{ } \qquad \qquad
+        y^{s,u}(h,t) = y^*(h,t) + z_y^{s,u}(h,t),
+    \end{cases}
+    \label{vozm}
+\end{equation}
+Подставим (\ref{vozm}) в уравения (\ref{fulltn}). Будем требовать выполнение следующих граничных условий:
+\begin{itemize}
+\item Решения принадлежащие $W^s(\Gamma_h)$:
+\begin{equation*}
+    \begin{cases}
+        z_\Lambda^{s}(k,+ \infty) = 0, \qquad
+        z_\lambda^{s}(k,+ \infty) = 0, \qquad
+        z_x^{s}(k,+ \infty) = 0, \qquad
+        z_y^{s}(k,+ \infty) = 0.
+    \end{cases}
+    \label{border2}
+\end{equation*}
+\item Решения принадлежащие $W^u(\Gamma_h)$:
+\begin{equation*}
+    \begin{cases}
+        z_\Lambda^{u}(k,- \infty) = 0, \qquad
+        z_\lambda^{u}(k,- \infty) = 0, \qquad
+        z_x^{u}(k,- \infty) = 0, \qquad
+        z_y^{u}(k,- \infty) = 0.
+    \end{cases}
+    \label{border3}
+\end{equation*} 
+\end{itemize}
+%\begin{thm}
+%Теорема Нейштадта про экспоненциальную близость
+%\end{thm}
+
+
+Введем новое медленное время $\tilde \tau = \frac{\theta(h)}{\omega} \tau = (1+\mathcal{O}(h^2))\tau$. Такая замена переменных, зависящая от $h$ позволяет сделать частоту периодических решений не зависящей от $h$ и в точности равной $\frac{\omega}{\varepsilon}$. При этом гамильтониан преобразуется следующим образом:
+$$H_{old} \to H = \frac{\omega}{\theta(h)}H_{old}= H_{old} + \mathcal{O}(h^2).$$
+
+Частота $\frac{\omega}{\varepsilon}=\mathcal{O}(1/\varepsilon)$ много больше характерного гиперблического масштаба $\frac{\xi}{\varepsilon} = \mathcal{O}(1)$, поэтому можно произвести усреднение по периоду периодических решений (обозначется $\langle \rangle$).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Перейдем к медленному времени $\tau = \varepsilon t$. В этом временном масштабе периодические решения имеют частоту $\approx \frac{\omega}{\varepsilon}$. В таком случае временной масштаб периодического решения (период $T = \frac{2 \pi \varepsilon}{\theta} \approx \frac{2 \pi \varepsilon}{\omega} = \mathcal{O}(\varepsilon)$) заметно меньше характерного времени эволюции возмущения ($\frac{\varepsilon}{\xi} = \mathcal{O}(1)$).
+
+
+%Данная частота заметно больше характерного гиперблического масштаба $\frac{\xi}{\varepsilon} = \mathcal{O}(1)$, поэтому можно произвести усреднение по периоду периодических решений. Под усреденением для некоторой функции $f(\Lambda,\lambda,x,y)$ здесь понимается следующее:
+%$$\langle f \rangle = \int_0^{\frac{2 \pi \varepsilon}{\theta}} f \left(\Lambda^*(\tau),\lambda^*(\tau),x^*(\tau),y^*(\tau) \right) d\tau.$$
+
+%В силу теоремы 2 решения полной системы на $(z_\Lambda, z_\lambda, z_x, z_y)$ будут экспоненциально близки к решениям усредненной системы.
+
+Подставив представление (\ref{vozm}) в гамильтониан (\ref{H}) получаем неавтономную систему относительно переменной $\v z$. Усредняя полученный гамильтониан и избавляясь тем сымым от неавтономности получаем:
+\begin{multline}
+\langle H \rangle = \frac{\omega}{\theta(h)} \Bigg( H_{old}(\v z) + \alpha \langle \Lambda^* \rangle z_\Lambda + 2F \langle x^* \rangle z_x - \langle \cos \lambda^* -1 \rangle \Big( U(z_x,z_y) \cos z_\lambda + V(z_x,z_y) \sin z_\lambda \Big) - \\
+- \cos z_\lambda \Big( (2C \hat x_0 + e_J D) \langle y^* \sin \lambda^* \rangle + z_x 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle \Big) - \\
+- \sin z_\lambda \Big( z_y 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) \Big) \Bigg) + \mathcal{O}(h^4),
+\label{ham_uncut}
+\end{multline}
+
+%$$N = 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right).$$
+
+Введем обрезанный усредненный гамильтониан, учитывающий только поправки порядка $h^2$:
+\begin{multline}
+\langle H \rangle_0 = H_{old}(\v z) - h^2 \theta_1 H_{old}(\v z) + \alpha \langle \Lambda^* \rangle_0 z_\Lambda + 2F \langle x^* \rangle_0 z_x - \\ - \langle \cos \lambda^* -1 \rangle_0 \Big( U(z_x,z_y) \cos z_\lambda + V(z_x,z_y) \sin z_\lambda \Big) - \\
+- \cos z_\lambda \Big( (2C \hat x_0 + e_J D) \langle y^* \sin \lambda^* \rangle_0 + z_x 2C \left( \left\langle x^* \cos \lambda^* \right\rangle_0 + \left\langle y^* \sin \lambda^* \right\rangle_0 \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle_0 \Big) - \\
+- \sin z_\lambda \Big( z_y 2C \left( \left\langle x^* \cos \lambda^* \right\rangle_0 + \left\langle y^* \sin \lambda^* \right\rangle_0 \right) \Big).
+\label{avg_ham}
+\end{multline}
+
+Здесь $\langle \cdot \rangle_0$ означает что в среднем значении учитываются только поправки порядка $h^2$, а старшие порядки отбрасываются.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+При достаточно малых значениях параметра $h$, системы (\ref{avg_ham}) и (\ref{ham_uncut}) имеют неподвижные точки 
+$$(\hat \Lambda_0^*(h), \hat \lambda_0^*(h), \hat x_0^*(h), \hat y_0^*(h)) \quad \text{и} \quad (\hat \Lambda_0^{**}(h), \hat \lambda_0^{**}(h), \hat x_0^{**}(h), \hat y_0^{**}(h)),$$
+соответственно, типа \textit{седло–центр}, расположенные в $\mathcal{O}(h^2)$-окрестности нуля. 
+
+Данный результат вытекает из применения теоремы о неявной функции, обеспечивающей существование гладкого семейства неподвижных точек при малом параметрическом возмущении, а также теоремы о непрерывной зависимости собственных значений от параметров \cite{arnold,horn}, гарантирующей сохранение их качественного расположения (вещественные и мнимые пары сохраняют тип и знак). 
+Следовательно, при малых $h$ характер равновесия не изменяется, и указанные неподвижные точки сохраняют тип \textit{седло–центр}.
+
+Сместим положение равновесия \textit{седло–центр} системы $\langle H \rangle_0$ в точку 0. Тогда ее гамильтониан принимает вид: 
+\begin{multline}
+\langle H \rangle_0 = \frac{\alpha \omega z_\Lambda^2}{2 \theta(h)} - \hat U(z_x,z_y)\cos{z_\lambda} - \hat V(z_x,z_y)\sin{z_\lambda} + \frac{F \omega}{\theta(h)} \left((z_x+\hat x_0 + \hat x_0^*(h))^2+z_y^2 \right) + \\ + \frac{\omega}{\theta(h)}\left(e_J G + 2F \langle x^* \rangle_0 + 2F \hat x_0^*(h) \right) z_x ,
+\label{final_avg_ham}
+\end{multline}
+где функции $\tilde U$ и $\tilde V$ отличаются от функций $U, V$ лишь значением констант на величину порядка $\mathcal{O}(h^2)$:
+\begin{equation*}
+    \begin{cases}
+        \hat U (x,y) = \underbrace{C \left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right)}_{C+\mathcal{O}(h^2)} (x^2-y^2) + \\ + x \underbrace{\big( (2C \hat x_0 + e_J D)\left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right) + 2C \left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right) \hat x_0^*(h) + T \big)}_{(2C \hat x_0 + e_J D)+\mathcal{O}(h^2)} + \\ + \big( (2C \hat x_0 + e_J D) \left\langle y^* \sin \lambda^* \right\rangle_0 + \left\langle U(x^*,y^*) \cos \lambda^* \right\rangle_0 + T \hat x_0^*(h) + C \left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right) (\hat x_0^*(h))^2 + \\ +(2C \hat x_0 + e_J D)\left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right) x_0^*(h) \big), \\
+        \\
+        \hat V(x,y) = 2C\left\langle \cos \lambda^* \right\rangle_0 xy + \\ + y \big( (2C \hat x_0 + e_J D)\left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right) + 2C\left( \left\langle \cos \lambda^* \right\rangle_0 - h^2 \theta_1 \right) \hat x_0^*(h) + T \big),
+    \end{cases}
+\end{equation*} 
+
+$$T \equiv 2C \left( \left\langle x^* \cos \lambda^* \right\rangle_0 + \left\langle y^* \sin \lambda^* \right\rangle_0 \right).$$
+
+Таким образом, при достаточно малых $h$ системы структурно одинаковые и система (\ref{final_avg_ham}) наследует следующее
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+Для неподвижной точки $0$ типа седло-центр системы (\ref{final_avg_ham}) существуют одномерные устойчивое и неустойчивое многообразия, расщепление которых не более чем экспоненциально мало.
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

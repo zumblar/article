@@ -1,0 +1,243 @@
+В данном разделе построим формальные решения системы (\ref{fulltn}), параметризующие устойчивое и неустойчивое многообразия $W^{s,u}(0)$ неподвижной точки. Для этого рассмотрим в дополнение к уравнениям (\ref{fulltn}) следующие начальные условия:
+    
+\begin{itemize}
+\item Решения принадлежащие $W^s(0)$:
+\begin{equation*}
+    \begin{cases}
+        \Lambda^{s}(+ \infty) = 0, \quad
+        \lambda^{s}(+ \infty) = 0, \quad
+        x^{s}(+ \infty) = 0, \quad
+        y^{s}(+ \infty) = 0,
+    \end{cases}
+    \label{border}
+\end{equation*}
+\item Решения принадлежащие $W^u(0)$:
+\begin{equation*}
+    \begin{cases}
+        \Lambda^{u}(- \infty) = 0, \quad
+        \lambda^{u}(- \infty) = 0, \quad
+        x^{u}(- \infty) = 0, \quad
+        y^{u}(- \infty) = 0.
+    \end{cases}
+\end{equation*}
+\end{itemize}
+
+%    Задачи Коши (\ref{fullt}), (\ref{border}) эквивалентны следующим интегральным уравнениям
+%\begin{equation}
+%    \begin{cases}
+%        \Lambda(t) = \int\limits_{\pm\infty}^t u \big(x(t'),y(t') \big) \sin \lambda(t') - v \big(x(t'),y(t') \big) \cos \lambda(t') dt', \\
+%        \lambda(t) = \lambda(\hat x_0,0) + \int\limits_{\pm\infty}^t \alpha \Lambda(t') dt', \\
+%        x(t) = \hat x_0 - \varepsilon \int\limits_{\pm\infty}^t \Big( 2Fy(t')+\frac{\partial u}{\partial y} \cos \lambda(t') + \frac{\partial v}{\partial y} \sin \lambda(t') \Big) dt', \\
+%        y(t) = \varepsilon \int\limits_{\pm\infty}^t \Big( 2F \big(x(t')+ \hat x_0 \big)+e_JG +\frac{\partial u}{\partial x} \cos \lambda(t') + \frac{\partial v}{\partial x} \sin \lambda(t') \Big)dt'. \\
+%    \end{cases}
+%    \label{fulltint}
+%\end{equation}
+   
+
+Представим формальные решения системы (\ref{fulltn}) в виде рядов:
+\begingroup
+\small
+\begin{equation}
+\begin{cases}
+\Lambda^{s,u}(\tau) = \sum_{k=0}^\infty \varepsilon^k \Lambda^{s,u}_k(\tau),\quad
+\lambda^{s,u}(\tau) = \sum_{k=0}^\infty \varepsilon^k \lambda^{s,u}_k(\tau),\quad
+x^{s,u}(\tau) =       \sum_{k=0}^\infty \varepsilon^k x^{s,u}_k(\tau),\quad
+y^{s,u}(\tau) =       \sum_{k=0}^\infty \varepsilon^k y^{s,u}_k(\tau),
+\end{cases}
+\label{predst}
+\end{equation}
+\endgroup
+и подставим их в уравнения, перейдя к медленному времени $\tau=\varepsilon t$.
+    Приравнивая коэффициенты при одинаковых степенях $\varepsilon$, получаем набор уравнений, причем в силу того, что система содержит 2 временных масштаба, уравнения для $(\lambda_k, \Lambda_k), k \ge 1$ будут алгебраическими:
+
+\begin{equation}
+    \begin{cases}
+        \Lambda_k(\tau) = \frac{1}{\alpha} \lambda_{k-1}', \\
+        
+        \lambda_k(\tau) = \frac1\beta \Big( \alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda + x_k \big( (2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 - 2Cy_0 \cos\lambda_0 \big) + \\
+        
+        \quad \quad \quad +y_k \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big) \Big),\\
+        \lambda_{-1}=0,
+    \end{cases}
+\end{equation}
+
+а для $(x_k,y_k), k \ge 1$ - дифференциальными:
+\begin{equation}
+\frac{d}{d\tau} \begin{pmatrix} x_k \\ y_k \end{pmatrix} = \begin{pmatrix} a(\tau) & b(\tau)\\ c(\tau) & -a(\tau) \end{pmatrix} \begin{pmatrix} x_k \\ y_k \end{pmatrix} + \begin{pmatrix} \tilde G_k^x(\tau) \\ \tilde G_k^y(\tau) \end{pmatrix} \equiv \mathcal{A}(\tau) \begin{pmatrix} x_k \\ y_k \end{pmatrix} + \begin{pmatrix} \tilde G_k^x(\tau) \\ \tilde G_k^y(\tau) \end{pmatrix},
+\label{xy_eq}
+\end{equation}
+где:
+$$ \tilde G_k^x = G_k^x - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big), $$
+$$ \tilde G_k^y = G_k^y - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \big). $$
+
+
+Здесь $a,b,c$ - функции зависящие от $x_0(\tau), y_0(\tau), \lambda_0(\tau), \Lambda_0(\tau)$:
+$$a(\tau) = \frac{\left( e_J^2 D^2 - 4CEe_J^2\right) \sin \lambda_0 \cos \lambda_0}{\beta(x_0,y_0)},$$
+$$b(\tau) = -2F - 2C \cos \lambda_0 - \frac{1}{\beta(x_0,y_0)} \big( (2Cy_0)\sin \lambda_0 + (2Cx_0+2C \hat x_0 + e_JD)\cos \lambda_0  \big)^2,$$
+$$c(\tau) = 2F - 2C \cos \lambda_0 + \frac{1}{\beta(x_0,y_0)} \big( (2Cx_0+2C \hat x_0 + e_JD)\sin \lambda_0 - (2Cy_0)\cos \lambda_0  \big)^2.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+
+\begin{enumerate}
+
+\item Функции $G_k^\rho, \rho \in \{\lambda,\Lambda,x,y\}$, отвечающие за неоднородность в уравнениях (\ref{xy_eq}), равны:
+
+$$G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{j!}, \quad k \ge 2,$$
+где $g^\rho$ - компонента правой части, соответствующая $\rho \in \{ \lambda, \Lambda, x, y \}$,
+$$\mathcal{L}_k^{(j)} = \sum_{k_1+...+k_j = k} \mathfrak{D}_{k_1} \cdot ... \cdot \mathfrak{D}_{k_j}, \qquad \mathfrak{D}_k = \left( \begin{pmatrix} \lambda_k\\ \Lambda_k \\ x_k \\ y_k \end{pmatrix},\begin{pmatrix} \frac{\partial}{\partial \lambda} |_{\lambda_0,\Lambda_0,x_0,y_0}\\ \frac{\partial}{\partial \Lambda} |_{\lambda_0,\Lambda_0,x_0,y_0} \\ \frac{\partial}{\partial x} |_{\lambda_0,\Lambda_0,x_0,y_0} \\ \frac{\partial}{\partial y} |_{\lambda_0,\Lambda_0,x_0,y_0} \end{pmatrix} \right),$$
+$(\cdot,\cdot)$ -- стандартное скалярное произведение в $\mathbb{R}^4$.
+
+\item Введем классы экспоненциально убывающих и растущих функций:
+
+\[
+\mathcal{F}_s = \left\{ f \colon \mathbb{R} \to \mathbb{R} \ \Big| \ \exists C > 0: \ \forall x \in \mathbb{R} \Rightarrow \ |f(x)| \leq C e^{-s|x|} \right\}, s > 0
+\]
+
+\[
+\mathcal{F}_{-s} = \left\{ f \colon \mathbb{R} \to \mathbb{R} \ \Big| \ \exists C > 0: \ \forall x \in \mathbb{R} \Rightarrow \ |f(x)| \geq C e^{s|x|} \right\}, s > 0
+\]
+
+Пусть $\lambda_j, \Lambda_j, x_j, y_j \in \mathcal{F}_s \ \forall \ 0 \le j \le k$, а $g^\rho \in C_b^{\infty} (\mathbb{R}^4)$ (где $C_b^{\infty} (\mathbb{R}^4)$ обозначает множество гладких функций таких, что все их производные ограничены).
+
+Тогда $G_{k+1}^\rho \in \mathcal{F}_{2s}$
+
+\item $$G_k^\lambda = 0 \quad \forall k \ge 1.$$  
+\end{enumerate}
+
+\end{utv}
+
+Уравнения на нулевой порядок в точности совпадают с уравнениями медленной системы при $\varepsilon = 0$. Так как в данном разделе строим формальные решения, параметризующие $W^{s,u}(0)$, то в качестве нулевого приближения выберем сепаратрисное решение медленной системы:
+\begin{equation*}
+    \begin{cases}
+        \Lambda_0(\tau) = 0, \quad
+        \lambda_0(\tau) = \lambda_-(x_{sep}(\tau),y_{sep}(\tau)), \\
+        x_0(\tau) = x_{sep}(\tau) - \hat x_0, \quad
+        y_0(\tau) = y_{sep}(\tau).
+    \end{cases}
+    %\label{fulltint}
+\end{equation*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Уравнения для поправок к медленным переменным $(x_1,y_1)$ принимают вид однородной линейной системы:
+\begin{equation}
+\frac{d}{d\tau} \begin{pmatrix} x_1 \\ y_1 \end{pmatrix} = \mathcal{A}(\tau) \begin{pmatrix} x_1 \\ y_1 \end{pmatrix}.
+\label{utv_odnor}
+\end{equation}
+
+Однородность этой системы является нетривиальным следствием структуры исходных уравнений. В общем случае асимптотическое разложение приводит к неоднородному уравнению в вариациях (подробнее в приложении). Однако в нашей задаче неоднородность $\tilde G_1^x$ и $\tilde G_1^y$ тождественно обращается в ноль из-за некоторых скрытых симметрий системы.
+
+Одним из решений однородного уравнения в вариациях (\ref{utv_odnor}) является производная решения нулевого порядка по медленному времени:
+\begin{equation}
+    \begin{dcases}
+        x_1^{s,u}(\tau) = \frac{dx_0}{d \tau}, \qquad
+        y_1^{s,u}(\tau) = \frac{dy_0}{d \tau},
+    \end{dcases}
+    \qquad \qquad \v u_1(\tau) \equiv \begin{pmatrix} x_1(\tau) \\ y_1(\tau) \end{pmatrix}
+\end{equation}
+
+Обозначим второе решение однородного уравнения (\ref{utv_odnor}) (линейно независимое к первому) как $\v{ \tilde{u_1}}(\tau) \equiv (\tilde x_1 (\tau), \tilde y_1 (\tau))$. Т.к. след матрицы $\mathcal{A}$ в однородном уравнении равен 0, то вронскиан, по формуле Лиувилля-Остроградского, является константой и, за счет нормировки второго решения, положим:
+$$W(\tau) = x_1(\tau) \tilde y_1 (\tau) - y_1 (\tau) \tilde x_1 (\tau) = 1$$
+Также потребуем ортогональность $(x_1, y_1)$ и $(\tilde x_1, \tilde y_1)$.
+
+%Рассмотрим пределы на обеих бесконечностях:
+%\begin{equation}
+%\begin{aligned}
+%W \big|_{\tau \rightarrow -\infty} = \underbrace{x_1 \big|_{\tau \rightarrow -\infty}}_{\rightarrow 0} \tilde y_1 \big|_{\tau \rightarrow -\infty} - \underbrace{y_1 \big|_{\tau \rightarrow -\infty}}_{\rightarrow 0} \tilde x_1 \big|_{\tau \rightarrow -\infty} = 1
+%\end{aligned}
+%\end{equation}
+
+%\begin{equation}
+%\begin{aligned}
+%W \big|_{\tau \rightarrow +\infty} = \underbrace{x_1 \big|_{\tau \rightarrow +\infty}}_{\rightarrow 0} \tilde y_1 \big|_{\tau \rightarrow +\infty} - \underbrace{y_1 \big|_{\tau \rightarrow +\infty}}_{\rightarrow 0} \tilde x_1 \big|_{\tau \rightarrow +\infty} = 1
+%\end{aligned}
+%\end{equation}
+
+%Таким образом $(\tilde x_1, \tilde y_1)$ обязаны экспоненциально расти чтобы компенсировать экспоненциальное убывание $(x_1,y_1)$ на обеих бесконечностях:
+%$$\tilde x_1 (\tau), \tilde y_1 (\tau) \in \mathcal{F}_{-s_0}$$
+
+При больших $|\tau|$ матрица $\mathcal{A}(\tau)$ имеет асимптотику:
+\begin{equation}
+\mathcal{A}(\tau) = \underbrace{\begin{pmatrix} 
+0 & -2F-2C + \frac{(2C \hat x_0 + e_J D)^2}{U_0}\\
+2F-2C & 0
+\end{pmatrix}}_{\mathcal{A}_0} + \mathcal{O}(e^{-s_0 |\tau|}) \equiv 
+\begin{pmatrix} 
+0 & b_0\\
+c_0 & 0
+\end{pmatrix} + \mathcal{O}(e^{-s_0 |\tau|})
+,\quad s_0 \equiv \sqrt{b_0 c_0} \in \mathbb{R} 
+\end{equation}
+
+Тогда базис решений имеет асимптотику:
+$$\v u_1(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ c_0 \sqrt{b_0} \end{pmatrix} e^{-s_0 \tau} + \mathcal{O}(e^{-2s_0 \tau}), \qquad \v{ \tilde{u_1}}(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ -c_0 \sqrt{b_0} \end{pmatrix} e^{s_0 \tau} + \mathcal{O}(1),$$
+для положительных $\tau$ и асимптотику:
+$$\v u_1(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ -c_0 \sqrt{b_0} \end{pmatrix} e^{s_0 \tau} + \mathcal{O}(e^{2s_0 \tau}), \qquad \v{ \tilde{u_1}}(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ c_0 \sqrt{b_0} \end{pmatrix} e^{-s_0 \tau} + \mathcal{O}(1),$$
+для отрицательных $\tau$.
+
+Таким образом:
+$$\v{ {u_1}}(\tau) \in \mathcal{F}_{s_0}, \qquad \qquad \v{ \tilde{u_1}}(\tau) \in \mathcal{F}_{-s_0}.$$
+
+Также отметим, что $(x_1,y_1)$ удовлетворяет граничным условиям и для $W^s(0)$, и для $W^u(0)$, поэтому индексы $s,u$ будем для него опускать. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Уравнения для приближений старших порядков являются неоднородными дифференциальными уравнениями с той же матрицей $\mathcal{A}$, что и в однородом уравнении на первое приближение. Тогда, с учетом граничных условий, по известным решениям однородного уравнения можно строить решения неоднородного:
+\begin{equation}
+    \begin{cases}
+        \v u_k^u = 
+        \v u_1(\tau)\bigint_{\text{ } \tau^u_k}^\tau \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau + 
+        \v{ \tilde{u_1}}(\tau) \bigint_{-\infty}^\tau \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau,\\
+        \\
+        
+        \v u_k^s = 
+        \v u_1(\tau)\bigint_{\text{ } \tau^s_k}^{\tau} \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau - 
+        \v{ \tilde{u_1}}(\tau) \bigint_{\text{ } \tau}^{+\infty} \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau. \\
+    \end{cases}
+    \label{neodnor}
+\end{equation}
+
+В силу описанных ранее свойств базиса решений и неоднородностей, подынтегральные выражения во всех интегралах в (\ref{neodnor}) экспоненциально убывают при $\tau \rightarrow \pm \infty$. Следовательно, все интегралы в (\ref{neodnor}) являются ограниченными функциями по $\tau$ при любых нижних пределах интегрирования.
+
+Поскольку $\mathbf{u}_1(\tau)$ убывает при $\tau \rightarrow \pm \infty$, то $\mathbf{u}_k^u$ и $\mathbf{u}_k^s$ будут удовлетворять граничным условиям для любых $\tau^u_k, \tau^s_k \in \mathbb{R}$.
+
+Функция $\tilde{\mathbf{u}_1}(\tau)$ растет при $\tau \rightarrow \pm \infty$. Поэтому в $\mathbf{u}_k^u$ и $\mathbf{u}_k^s$ во втором слагаемом пределы интегрирования выбираются, как указано в (\ref{neodnor}), чтобы компенсировать этот рост на соответствующих бесконечностях. Так как $(x_1 \tilde G_k^y - y_1 \tilde G_k^x) \in \mathcal{F}_{3s_0}$, можно гарантировать, что убывание интегралов происходит быстрее, чем рост $\tilde{\mathbf{u}_1}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+По описанной процедуре строится формальное решение
+\begin{equation}
+    \Lambda^s(\tau) = \sum_{k=0}^\infty \varepsilon^k \Lambda_k(\tau), \quad
+    \lambda^s(\tau) = \sum_{k=0}^\infty \varepsilon^k \lambda_k(\tau), \quad
+    x^s(\tau) = \sum_{k=0}^\infty \varepsilon^k x_k(\tau), \quad
+    y^s(\tau) = \sum_{k=0}^\infty \varepsilon^k y_k(\tau).
+    \label{proizv_predst}
+\end{equation}
+где в качестве $(x_1,y_1)$ выбирается решение (\ref{xy_eq}) вида $\left( x_1(\tau), y_1(\tau) \right) = \text{const} \cdot \v u_1$, а константы $\tau_k^{s}$ остаются произвольными.
+
+В силу теоремы Адамара-Перрона об инвариантных многообразиях, устойчивое многообразие $W^s(0)$ является одномерным. Это гарантирует существование решения исходной системы (\ref{fulltn}), принадлежащего $W^s(0)$ и однозначно его параметризующего. Асимптотическое разложение этого решения совпадает с (\ref{proizv_predst}).
+
+Аналогичное утверждение справедливо для неустойчивого многообразия $W^u(0)$, которое также является одномерным, с соответствующими граничными условиями на $+\infty$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Для исследования расщепления сепаратрис рассмотрим разность устойчивого и неустойчивого решений в каждом порядке:
+\begin{multline}
+        |\v u_k^u(\tau)-\v u_k^s(\tau)| = \bigg| \v u_1(\tau)\int_{\tau^u_k}^{\tau^s_k} \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau + \\
+        +\v{ \tilde{u_1}}(\tau) \int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau \bigg|
+\label{rasshep}
+\end{multline}
+
+Существование нулей у такой величины при некоторых $\tau$ будет означать существование пересечения сепаратрис в соответствующем порядке. В таком случае в силу теоремы о единственности решения и одномерности $W^s(0)$ и $W^u(0)$ $\v u_k^s$ и $\v u_k^u$ обязаны совпадать для произвольных $\tau$.
+
+Отметим, что уравнение $|\v u_k^u(\tau_1)-\v u_k^s(\tau_2)|=0$ можно рассматривать с различными моментами времени $\tau_1, \tau_2$. Однако, поскольку достаточно найти хотя бы одно решение такого уравения, мы положим  для простоты $\tau_1=\tau_2=\tau$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{dfn}
+Будем говорить, что функция $f(\tau)$ имеет четность, если $f(\tau)$ является либо четной, либо нечетной по $\tau$.
+\end{dfn}
+
+Предположим, что $\lambda_j,\Lambda_j,x_j,y_j, \quad j \le k-1$ как функции $\tau$ имеют некоторую четность. Тогда используя свойства правой части системы (\ref{fulltn}) можно показать, что $G_k^x(\tau),\tilde G_k^x(\tau),G_k^\Lambda(\tau), G_k^y(\tau)$ также имеют четность. При этом $G_k^x(\tau),\tilde G_k^x(\tau),G_k^\Lambda(\tau)$ имеют одинаковую четность, а $G_k^y(\tau), \tilde G_k^y(\tau)$ имеют противоположную к $G_k^x(\tau)$ четность (доказательство в приложении). 
+
+В частности $G_2^x(\tau), \tilde G_2^x(\tau), G_2^\Lambda$ - нечетные, $G_2^y(\tau), \tilde G_2^y(\tau)$ - четные.
+
+Как следствие, в силу нечетности подынтегральной функции, следующий интеграл обращается в ноль:
+$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau = 0.$$

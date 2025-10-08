@@ -1,0 +1,929 @@
+\subsection{Сепаратрисные решения в окрестности усточивого листа}
+
+    В данной главе рассматривается исключительно устойчивый лист медленного многообразия. Поэтому для упрощения обозначений индексы, указывающие на принадлежность к устойчивому или неустойчивому листу, будут опущены: все функции и константы подразумеваются заданными на устойчивом листе, если не оговорено иное.
+
+Также для удобства сместим положение равновесия \textit{седло-центр} системы в точку $0$, при этом все обозначения оставим прежними:
+$$\Lambda \rightarrow \Lambda$$
+$$\lambda \rightarrow \lambda - \lambda_+(\hat x_0,0) = \lambda - \pi$$
+$$x \rightarrow x - \hat x_0$$
+$$y \rightarrow y$$
+
+В новых переменных уравнения имеют вид:
+\begin{equation}
+    \begin{cases}
+        \dot \Lambda = - U \sin \lambda + V \cos \lambda \equiv g^\Lambda(\Lambda,\lambda,x,y), \\
+        \dot \lambda = \alpha \Lambda \equiv g^\lambda(\Lambda,\lambda,x,y), \\
+        \dot x = -\varepsilon \big( 2Fy-\frac{\partial U}{\partial y} \cos \lambda - \frac{\partial V}{\partial y} \sin \lambda \big) \equiv g^x(\Lambda,\lambda,x,y), \\
+        \dot y = \varepsilon \big( 2F(x+\hat x_0)+e_JG -\frac{\partial U}{\partial x} \cos \lambda - \frac{\partial V}{\partial x} \sin \lambda \big) \equiv g^y(\Lambda,\lambda,x,y). \\
+    \end{cases}
+    \label{fulltn}
+\end{equation}
+
+$$U(x,y) = U_0 + x(2C \hat x_0+e_JD)+C(x^2-y^2)$$
+$$V(x,y) = 2Cxy+y(2C \hat x_0+e_JD)$$
+
+Заметим, что система (\ref{fulltn}) является гамильтоновой относительно симплектической формы
+$$\Omega = d \Lambda \wedge d \lambda + \varepsilon^{-1} dx \wedge dy.$$
+
+Гамильтониан системы равен:
+\begin{equation}
+H = \frac{\alpha \Lambda^2}{2} - U(x,y)\cos{\lambda} - V(x,y)\sin{\lambda} + F \left((x+\hat x_0)^2+y^2 \right) + e_J G x. 
+\label{H}
+\end{equation}
+
+\subsubsection{Метод разложения по малому параметру}
+    В данном разделе построим формальные решения системы (\ref{fulltn}), параметризующие устойчивое и неустойчивое многообразия $W^{s,u}(0)$ неподвижной точки. Для этого рассмотрим в дополнение к уравнениям (\ref{fulltn}) следующие начальные условия:
+    
+\begin{itemize}
+\item Решения принадлежащие $W^s(0)$:
+\begin{equation*}
+    \begin{cases}
+        \Lambda^{s}(+ \infty) = 0, \\
+        \lambda^{s}(+ \infty) = 0,\\
+        x^{s}(+ \infty) = 0, \\
+        y^{s}(+ \infty) = 0,
+    \end{cases}
+    \label{border}
+\end{equation*}
+\item Решения принадлежащие $W^u(0)$:
+\begin{equation*}
+    \begin{cases}
+        \Lambda^{u}(- \infty) = 0, \\
+        \lambda^{u}(- \infty) = 0,\\
+        x^{u}(- \infty) = 0, \\
+        y^{u}(- \infty) = 0.
+    \end{cases}
+\end{equation*}
+\end{itemize}
+
+%    Задачи Коши (\ref{fullt}), (\ref{border}) эквивалентны следующим интегральным уравнениям
+%\begin{equation}
+%    \begin{cases}
+%        \Lambda(t) = \int\limits_{\pm\infty}^t u \big(x(t'),y(t') \big) \sin \lambda(t') - v \big(x(t'),y(t') \big) \cos \lambda(t') dt', \\
+%        \lambda(t) = \lambda(\hat x_0,0) + \int\limits_{\pm\infty}^t \alpha \Lambda(t') dt', \\
+%        x(t) = \hat x_0 - \varepsilon \int\limits_{\pm\infty}^t \Big( 2Fy(t')+\frac{\partial u}{\partial y} \cos \lambda(t') + \frac{\partial v}{\partial y} \sin \lambda(t') \Big) dt', \\
+%        y(t) = \varepsilon \int\limits_{\pm\infty}^t \Big( 2F \big(x(t')+ \hat x_0 \big)+e_JG +\frac{\partial u}{\partial x} \cos \lambda(t') + \frac{\partial v}{\partial x} \sin \lambda(t') \Big)dt'. \\
+%    \end{cases}
+%    \label{fulltint}
+%\end{equation}
+   
+
+    Представим формальные решения системы (\ref{fulltn}) в виде рядов:
+    \begin{equation}
+    \begin{cases}
+\Lambda^{s,u}(\tau) = \sum_{k=0}^\infty \varepsilon^k \Lambda^{s,u}_k(\tau)\\
+\lambda^{s,u}(\tau) = \sum_{k=0}^\infty \varepsilon^k \lambda^{s,u}_k(\tau)\\
+x^{s,u}(\tau) =       \sum_{k=0}^\infty \varepsilon^k x^{s,u}_k(\tau)\\
+y^{s,u}(\tau) =       \sum_{k=0}^\infty \varepsilon^k y^{s,u}_k(\tau)\\
+\end{cases}
+    \label{predst}
+\end{equation}
+
+
+    и подставим их в уравнения, перейдя к медленному времени $\tau=\varepsilon t$.
+    Приравнивая коэффициенты при одинаковых степенях $\varepsilon$ получаем набор уравнений, причем в силу того что система содержит 2 временных масштаба, уравнения для $(\lambda_k, \Lambda_k), k \ge 1$ будут алгебраическими:
+
+\begin{equation}
+    \begin{cases}
+        \Lambda_k(\tau) = \frac{1}{\alpha} \lambda_{k-1}', \\
+        
+        \lambda_k(\tau) = \frac1\beta \Big( \alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda + x_k \big( (2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 - 2Cy_0 \cos\lambda_0 \big) + \\
+        
+        \quad \quad \quad +y_k \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big) \Big),\\
+        \lambda_{-1}=0,
+    \end{cases}
+\end{equation}
+
+а для $(x_k,y_k), k \ge 1$ - дифференциальными:
+\begin{equation}
+\frac{d}{d\tau} \begin{pmatrix} x_k \\ y_k \end{pmatrix} = \begin{pmatrix} a(\tau) & b(\tau)\\ c(\tau) & -a(\tau) \end{pmatrix} \begin{pmatrix} x_k \\ y_k \end{pmatrix} + \begin{pmatrix} \tilde G_k^x(\tau) \\ \tilde G_k^y(\tau) \end{pmatrix} \equiv \mathcal{A}(\tau) \begin{pmatrix} x_k \\ y_k \end{pmatrix} + \begin{pmatrix} \tilde G_k^x(\tau) \\ \tilde G_k^y(\tau) \end{pmatrix}
+\label{xy_eq}
+\end{equation}
+где:
+$$ \tilde G_k^x = G_k^x - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big), $$
+$$ \tilde G_k^y = G_k^y - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \big). $$
+
+
+Здесь $a,b,c$ - функции зависящие от $x_0(\tau), y_0(\tau), \lambda_0(\tau), \Lambda_0(\tau)$:
+$$a(\tau) = \frac{\left( e_J^2 D^2 - 4CEe_J^2\right) \sin \lambda_0 \cos \lambda_0}{\beta(x_0,y_0)},$$
+$$b(\tau) = -2F - 2C \cos \lambda_0 - \frac{1}{\beta(x_0,y_0)} \big( (2Cy_0)\sin \lambda_0 + (2Cx_0+2C \hat x_0 + e_JD)\cos \lambda_0  \big)^2,$$
+$$c(\tau) = 2F - 2C \cos \lambda_0 + \frac{1}{\beta(x_0,y_0)} \big( (2Cx_0+2C \hat x_0 + e_JD)\sin \lambda_0 - (2Cy_0)\cos \lambda_0  \big)^2.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+
+\begin{enumerate}
+
+\item Функции $G_k^\rho, \rho \in \{\lambda,\Lambda,x,y\}$, отвечающие за неоднородность в уравнениях (\ref{xy_eq}), равны:
+
+$$G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{j!}, \quad k \ge 2,$$
+где $g^\rho$ - компонента правой части, соответствующая $\rho \in \{ \lambda, \Lambda, x, y \}$,
+$$\mathcal{L}_k^{(j)} = \sum_{k_1+...+k_j = k} \mathfrak{D}_{k_1} \cdot ... \cdot \mathfrak{D}_{k_j},$$
+$$\mathfrak{D}_k = \left( \begin{pmatrix} \lambda_k\\ \Lambda_k \\ x_k \\ y_k \end{pmatrix},\begin{pmatrix} \frac{\partial}{\partial \lambda} |_{\lambda_0,\Lambda_0,x_0,y_0}\\ \frac{\partial}{\partial \Lambda} |_{\lambda_0,\Lambda_0,x_0,y_0} \\ \frac{\partial}{\partial x} |_{\lambda_0,\Lambda_0,x_0,y_0} \\ \frac{\partial}{\partial y} |_{\lambda_0,\Lambda_0,x_0,y_0} \end{pmatrix} \right),$$
+$(\cdot,\cdot)$ -- стандартное скалярное произведение в $\mathbb{R}^4$.
+
+\item Введем классы экспоненциально убывающих и растущих функций:
+
+\[
+\mathcal{F}_s = \left\{ f \colon \mathbb{R} \to \mathbb{R} \ \Big| \ \exists C > 0: \ \forall x \in \mathbb{R} \Rightarrow \ |f(x)| \leq C e^{-s|x|} \right\}, s > 0
+\]
+
+\[
+\mathcal{F}_{-s} = \left\{ f \colon \mathbb{R} \to \mathbb{R} \ \Big| \ \exists C > 0: \ \forall x \in \mathbb{R} \Rightarrow \ |f(x)| \geq C e^{s|x|} \right\}, s > 0
+\]
+
+Пусть $\lambda_j, \Lambda_j, x_j, y_j \in \mathcal{F}_s \ \forall \ 0 \le j \le k$, 
+
+пусть $g^\rho \in C_b^{\infty} (\mathbb{R}^4)$ ($g^\rho$ и все ее производные ограничены).
+
+Тогда $G_{k+1}^\rho \in \mathcal{F}_{2s}$
+
+\item $$G_k^\lambda = 0 \quad \forall k \ge 1$$  
+\end{enumerate}
+
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+
+\begin{enumerate}
+
+\item Рассмотрим произвольную функцию $g^\rho(\lambda,\Lambda,x,y)$ и подставим в нее представление (\ref{predst}). Раскладывая в многомерный ряд Тейлора получаем:
+
+$$g^\rho(\lambda,\Lambda,x,y) = g^\rho(\lambda_0,\Lambda_0,x_0,y_0) + \sum_{j=1}^{+\infty} \frac{\mathcal{T}^j g^\rho}{j!},$$
+где $\mathcal{T}$ - оператор вида:
+
+\begin{multline*}
+\mathcal{T} = 
+\left(\sum_{k=1}^{+\infty} \lambda_k \varepsilon^k \right) \frac{\partial}{\partial \lambda} \bigg|_{\lambda_0,\Lambda_0,x_0,y_0}+
+\left(\sum_{k=1}^{+\infty} \Lambda_k \varepsilon^k \right) \frac{\partial}{\partial \Lambda} \bigg|_{\lambda_0,\Lambda_0,x_0,y_0}+\\
++\left(\sum_{k=1}^{+\infty} x_k \varepsilon^k \right) \frac{\partial}{\partial x} \bigg|_{\lambda_0,\Lambda_0,x_0,y_0}
++\left(\sum_{k=1}^{+\infty} y_k \varepsilon^k \right) \frac{\partial}{\partial y} \bigg|_{\lambda_0,\Lambda_0,x_0,y_0}
+\end{multline*}
+
+Вводя оператор
+$$\mathfrak{D}_k = \left( \begin{pmatrix} \lambda_k\\ \Lambda_k \\ x_k \\ y_k \end{pmatrix},\begin{pmatrix} \frac{\partial}{\partial \lambda} |_{\lambda_0,\Lambda_0,x_0,y_0}\\ \frac{\partial}{\partial \Lambda} |_{\lambda_0,\Lambda_0,x_0,y_0} \\ \frac{\partial}{\partial x} |_{\lambda_0,\Lambda_0,x_0,y_0} \\ \frac{\partial}{\partial y} |_{\lambda_0,\Lambda_0,x_0,y_0} \end{pmatrix} \right)$$
+получаем:
+$$\mathcal{T} = \sum_{k=1}^{+\infty} \varepsilon^k \mathfrak{D}_k$$
+
+%$(\cdot,\cdot)$ - стандартное скалярное произведение в $\mathbb{R}^4$.
+
+Рассмотрим выражение для $\mathcal{T}^j$ в котором, явно взяв степень, получаем:
+
+$$\mathcal{T}^j = \left( \sum_{k=1}^{+\infty} \varepsilon^k \mathfrak{D}_k \right)^j = \sum_{k=j}^{+\infty} \varepsilon^k \mathcal{L}_k^{(j)},$$
+где:
+$$\mathcal{L}_k^{(j)} = \sum_{k_1+...+k_j = k} \mathfrak{D}_{k_1} \cdot ... \cdot \mathfrak{D}_{k_j}$$
+
+Подставляя этот результат в ряд Тейлора и группируя слагаемые по степеням $\varepsilon$ получаем:
+
+$$g^\rho(\lambda,\Lambda,x,y) = g^\rho(\lambda_0,\Lambda_0,x_0,y_0) + \sum_{k=1}^{+\infty} \varepsilon^k \left( \sum_{j=1}^k \frac{\mathcal{L}_k^{(j)} g^\rho}{j!} \right).$$
+
+
+Разобъем внутреннюю сумму на 2 части, учитывая $\mathcal{L}_k^{(1)} = \mathfrak{D}_k$:
+
+\begin{equation*}
+\begin{aligned}
+g^\rho(\lambda,\Lambda,x,y) 
+    &= g^\rho(\lambda_0,\Lambda_0,x_0,y_0) + \varepsilon \mathfrak{D}_1 g^\rho + \sum_{k=2}^{+\infty} \varepsilon^k \left( \mathcal{L}_k^{(1)}g^\rho + \sum_{j=2}^k \frac{\mathcal{L}_k^{(j)} g^\rho}{j!} \right) = \\ 
+    &= g^\rho(\lambda_0,\Lambda_0,x_0,y_0) + \varepsilon \mathfrak{D}_1 g^\rho + \sum_{k=2}^{+\infty} \varepsilon^k \left( \mathfrak{D}_k g^\rho + \underbrace{\sum_{j=2}^k \frac{\mathcal{L}_k^{(j)} g^\rho}{j!}}_{G_k^\rho} \right) \\ 
+    %&= g(\lambda_0,\Lambda_0,x_0,y_0) + \underbrace{\sum_{k=1}^{\infty} \varepsilon^k \mathfrak{D}_k g}_{I} 
+    %+ \underbrace{\sum_{k=2}^{\infty} \varepsilon^k \left( \sum_{j=2}^{k} \frac{C_k^{(j)} g }{j!} \right)}_{II = G_k^\rho}.
+\end{aligned}
+\end{equation*}
+
+\begin{itemize}
+\item $\mathfrak{D}_k g^\rho$ - содержит $(\lambda_k, \Lambda_k, x_k, y_k)$ и уйдет в оператор однородного уравнения;
+\item $G_k^\rho$ - содержит $(\lambda_j, \Lambda_j, x_j, y_j), \quad j \le k-1$ и входит в неднородность в уравнениях (\ref{xy_eq}).
+\end{itemize}
+
+Введенные таким образом $G_k^\rho$ определены только для $k \ge 2$, для $k=1$ по определению положим $G_1^\rho = 0$. В итоге получаем:
+
+\begin{equation}
+G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{j!}, \quad k \ge 2,
+\label{G_def}
+\end{equation}
+$$G_1^\rho \equiv 0,$$
+$$g^\rho(\lambda,\Lambda,x,y) = g^\rho(\lambda_0,\Lambda_0,x_0,y_0) + \sum_{k=1}^{\infty} \varepsilon^k \mathfrak{D}_k g^\rho + \sum_{k=2}^{+\infty} \varepsilon^k G_k^\rho.$$
+
+\item Так как $g^\rho, \rho \in \{\lambda, \Lambda, x, y\}$ и все ее производные ограничены, а сумма (\ref{G_def}) начинается с $j=2$, то $G_{k+1}^\rho$ будет содержать слагаемые из 2 и более множителей (порядка $\le k$) вида $\mathfrak{D}_i \mathfrak{D}_j g^\rho, i+j \leq k$. Учитывая что каждое решение порядка $\le k$ принадлежит классу $\mathcal{F}_s$, то их произведения и, как следствие, $G_{k+1}^\rho$ будут принадлежать классу $\mathcal{F}_{2s}$.
+
+\item Так как $g^\lambda = \alpha \Lambda$ не содержит нелинейные члены, то любые производные второго порядка и старше будут равны 0. В следствие этого $G_k^\lambda = 0 \quad \forall k \ge 1$. $\blacksquare$
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Уравнения на нулевой порядок в точности совпадают с уравнениями медленной системы при $\varepsilon = 0$. Так как в данном разделе строим формальные решения, параметризующие $W^{s,u}(0)$, то в качестве нулевого приближения выбираем сепаратрисное решение медленной системы:
+\begin{equation*}
+    \begin{cases}
+        \Lambda_0(\tau) = 0 , \\
+        
+        \lambda_0(\tau) = \lambda_- (x_{sep}(\tau),y_{sep}(\tau)), \\
+        
+        x_0(\tau) = x_{sep}(\tau) - \hat x_0, \\
+        
+        y_0(\tau) = y_{sep}(\tau).\\
+    \end{cases}
+    %\label{fulltint}
+\end{equation*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+\begin{enumerate}
+
+    \item Уравнения на $(\Lambda_1,\lambda_1,x_1,y_1)$ являются алгебраичекими по переменным $(\Lambda_1,\lambda_1)$:
+    
+\begin{equation*}
+    \begin{cases}
+        \Lambda_1(\tau) = \lambda_{0}', \\
+        
+        \lambda_1(\tau) = \frac1\beta \Big(x_1 \big( (2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 - 2Cy_0 \cos\lambda_0 \big) + \\
+        +y_1 \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big) \Big),
+    \end{cases}
+    %\label{fulltint}
+\end{equation*}
+
+и однородными дифференциальным по переменным $(x_1,y_1)$:
+\begin{equation}
+\frac{d}{d\tau} \begin{pmatrix} x_k \\ y_k \end{pmatrix} = \mathcal{A}(\tau) \begin{pmatrix} x_k \\ y_k \end{pmatrix}
+\label{utv_odnor}
+\end{equation}
+
+    \item Одним из решений (\ref{utv_odnor}) будет:
+    
+\begin{equation}
+    \begin{dcases}
+        x_1(\tau)=x_1^{s,u}(\tau)=\frac{dx_0}{d \tau}, \\
+        y_1(\tau)=y_1^{s,u}(\tau)=\frac{dy_0}{d \tau}. \\
+    \end{dcases}
+    %\label{fulltint}
+\end{equation}
+
+\end{enumerate}
+\end{utv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+
+\begin{enumerate}
+
+\item Рассмотрим абстрактную 4 мерную быстро-медленную систему:
+
+\begin{equation*}
+    \begin{cases}
+        \dot \Lambda(t)=g^\Lambda(\Lambda,\lambda,x,y), \\
+        \dot \lambda(t)=g^\lambda(\Lambda,\lambda,x,y), \\
+        \dot x(t)=\varepsilon g^x(\Lambda,\lambda,x,y), \\
+        \dot y(t)=\varepsilon g^y(\Lambda,\lambda,x,y), \\
+    \end{cases}
+\end{equation*}
+
+Переходя к медленному времени $\tau = \varepsilon t$ получаем:
+\begin{equation*}
+    \begin{cases}
+        \varepsilon \Lambda'(\tau)=g^\Lambda(\Lambda,\lambda,x,y), \\
+        \varepsilon \lambda'(\tau)=g^\lambda(\Lambda,\lambda,x,y), \\
+        x'(\tau)=g^x(\Lambda,\lambda,x,y), \\
+        y'(\tau)=g^y(\Lambda,\lambda,x,y), \\
+    \end{cases}
+\end{equation*}
+
+Обозначим $\v X = (\Lambda,\lambda,x,y)$ и будем искать формальное решение в виде:
+$\v X = \sum_{k=0}^\infty \varepsilon^k \v X_k.$
+Подставляя это представление в систему и приравнивая члены при одинаковых степенях $\varepsilon$ получаем для младших порядков:
+
+\begin{equation}
+    \begin{cases}
+        0=g^\Lambda(\v X_0), \\
+        0=g^\lambda(\v X_0), \\
+        x_0'(\tau)=g^x(\v X_0), \\
+        y_0'(\tau)=g^y(\v X_0), \\
+    \end{cases}
+    \label{slow_sys}
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+        \Lambda_0'(\tau)=(\nabla g^\Lambda(\v X_0),\v X_1), \\
+        \lambda_0'(\tau)=(\nabla g^\lambda(\v X_0),\v X_1), \\
+        x_1'(\tau)=(\nabla g^x(\v X_0),\v X_1), \\
+        y_1'(\tau)=(\nabla g^y(\v X_0),\v X_1), \\
+    \end{cases}
+    \label{1st_order}
+\end{equation}
+
+Заметим, что первые два уравнения в (\ref{1st_order}) являются линейной неоднородной системой алгебраических уравнений по переменным $(\Lambda_1, \lambda_1)$, представимой в виде:
+
+\begin{align*}
+\begin{pmatrix}
+(\nabla g^\Lambda)_\Lambda & (\nabla g^\Lambda)_\lambda \\
+(\nabla g^\lambda)_\Lambda & (\nabla g^\lambda)_\lambda
+\end{pmatrix}
+\begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix}
+= A \begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix} =
+\begin{pmatrix} \Lambda_0' - (\nabla g^\Lambda)_x x_1 - (\nabla g^\Lambda)_y y_1 \\ \lambda_0' - (\nabla g^\lambda)_x x_1 - (\nabla g^\lambda)_y y_1 \end{pmatrix}.
+\end{align*}
+
+Тогда решение этой системы имеет вид:
+\begin{align*}
+    \begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix} = 
+    M \begin{pmatrix} x_1 \\ y_1 \end{pmatrix} + \v C
+\end{align*}
+
+\begin{align*}
+    M = \frac{1}{\det A} \begin{pmatrix} 
+        -(\nabla g^\lambda)_\lambda (\nabla g^\Lambda)_x + (\nabla g^\Lambda)_\lambda (\nabla g^\lambda)_x & -(\nabla g^\lambda)_\lambda (\nabla g^\Lambda)_y + (\nabla g^\Lambda)_\lambda (\nabla g^\lambda)_y \\ 
+         (\nabla g^\lambda)_\Lambda (\nabla g^\Lambda)_x - (\nabla g^\Lambda)_\Lambda (\nabla g^\lambda)_x &  (\nabla g^\lambda)_\Lambda (\nabla g^\Lambda)_y - (\nabla g^\Lambda)_\Lambda (\nabla g^\lambda)_y
+    \end{pmatrix}
+\end{align*}
+
+$$\v C = \frac{1}{\det A} \begin{pmatrix} (\nabla g^\lambda)_\lambda \Lambda_0' - (\nabla g^\Lambda)_\lambda \lambda_0' \\ -(\nabla g^\lambda)_\Lambda \Lambda_0' + (\nabla g^\Lambda)_\Lambda \lambda_0' \end{pmatrix}$$
+
+Подставляя решение в последние два уравнения в (\ref{1st_order}) и группируя слагаемые получаем:
+
+\begin{equation}
+    \begin{cases}
+        x_1'(\tau) = 
+            \Big( 
+                (\nabla g^x)_x + \big( (\nabla g^x)_\Lambda M_{11} + (\nabla g^x)_\lambda M_{21} \big)
+            \Big)x_1 +\\
+            \quad \quad \quad + \Big(
+                (\nabla g^x)_y + \big( (\nabla g^x)_\Lambda M_{12} + (\nabla g^x)_\lambda M_{22} \big)
+            \Big)y_1 +\\
+            \quad \quad \quad + \left( \begin{pmatrix} (\nabla g^x)_\Lambda \\ (\nabla g^x)_\lambda \end{pmatrix},\v C \right), \\
+            \\
+        y_1'(\tau)=
+            \Big(
+                (\nabla g^y)_x + \big( (\nabla g^y)_\Lambda M_{11} + (\nabla g^y)_\lambda M_{21} \big)
+            \Big)x_1 +\\
+            \quad \quad \quad + \Big(
+                (\nabla g^x)_y + \big( (\nabla g^y)_\Lambda M_{12} + (\nabla g^y)_\lambda M_{22} \big)
+            \Big)y_1 +\\
+            \quad \quad \quad + \left( \begin{pmatrix} (\nabla g^y)_\Lambda \\ (\nabla g^y)_\lambda \end{pmatrix},\v C \right). \\
+    \end{cases}
+    \label{x1y1_eq}
+\end{equation}
+
+Здесь $(\cdot,\cdot)$ -- стандартное скалярное произведение в $\mathbb{R}^n$.
+
+Таким образом, в общем случае, уравнение для первого приближения является неоднородным, однако для рассматриваемой системы (\ref{fulltn}) неоднородность равна нулю. Действительно, заметим:
+
+$$\Lambda_0 = 0 \quad \Rightarrow \quad \v C = \begin{pmatrix} \frac{\lambda_0'}{\alpha} \\ 0 \end{pmatrix}$$
+
+Также заметим, что компоненты правой части $g^x, g^y$ не зависят от $\Lambda$, поэтому векторы, входящие в неоднородность в уравнениях (\ref{x1y1_eq}) имеют вид:
+
+$$\begin{pmatrix} (\nabla g^x)_\Lambda \\ (\nabla g^x)_\lambda \end{pmatrix} = \begin{pmatrix} 0 \\ * \end{pmatrix},$$
+$$\begin{pmatrix} (\nabla g^y)_\Lambda \\ (\nabla g^y)_\lambda \end{pmatrix} = \begin{pmatrix} 0 \\ * \end{pmatrix}.$$
+
+Тогда неоднородность в системе (\ref{x1y1_eq}) вырождается:
+
+$$\left( \begin{pmatrix} (\nabla g^x)_\Lambda \\ (\nabla g^x)_\lambda \end{pmatrix},\v C \right) = \left( \begin{pmatrix} (\nabla g^y)_\Lambda \\ (\nabla g^y)_\lambda \end{pmatrix},\v C \right) = 0.$$
+
+Таким образом в системе (\ref{fulltn}) дифференциальное уравнение на $(x_1,y_1)$ является однородным.
+
+\item 
+
+Рассмотрим уравнения медленной системы (\ref{slow_sys}). Для простоты приведем выкладки только для компоненты $x_0$.
+
+Продифференцируем уравнение на $x_0$ по времени, при этом будем считать, что $\Lambda_0, \lambda_0$ зависят от $x_0,y_0$:
+\begin{multline}
+x_0'' = (\nabla g^x)_x x_0' + (\nabla g^x)_y y_0' + (\nabla g^x)_\Lambda \Lambda_0' + (\nabla g^x)_\lambda \lambda_0' = \\
+= 
+\left( (\nabla g^x)_x + (\nabla g^x)_\Lambda\frac{\partial \Lambda_0}{\partial x} + (\nabla g^x)_\lambda\frac{\partial \lambda_0}{\partial x} \right) x_0' +\\
++\left( (\nabla g^x)_y + (\nabla g^x)_\Lambda\frac{\partial \Lambda_0}{\partial y} + (\nabla g^x)_\lambda\frac{\partial \lambda_0}{\partial y} \right) y_0'
+\label{xdd_eq}
+\end{multline}
+
+Заметим, что $\Lambda_0(x_0,y_0), \lambda_0(x_0,y_0)$ задаются неявно через уравнения:
+\begin{equation}
+    \begin{cases}
+        0=g^\Lambda(\v X_0), \\
+        0=g^\lambda(\v X_0), \\
+    \end{cases}
+\end{equation}
+
+Дифференцируем оба уравнения по \(x\):
+\[
+\begin{cases}
+(\nabla g^\Lambda)_x + (\nabla g^\Lambda)_y \underbrace{y_x}_0 + (\nabla g^\Lambda)_\Lambda \cdot \Lambda_x + (\nabla g^\Lambda)_\lambda \cdot \lambda_x = 0 \\
+(\nabla g^\lambda)_x + (\nabla g^\lambda)_y \underbrace{y_x}_0 + (\nabla g^\lambda)_\Lambda \cdot \Lambda_x + (\nabla g^\lambda)_\lambda \cdot \lambda_x = 0
+\end{cases}
+\]
+
+Полученное выражение можно переписать в матричной форме:
+\[
+\begin{pmatrix}
+(\nabla g^\Lambda)_\Lambda & (\nabla g^\Lambda)_\lambda \\
+(\nabla g^\lambda)_\Lambda & (\nabla g^\lambda)_\lambda
+\end{pmatrix}
+\begin{pmatrix}
+\Lambda_x \\
+\lambda_x
+\end{pmatrix}
+= -
+\begin{pmatrix}
+(\nabla g^\Lambda)_x \\
+(\nabla g^\lambda)_x
+\end{pmatrix}
+\]
+
+Решая это уравнение относительно $(\Lambda_x,\lambda_x)$ получаем:
+$$
+\Lambda_x = \frac{(\nabla g^\Lambda)_\lambda (\nabla g^\lambda)_x - (\nabla g^\Lambda)_x (\nabla g^\lambda)_\lambda}{(\nabla g^\Lambda)_\Lambda (\nabla g^\lambda)_\lambda - (\nabla g^\Lambda)_\lambda (\nabla g^\lambda)_\Lambda}
+$$
+$$
+\lambda_x = \frac{(\nabla g^\Lambda)_x (\nabla g^\lambda)_\Lambda - (\nabla g^\Lambda)_\Lambda (\nabla g^\lambda)_x}{(\nabla g^\Lambda)_\Lambda (\nabla g^\lambda)_\lambda - (\nabla g^\Lambda)_\lambda (\nabla g^\lambda)_\Lambda}
+$$
+
+Заметим, что данные частные производные в точности совпадают с коэффициентами матрицы $M$:
+$$
+\frac{\partial \Lambda_0}{\partial x} = M_{11}
+$$
+$$
+\frac{\partial \lambda_0}{\partial x} = M_{21}
+$$
+Аналогично можно показать следующее:
+$$
+\frac{\partial \Lambda_0}{\partial y} = M_{12}
+$$
+$$
+\frac{\partial \lambda_0}{\partial y} = M_{22}
+$$
+
+Подставляя данный результат в (\ref{xdd_eq}) получаем:
+\begin{multline}
+(x_0')' = (\nabla g^x)_x x_0' + (\nabla g^x)_y y_0' + (\nabla g^x)_\Lambda \Lambda_0' + (\nabla g^x)_\lambda \lambda_0' = \\
+= 
+\left( (\nabla g^x)_x + (\nabla g^x)_\Lambda M_{11} + (\nabla g^x)_\lambda M_{21} \right) x_0' +\\
++\left( (\nabla g^x)_y + (\nabla g^x)_\Lambda M_{12} + (\nabla g^x)_\lambda M_{22} \right) y_0'
+\label{xdd_eq2}
+\end{multline}
+
+Учитывая, что в системе (\ref{fulltn}) $\v C = 0$, вид уравнений (\ref{xdd_eq2}) и (\ref{x1y1_eq}) полностью совпадает.
+
+Заметим, что асимптотика сепаратрисы медленной системы при $\tau \to \pm \infty$ имеет вид: 
+\begin{equation*}
+    \begin{dcases}
+        x_0(\tau) = \frac{\text{const}}{\cosh(f_\pm \cdot \tau)} + \mathcal{O}(e^{-2 f_\pm |\tau|}), \quad \tau \to \pm \infty,\\
+        y_0(\tau) = \frac{\text{const} \cdot \sinh(f_\pm \cdot \tau)}{\cosh^2(f_\pm \cdot \tau)} + \mathcal{O}(e^{-2 f_\pm |\tau|}), \quad \tau \to \pm \infty,
+    \end{dcases}
+\end{equation*}
+где $f_\pm = \lim_{\tau \to \pm \infty} \frac{d f^\pm(\tau)}{d\tau} = \frac{J^{+} \chi^{+}}{\sigma^{+}}  \lim_{\tau \to \pm \infty} \frac{P^{+}(f^{+}(\tau))}{S^{+}(f^{+}(\tau))}$. Так как $P^\pm$ и $S^\pm$ являются полиномами второй степени от $\cosh f^\pm$, то пределы существуют и  равны:
+ 
+$$f_+ = f_- = \frac{J^{+} \chi^{+}}{\sigma^{+}} \cdot \frac{1}{U_0} >0$$
+
+Тогда получаем:
+$$x_0,y_0 \in \mathcal{F}_{s_0}, \quad s_0 = f_+ = f_- > 0$$
+
+Решение для первого приближения имеет аналогичное поведение на обеих бесконечностях:
+\begin{equation*}
+    \begin{cases}
+        x_1(\pm \infty) = 0, \\
+        
+        y_1(\pm \infty) = 0. \\
+    \end{cases}
+\end{equation*}
+$$x_1, y_1 \in \mathcal{F}_{s_0}$$
+
+Отсюда получаем, что $(x_1,y_1)$ удовлетворяет граничным условиям и для $W^s(0)$, и для $W^u(0)$, поэтому индексы $s,u$ будем для него опускать. 
+
+$\blacksquare$
+
+\end{enumerate}
+
+Обозначим второе решение однородного уравнения (\ref{utv_odnor}) (линейно независимое к первому) как $(\tilde x_1 (\tau), \tilde y_1 (\tau))$. Т.к. след матрицы $\mathcal{A}$ в однородном уравнении равен 0, то вронскиан, по формуле Лиувилля-Остроградского, является константой и, за счет нормировки второго решения, положим:
+$$W(\tau) = x_1(\tau) \tilde y_1 (\tau) - y_1 (\tau) \tilde x_1 (\tau) = 1$$
+Также потребуем ортогональность $(x_1, y_1)$ и $(\tilde x_1, \tilde y_1)$.
+
+%Рассмотрим пределы на обеих бесконечностях:
+%\begin{equation}
+%\begin{aligned}
+%W \big|_{\tau \rightarrow -\infty} = \underbrace{x_1 \big|_{\tau \rightarrow -\infty}}_{\rightarrow 0} \tilde y_1 \big|_{\tau \rightarrow -\infty} - \underbrace{y_1 \big|_{\tau \rightarrow -\infty}}_{\rightarrow 0} \tilde x_1 \big|_{\tau \rightarrow -\infty} = 1
+%\end{aligned}
+%\end{equation}
+
+%\begin{equation}
+%\begin{aligned}
+%W \big|_{\tau \rightarrow +\infty} = \underbrace{x_1 \big|_{\tau \rightarrow +\infty}}_{\rightarrow 0} \tilde y_1 \big|_{\tau \rightarrow +\infty} - \underbrace{y_1 \big|_{\tau \rightarrow +\infty}}_{\rightarrow 0} \tilde x_1 \big|_{\tau \rightarrow +\infty} = 1
+%\end{aligned}
+%\end{equation}
+
+%Таким образом $(\tilde x_1, \tilde y_1)$ обязаны экспоненциально расти чтобы компенсировать экспоненциальное убывание $(x_1,y_1)$ на обеих бесконечностях:
+%$$\tilde x_1 (\tau), \tilde y_1 (\tau) \in \mathcal{F}_{-s_0}$$
+
+Обозначим:
+$$\v u_1(\tau) = \begin{pmatrix} x_1(\tau) \\ y_1(\tau) \end{pmatrix}$$
+$$\v{ \tilde{u_1}}(\tau) = \begin{pmatrix} \tilde x_1(\tau) \\ \tilde y_1(\tau) \end{pmatrix}$$
+
+Рассмотрим асимптотику матрицы $\mathcal{A}(\tau)$ при больших $|\tau|$:
+
+\begin{equation}
+\mathcal{A}(\tau) = \underbrace{\begin{pmatrix} 
+0 & -2F-2C + \frac{(2C \hat x_0 + e_J D)^2}{U_0}\\
+2F-2C & 0
+\end{pmatrix}}_{\mathcal{A}_0} + \mathcal{O}(e^{-s_0 |\tau|}) \equiv 
+\begin{pmatrix} 
+0 & b_0\\
+c_0 & 0
+\end{pmatrix} + \mathcal{O}(e^{-s_0 |\tau|})
+\end{equation}
+
+Учитывая значения констант, получаем, что собственные значения $\pm \sqrt{b_0 c_0}$ матрицы $\mathcal{A}_0$ чисто вещественные. Также, учитывая явный вид $b_0,c_0$, заметим, что:
+$$\sqrt{b_0 c_0} = s_0$$
+
+Тогда для положительных $\tau$:
+
+$$\v u_1(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ c_0 \sqrt{b_0} \end{pmatrix} e^{-s_0 \tau} + \mathcal{O}(e^{-2s_0 \tau}),$$
+
+$$\v{ \tilde{u_1}}(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ -c_0 \sqrt{b_0} \end{pmatrix} e^{s_0 \tau} + \mathcal{O}(1).$$
+
+Аналогично для отрицательных $\tau$:
+$$\v u_1(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ -c_0 \sqrt{b_0} \end{pmatrix} e^{s_0 \tau} + \mathcal{O}(e^{2s_0 \tau}),$$
+
+$$\v{ \tilde{u_1}}(\tau) = \text{const} \begin{pmatrix} b_0 \sqrt{c_0} \\ c_0 \sqrt{b_0} \end{pmatrix} e^{-s_0 \tau} + \mathcal{O}(1).$$
+
+Таким образом:
+$$\v{ \tilde{u_1}}(\tau) \in \mathcal{F}_{-s_0}.$$
+
+Уравнения для приближений старших порядков являются неоднородными дифференциальными уравнениями с той же матрицей $\mathcal{A}$, что и в однородом уравнении на первое приближение. Тогда, с учетом граничных условий, по известным решениям однородного уравнения можно строить решения неоднородного:
+\begin{equation}
+    \begin{cases}
+        \v u_k^u = 
+        \v u_1(\tau)\bigint_{\text{ } \tau^u_k}^\tau \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau + 
+        \v{ \tilde{u_1}}(\tau) \bigint_{-\infty}^\tau \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau,\\
+        \\
+        
+        \v u_k^s = 
+        \v u_1(\tau)\bigint_{\text{ } \tau^s_k}^{\tau} \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau - 
+        \v{ \tilde{u_1}}(\tau) \bigint_{\text{ } \tau}^{+\infty} \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau. \\
+    \end{cases}
+    \label{neodnor}
+\end{equation}
+
+В силу \textit{Утверждения 2} подынтегральные выражения во всех интегралах в (\ref{neodnor}) экспоненциально убывают при $\tau \rightarrow \pm \infty$. Следовательно, все интегралы в (\ref{neodnor}) являются ограниченными функциями по $\tau$ при любых нижних пределах интегрирования.
+
+Поскольку $\mathbf{u}_1(\tau)$ убывает при $\tau \rightarrow \pm \infty$, то $\mathbf{u}_k^u$ и $\mathbf{u}_k^s$ будут удовлетворять граничным условиям для любых $\tau^u_k, \tau^s_k \in \mathbb{R}$.
+
+$\tilde{\mathbf{u}_1}(\tau)$ возрастает при $\tau \rightarrow \pm \infty$. Поэтому в $\mathbf{u}_k^u$ и $\mathbf{u}_k^s$ во втором слагаемом пределы интегрирования выбираются, как указано в (\ref{neodnor}), чтобы компенсировать этот рост на соответствующих бесконечностях. Так как $(x_1 \tilde G_k^y - y_1 \tilde G_k^x) \in \mathcal{F}_{3s_0}$, можно гарантировать, что убывание происходит быстрее, чем рост $\tilde{\mathbf{u}_1}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+Пусть по описанной выше процедуре построено формальное решение:
+\begin{equation}
+    \begin{cases}
+\Lambda^s(\tau) = \sum_{k=0}^\infty \varepsilon^k \Lambda_k(\tau)\\
+\lambda^s(\tau) = \sum_{k=0}^\infty \varepsilon^k \lambda_k(\tau)\\
+x^s(\tau) =       \sum_{k=0}^\infty \varepsilon^k x_k(\tau)\\
+y^s(\tau) =       \sum_{k=0}^\infty \varepsilon^k y_k(\tau)\\
+\end{cases}
+\label{proizv_predst}
+\end{equation}
+Причем в качестве $(x_1,y_1)$ выбрано следующее решение (\ref{xy_eq}):
+\begin{align*}
+    \begin{pmatrix} x_1(\tau) \\ y_1(\tau) \end{pmatrix} = \text{const} \cdot \v u_1.
+\end{align*}
+Константы $\tau_k^{s}$ произвольны.
+
+Тогда будет существовать решение системы (\ref{fulltn}), принадлежащее $W^s(0)$ и, в силу одномерности устойчивого многообразия, однозначно параметризующее его.
+Причем асимптотика такого решения будет совпадать с (\ref{proizv_predst}).
+
+Аналогично будет существовать решение системы (\ref{fulltn}), принадлежащее $W^u(0)$, параметризущее его и имеющее аналогичную асимптотику с другими граничными условиями.
+
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Для исследования расщепления сепаратрис рассмотрим разность устойчивого и неустойчивого решений:
+\begin{multline}
+        |\v u_k^u(\tau)-\v u_k^s(\tau)| = \bigg| \v u_1(\tau)\int_{\tau^u_k}^{\tau^s_k} \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau + \\
+        +\v{ \tilde{u_1}}(\tau) \int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau \bigg|
+\label{rasshep}
+\end{multline}
+
+Существование нулей у такой величины при некоторых $\tau$ будет означать существование пересечения сепаратрис в соответствующем порядке. В таком случае в силу теоремы о единственности решения и одномерности $W^s(0)$ и $W^u(0)$ $\v u_k^s$ и $\v u_k^u$ обязаны совпадать для произвольных $\tau$.
+
+Отметим, что можно рассматривать уравнение $|\v u_k^u(\tau_1)-\v u_k^s(\tau_2)|=0$ с различными моментами времени $\tau_1, \tau_2$, однако, так как достаточно найти хотя бы одно решение такого уравения, можно положить $\tau=\tau_1=\tau_2$ для простоты.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+
+Для $G_k^\rho$ верна рекуррентная формула:
+
+\begin{equation*}
+G_{k+1}^\rho = \frac12 \sum_{m=1}^k \mathfrak{D}_m \mathfrak{D}_{k+1-m} g^\rho + \sum_{m=1}^k \mathfrak{D}_m \hat G_{k+1-m}^\rho,
+\end{equation*}
+где $\hat G_{k+1}^\rho$ отличается от $G_{k+1}^\rho$ нормировкой:
+$$G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{j!},$$
+$$\hat G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{(j+1)!}$$
+$$\rho \in {\lambda, \Lambda, x, y}$$
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+$$\mathcal{L}_{k+1}^{(j)}g^\rho = \sum_{m=1}^{k+2-j} \mathfrak{D}_m \mathcal{L}_{k+1-m}^{(j-1)} g^\rho$$
+
+$$G_{k+1}^\rho = \sum_{j=2}^{k+1} \frac{\mathcal{L}_{k+1}^{(j)} g^\rho }{j!} = \sum_{j=2}^{k+1} \sum_{m=1}^{k+2-j} \frac{\mathcal{L}_{k+1-m}^{(j-1)} g^\rho }{j!} = \sum_{m=1}^k \mathfrak{D}_m \sum_{j=2}^{k+2-m} \frac{\mathcal{L}_{k+1-m}^{(j-1)} g^\rho }{j!} =$$
+$$= \sum_{m=1}^k \mathfrak{D}_m \sum_{l=1}^{k+1-m} \frac{\mathcal{L}_{k+1-m}^{(l)} g^\rho }{(l+1)!} = \sum_{m=1}^k \mathfrak{D}_m \left( \sum_{l=2}^{k+1-m} \frac{\mathcal{L}_{k+1-m}^{(l)} g^\rho }{(l+1)!} + \frac12 \mathcal{L}_{k+1-m}^{(1)}g^\rho \right) =$$
+$$= \sum_{m=1}^k \mathfrak{D}_m \left( \hat G_{k+1-m}^\rho + \frac12 \mathfrak{D}_{k+1-m}g^\rho \right) \blacksquare$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{dfn}
+Будем говорить, что функция $f(\tau)$ имеет четность, если $f(\tau)$ является либо четной, либо нечетной по $\tau$.
+\end{dfn}
+
+\begin{utv}
+\begin{enumerate}
+
+\item $G_k^x(\tau),\tilde G_k^x(\tau),G_k^\Lambda(\tau)$ имеют одинаковую четность, $G_k^y(\tau), \tilde G_k^y(\tau)$ имеют противоположную к $G_k^x(\tau)$ четность, 
+
+если определена четность $\lambda_j,\Lambda_j,x_j,y_j, \quad j \le k-1$.
+
+\item В частности $G_2^x(\tau), \tilde G_2^x(\tau), G_2^\Lambda$ - нечетные, $G_2^y(\tau), \tilde G_2^y(\tau)$ - четные.
+\end{enumerate}
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+\begin{enumerate}
+\item Рассмотрим четность правой части и различных ее производных по координатам в подстановке нулевого приближения.
+Т.к. $x_0(\tau)$ - четная, $y_0(\tau), \lambda_0(\tau)$ - нечетные получаем:
+$$g^\Lambda|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} = U(x_0,y_0)\sin\lambda_0-V(x_0,y_0)\cos\lambda_0 \quad \text{ - нечетная}$$
+$$g^x|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} = -\varepsilon \left( 2Fy_0-\frac{\partial U}{\partial y} \cos \lambda_0 - \frac{\partial V}{\partial y} \sin \lambda_0 \right) \quad \text{ - нечетная}$$
+$$g^y|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} = \varepsilon \left( 2F(x_0+\hat x_0)+e_JG -\frac{\partial U}{\partial x} \cos \lambda_0 - \frac{\partial V}{\partial x} \sin \lambda_0 \right) \quad \text{ - четная}$$
+
+Заметим:
+\begin{itemize}
+    \item Каждая производная по чётной переменной ($x_0$) сохраняет чётность.
+    \item Каждая производная по нечётной переменной ($y_0$ или $\lambda_0$) меняет чётность на противоположную.
+\end{itemize}
+Таким образом обозначая четность как $+1$, нечетность как $-1$ получаем:
+$$\frac{\partial^{p+q+m}g^\Lambda}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} \quad \Leftrightarrow \quad -(-1)^{q+m}$$
+\begin{equation}
+\frac{\partial^{p+q+m}g^x}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} \quad \Leftrightarrow \quad -(-1)^{q+m} \label{chetnost}
+\end{equation}
+$$\frac{\partial^{p+q+m}g^y}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} \quad \Leftrightarrow \quad (-1)^{q+m}$$
+
+Заметим, что $G_k^\Lambda(\tau),G_k^x(\tau),G_k^y(\tau)$ имеют вид:
+$$G_k^\Lambda(\tau) = \sum_{p_1,q_1,m_1,...} \frac{\partial^{p+q+m}g^\Lambda}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} (x_{p_1}y_{q_1}\lambda_{m_1}...),$$
+$$G_k^x(\tau) = \sum_{p_1,q_1,m_1,...} \frac{\partial^{p+q+m}g^x}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} (x_{p_1}y_{q_1}\lambda_{m_1}...),$$
+$$G_k^y(\tau) = \sum_{p_1,q_1,m_1,...} \frac{\partial^{p+q+m}g^y}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} (x_{p_1}y_{q_1}\lambda_{m_1}...),$$
+и отличаются только производными, множители в скобках у них одинаковые.
+
+Таким образом, если определена четность множителя в скобках (т.е. определена четность всех решений порядка $\le k-1$), то четность $G_k^\Lambda(\tau),G_k^x(\tau),G_k^y(\tau)$ отличается на четность производных.
+Учитывая, что четность производных одинакового порядка для $g^\Lambda$ и $g^x$ совпадает, а для $g^y$ отличается, получаем необходимое утверждение.
+
+Четность $\tilde G_k^x, \tilde G_k^y$ наследуется от $G_k^\Lambda(\tau),G_k^x(\tau),G_k^y(\tau)$.
+
+\item Четность всех функций входящих в $G_2^x(\tau), \tilde G_2^x(\tau), G_2^\Lambda, G_2^y(\tau), \tilde G_2^y(\tau)$ определена и известна, утверждение проверяется явной подстановкой.
+
+Заметим, что $x_0(\tau), y_1(\tau), \tilde x_1, \lambda_1$ -- четные, а $y_0(\tau), x_1(\tau), \tilde y_1$ -- нечетные
+
+\begin{equation}
+G_2^\rho(\tau) = \sum_{p+q+m=2,\quad p,q,m \ge 0, \quad p,q,m \neq 2} \frac{\partial^{2}g^\rho}{\partial x^p \partial y^q \partial \lambda^m}\bigg|_{\lambda_0(\tau),\Lambda_0(\tau),x_0(\tau),y_0(\tau)} x_1^p y_1^q \lambda_1^m
+\label{g_2}
+\end{equation}
+
+Заметим, что четность $x_1^p y_1^q \lambda_1^m$ равна $(-1)^p$. Тогда, учитывая (\ref{chetnost}), получаем что четность слагаемых в (\ref{g_2}) равна $-(-1)^{p+q+m}$ для $\rho \in \{ \Lambda, x \}$ и $(-1)^{p+q+m}$ для $\rho = y$. Но так как во всех слагаемых $p+q+m=2$ получаем:
+$G_2^x(\tau), G_2^\Lambda$ - нечетные, $G_2^y(\tau)$ - четные.
+
+Четность $\tilde G_2^x, \tilde G_2^y$ наследуется от $G_2^\Lambda(\tau),G_2^x(\tau),G_2^y(\tau)$.
+$\blacksquare$
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{consequence}
+В силу нечётности подынтегральной функции $x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau)$ относительно переменной $\tau$ выполняется:
+$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau = 0$$
+
+%В таком случае во втором порядке по $\varepsilon$ может происходить расшепление сепаратрис при $\tau^u \ne \tau^s$, причем оно ограничено и стремится к 0 при $\tau \rightarrow \pm \infty$:
+
+%\begin{equation}
+%        |\v u_2^u(\tau)-\v u_2^s(\tau)| = | \v u_1(\tau) | \cdot \left| \int_{\tau^u_2}^{\tau^s_2} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau \right|
+%\label{rasshep_res}
+%\end{equation}
+
+%При выборе $\tau^u_2 = \tau^s_2$ устойчивое и неустойчивое решения во втором порядке совпадут:
+
+
+
+\end{consequence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Поскольку интеграл в \textit{Следствии 1} равен нулю, а подынтегральное выражение нечётное, то следующие функции являются чётными:
+$$\int_{-\infty}^{\tau} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau \quad \text{ - четная},$$
+$$\int_{\tau}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau \quad \text{ - четная}.$$
+
+Так как в общем случае интегралы
+$$\int_{\tau^u_2}^{0} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau \ne 0$$
+$$\int_{\tau^s_2}^{0} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau \ne 0$$
+то функции 
+\begin{equation*}
+\begin{aligned}
+\int_{\tau^u_2}^{\tau} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau = \underbrace{\int_{\tau^u_2}^{0} \left( \tilde y_1 \tilde G_2^x - \tilde x_1 \tilde G_2^y \right) d \tau}_{\text{const}} + \underbrace{\int_{0}^{\tau} \overbrace{ \left( \tilde y_1 \tilde G_2^x - \tilde x_1 \tilde G_2^y \right)}^{\text{четная}} d \tau}_{\text{нечетная}}
+%g(\lambda,\Lambda,x,y) &= g(\lambda_0,\Lambda_0,x_0,y_0) + \underbrace{\sum_{k=1}^{\infty} \varepsilon^k \mathfrak{D}_k g}_{I} 
+%   + \underbrace{\sum_{k=2}^{\infty} \varepsilon^k \left( \sum_{j=2}^{k} \frac{C_k^{(j)} g }{j!} \right)}_{II}.
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\begin{aligned}
+\int_{\tau^s}^{\tau} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau = \underbrace{\int_{\tau^s_2}^{0} \left( \tilde y_1 \tilde G_2^x - \tilde x_1 \tilde G_2^y \right) d \tau}_{\text{const}} + \underbrace{\int_{\tau}^{0} \overbrace{ \left( \tilde y_1 \tilde G_2^x - \tilde x_1 \tilde G_2^y \right)}^{\text{четная}} d \tau}_{\text{нечетная}}
+%g(\lambda,\Lambda,x,y) &= g(\lambda_0,\Lambda_0,x_0,y_0) + \underbrace{\sum_{k=1}^{\infty} \varepsilon^k \mathfrak{D}_k g}_{I} 
+%   + \underbrace{\sum_{k=2}^{\infty} \varepsilon^k \left( \sum_{j=2}^{k} \frac{C_k^{(j)} g }{j!} \right)}_{II}.
+\end{aligned}
+\end{equation*}
+не имеют определенной четности.
+
+Следовательно $\v u_2^u(\tau)$ и $\v u_2^s(\tau)$ также не имеют определенной четности при произвольных $\tau_2^{s,u}$. 
+
+В силу \textit{утверждения 4} любое формальное решение, построенное по формулам (\ref{neodnor}) будет параметризовать $W^s(s)$ или $W^s(s)$ соответственно. Поэтому для простоты положим $\tau_k^s = \tau_k^u = 0 \quad \forall k \ge 2$. 
+
+В таком случае:
+
+\begin{multline*}
+\begin{aligned}
+        |\v u_2^u(\tau)-\v u_2^s(\tau)| = \bigg| \v u_1(\tau) \underbrace{\int_{0}^{0} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau}_0 + \\
+        +\v{ \tilde{u_1}}(\tau) \underbrace{\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau}_0 \bigg| = 0
+\end{aligned}
+\end{multline*}
+
+\begin{multline*}
+\begin{aligned}
+        |\v u_k^u(\tau)-\v u_k^s(\tau)| = \bigg| \v u_1(\tau) \underbrace{\int_{0}^{0} \left( \tilde y_1(\tau) \tilde G_k^x(\tau) - \tilde x_1(\tau) \tilde G_k^y(\tau) \right) d \tau}_0 + \\
+        +\v{ \tilde{u_1}}(\tau) \int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_k^y(\tau) - y_1(\tau) \tilde G_k^x(\tau) \right) d \tau \bigg|, \quad k \ge 3.
+\end{aligned}
+\end{multline*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Построение сепаратрисы полной системы}
+
+Построим выделенное формальное решение для полной системы, которое будем называть \textit{каноническим} и обозначать верхним индексом $0$.
+
+Система уравнений на первый порядок является однородной, поэтому для рассматриваемого случая выберем тривиальное решение:
+\begin{align*}
+    \v u^0_1(\tau) \equiv \begin{pmatrix} x^0_1(\tau) \\ y^0_1(\tau) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+\end{align*}
+
+В силу этого $(\lambda^0_1(\tau), \Lambda^0_1(\tau)) = (0,0)$. В таком случае:
+$$\mathfrak{D}_1 = 0 \cdot \quad \text{ - оператор умножения на 0},$$
+$$G_2^\rho = \frac12 \mathfrak{D}_1^2 g^\rho = \frac12 (x^0_1)^2 g^\rho_{xx} + \frac12 x^0_1 y^0_1 g^\rho_{xy} + ... = 0$$
+
+$$\tilde G_2^x  = \frac{1}{\alpha \beta} \lambda_0''(\tau) \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right) \text{ - нечетная}$$
+
+$$\tilde G_2^y  = \frac{1}{\alpha \beta} \lambda_0''(\tau) \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right) \text{ - четная}$$
+
+При построении $\v u_2^u,\v u_2^s$ выберем $\tau^u_2 = \tau^s_2 = 0$:
+\begin{equation*}
+    \begin{cases}
+        \v u_2^u = 
+        \v u_1(\tau)\bigint_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau + 
+        \v{ \tilde{u_1}}(\tau) \bigint_{-\infty}^\tau \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau,\\
+        \\
+        
+        \v u_2^s = 
+        \v u_1(\tau)\bigint_{\text{ } 0}^{\tau} \left( \tilde y_1(\tau) \tilde G_2^x(\tau) - \tilde x_1(\tau) \tilde G_2^y(\tau) \right) d \tau - 
+        \v{ \tilde{u_1}}(\tau) \bigint_{\text{ } \tau}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau. \\
+    \end{cases}
+\end{equation*}
+
+Тогда по \textit{Следствию 1} $\v u_2^s(\tau) = \v u_2^u(\tau) \equiv \v u_2^0(\tau)$
+
+Т.к. $G_k^\rho$ и $\hat G_k^\rho$ отличаются только нормировкой то вырождаются они одновременно. В таком случае:
+
+$$G_3^\rho = \frac12 (\mathfrak{D}_1 \mathfrak{D}_2 + \mathfrak{D}_2 \mathfrak{D}_1)g^\rho + \mathfrak{D}_1 \hat G_2^\rho = 0$$
+\begin{equation*}
+\begin{aligned}
+\tilde G_3^x  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_1)''(\tau)}_0 \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right) =0
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\tilde G_3^y  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_1)''(\tau)}_0 \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right) = 0
+\end{aligned}
+\end{equation*}
+
+То есть в 3 порядке неоднородность вырождается и уравнение становится однородным. Выберем тривиальное решение:
+\begin{align*}
+    \v u^0_3(\tau) \equiv \begin{pmatrix} x^0_3(\tau) \\ y^0_3(\tau) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+\end{align*}
+
+$$(\lambda^0_3(\tau), \Lambda^0_3(\tau)) = (0,0)$$
+
+Продолжая данное построение по индукции получаем следующее
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{utv}
+
+$$G_{2k+1}^\rho = 0, \rho \in \{\Lambda,\lambda,x,y\}$$
+$$G_{2k+2}^x, y_{2k+2} \text{ - нечетные}$$
+$$G_{2k+2}^y, x_{2k+2} \text{ - четные}$$
+$$({\lambda^0_{2k+1}, \Lambda^0_{2k+1}, x^0_{2k+1}, y^0_{2k+1}}) = (0,0,0,0)$$
+$$k \ge 1$$
+
+\end{utv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+
+База индукции описана ранее.
+Индукционное предположение:
+$$G_{2k-1}^\rho = 0$$
+$$G_{2k}^x, y_{2k} \text{ - нечетные}$$
+$$G_{2k}^y, x_{2k} \text{ - четные}$$
+$$({\lambda^0_{2k-1}, \Lambda^0_{2k-1}, x^0_{2k-1}, y^0_{2k-1}}) = (0,0,0,0)$$
+
+По \textit{Утверждению 5} 
+\begin{equation}
+G_{2k+1}^\rho = \frac12 \sum_{m=1}^{2k} \mathfrak{D}_m \mathfrak{D}_{2k+1-m} g^\rho + \sum_{m=1}^{2k} \mathfrak{D}_m \hat G_{2k+1-m}^\rho
+\label{G_nechet}
+\end{equation}
+
+В силу индукционного предположения для всех нечетных $j \leq 2k-1$ операторы $\mathfrak{D}_{j}$ это операторы умножения на $0$.
+
+Первая сумма в (\ref{G_nechet}) состоит из произведений $\mathfrak{D}_m \mathfrak{D}_{2k+1-m} g^\rho$, сумма индексов которых должна быть нечетна и равна $2k+1$, соответственно либо $\mathfrak{D}_m$ либо $\mathfrak{D}_{2k+1-m}$ имеет нечетный индекс.  
+Тогда $\mathfrak{D}_m \mathfrak{D}_{2k+1-m} g^\rho = 0 \quad \forall m \leq 2k$.
+
+Аналогично во второй сумме в (\ref{G_nechet}) нечетный индекс имеет либо $\mathfrak{D}_m$, либо $\hat G^\rho_{2k+1-m}$. Но т.к. для нечетных $j \le 2k-1$ функции $\hat G^\rho_{j} \equiv 0$ то все слагаемые во второй сумме также обращаются в 0. 
+
+Также в силу индукционного предположения и (\ref{G_nechet}) неоднородность в нечетных уравнениях также будет нулевой:
+\begin{equation*}
+\begin{aligned}
+\tilde G_{2k+1}^x  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_{2k-1})''(\tau)}_0 \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right) =0
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\tilde G_{2k+1}^y  = \frac{1}{\alpha \beta} \underbrace{(\lambda^0_{2k-1})''(\tau)}_0 \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right) = 0
+\end{aligned}
+\end{equation*}
+
+Тогда можно выбрать:
+$$({\lambda^0_{2k+1}, \Lambda^0_{2k+1}, x^0_{2k+1}, y^0_{2k+1}}) = (0,0,0,0)$$
+
+Заметим, что оператор $\mathfrak{D}_{2k}$ сохраняет четность:
+
+\begin{equation*}
+\begin{aligned}
+\mathfrak{D}_{2k}g^\rho = \underbrace{x^0_{2k}}_{\text{чет.}} g^\rho_x|_{\lambda_0,\Lambda_0,x_0,y_0} + \underbrace{y^0_{2k}}_{\text{нечет.}} g^\rho_y|_{\lambda_0,\Lambda_0,x_0,y_0} + \underbrace{\lambda^0_{2k}}_{\text{нечет.}} g^\rho_\lambda|_{\lambda_0,\Lambda_0,x_0,y_0} + \underbrace{\Lambda^0_{2k}}_{(\lambda^0_{2k-1})' = 0} g^\rho_\Lambda|_{\lambda_0,\Lambda_0,x_0,y_0}
+\end{aligned}
+\end{equation*}
+
+$\frac{\partial}{\partial x}|_{\lambda_0,\Lambda_0,x_0,y_0}$ не меняет четность, $\frac{\partial}{\partial y}|_{\lambda_0,\Lambda_0,x_0,y_0}, \frac{\partial}{\partial \lambda}|_{\lambda_0,\Lambda_0,x_0,y_0}$ меняют четность.
+
+
+Тогда как следствие \textit{Утверждения 5} $G_{2k}^\rho$ наследует четность $G_{2k-2}^\rho$.
+$\blacksquare$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+В итоге построенное \textit{каноническое} решение имеет вид:
+
+\begin{equation*}
+\begin{cases}
+\lambda^0(\tau) = (\lambda_0(\tau) - \pi) + \sum_{k=1}^{+\infty} \varepsilon^{2k} \lambda^0_{2k}(\tau)\\
+\Lambda^0(\tau) = \frac{1}{\alpha} \sum_{k=1}^{+\infty} \varepsilon^{2k} (\lambda^0_{2k-1})'(\tau)\\
+x^0(\tau) = x_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} x^0_{2k}(\tau)\\
+y^0(\tau) = y_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} y^0_{2k}(\tau)
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+\begin{cases}
+        x^0_{2k}(\tau) = 
+        x_1(\tau)\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde x_1(\tau) \tilde G_{2k}^y(\tau) \right) d \tau + 
+        \tilde {x_1}(\tau) \int_{-\infty}^\tau \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau \\
+        
+        y^0_{2k}(\tau) = 
+        y_1(\tau)\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde x_1(\tau) \tilde G_{2k}^y(\tau) \right) d \tau + 
+        \tilde {y_1}(\tau) \int_{-\infty}^\tau \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau
+\end{cases}
+\end{equation*}
+
+$$\tilde G_{2k}^x  = \frac{1}{\alpha \beta} (\lambda^0_{2k-2})''(\tau) \left( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \right)$$
+
+$$\tilde G_{2k}^y  = \frac{1}{\alpha \beta} (\lambda^0_{2k-2})''(\tau) \left( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \right)$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thm}
+
+Существуют решения системы (\ref{fulltn}):
+\begin{itemize}
+\item $(\Lambda^s(\tau),\lambda^s(\tau),x^s(\tau),y^s(\tau)) \in W^s(0),$
+\item $(\Lambda^u(\tau),\lambda^u(\tau),x^u(\tau),y^u(\tau)) \in W^u(0),$
+\end{itemize}
+
+асимптотика которых совпадает в любом порядке по $\varepsilon$ и равна $(\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau))$.
+
+То есть $\exists \quad c>0:$
+$$(\Lambda^s(\tau),\lambda^s(\tau),x^s(\tau),y^s(\tau)) = (\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau)) + \mathcal{O}(e^{-\frac{c}{\varepsilon}})$$
+$$(\Lambda^u(\tau),\lambda^u(\tau),x^u(\tau),y^u(\tau)) = (\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau)) + \mathcal{O}(e^{-\frac{c}{\varepsilon}})$$
+
+\end{thm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Доказательство:}\nopagebreak[4]
+
+Функции 
+$$\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde x_1(\tau) \tilde G_{2k}^y(\tau) \right) d \tau$$
+равномерно ограничены $\forall k \in \mathbb{N}$ т.к. подынтегральное выражение принадлежит классу $\mathcal{F}_{s_0}$.
+
+В силу нечетности подынтегрального выражения (по \textit{Утверждению 7}) следущие интегралы равны 0:
+$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau, \quad k \in \mathbb{N}$$
+
+Тогда, учитывая что подынтегральное выражение принадлежит классу $\mathcal{F}_{3s_0}$, функции
+$$\int_{-\infty}^{\tau} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau$$
+будут принадлежать классу $\mathcal{F}_{2s_0}$. Причем их убывание будет подавлять рост $\v{ \tilde{u_1}}$.
+
+Таким образом $(\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau))$ стремится к нулю при $\tau \to \pm \infty$.
+
+$\blacksquare$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{consequence}
+Расщепление сепаратрис положения равновесия седло-центр в системе (\ref{fulltn}) не более чем экспоненциально мало. 
+\end{consequence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

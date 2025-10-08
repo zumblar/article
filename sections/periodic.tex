@@ -1,0 +1,65 @@
+Рассмотрим систему (\ref{fulltn}) с положением равновесия в начале координат. Линеаризация в окрестности нуля задаётся матрицей:
+\[
+A = 
+\begin{pmatrix}
+0 & -U_0 & 0 & (2C \hat x_0 + e_J D) \\
+\alpha & 0 & 0 & 0 \\
+0 & \varepsilon (2C \hat x_0 + e_J D) & 0 & -\varepsilon (2F+2C) \\
+0 & 0 & \varepsilon (2F-2C) & 0 
+\end{pmatrix}.
+\]
+
+Матрица $A$ имеет собственные значения $\pm i\omega$, $\pm\xi$ и приводится к диагональному виду преобразованием $(z,\eta,a,b)^T = R^{-1}(\Lambda,\lambda,x,y)^T$, где $R$ -- матрица собственных векторов. В новых координатах система принимает вид:
+\begin{align}
+\frac{d}{dt}(z,\eta,a,b)^T = \text{diag}(i\omega, -i\omega, \xi, -\xi)(z,\eta,a,b)^T + \v{\mathcal{G}}(z,\eta,a,b),
+\label{new_eq}
+\end{align}
+где $\v{\mathcal{G}}$ содержит нелинейные члены.
+
+Будем искать решение в виде рядов по степеням функций $\phi(t), \psi(t)$, следуя методу,
+изложенному в \cite{siegel}. Положим:
+$$\varphi(t) = \varphi_0 e^{i \theta (\varphi_0, \psi_0) t}, \qquad \psi(t) = \varphi_0 e^{-i \theta (\varphi_0, \psi_0) t}.$$
+Причем частота $\theta (\varphi_0, \psi_0)$ сама является функцией амплитуд $\varphi_0, \psi_0$:
+$$\theta(\varphi_0, \psi_0) = \omega + \sum_{k=1}^{+\infty}{\theta_k \cdot (\varphi_0 \psi_0)^k}.$$
+
+Анзац для искомого решения имеет вид:
+\begin{equation}
+\left\{
+    \begin{aligned}
+        z(\varphi,\psi) &= \varphi + \textstyle\sum_{k,j=1}^{\infty} \{z\}_{k,j} \varphi^k \psi^j,
+        &\quad
+        \eta(\varphi,\psi) &= \psi + \textstyle\sum_{k,j=1}^{\infty} \{\eta\}_{k,j} \varphi^k \psi^j, \\[0.5ex]
+        a(\varphi,\psi) &= \textstyle\sum_{k,j=1}^{\infty} \{a\}_{k,j} \varphi^k \psi^j,
+        &\quad
+        b(\varphi,\psi) &= \textstyle\sum_{k,j=1}^{\infty} \{b\}_{k,j} \varphi^k \psi^j.
+    \end{aligned}
+\right.
+\label{predst3}
+\end{equation}
+Дополнительно потребуем, чтобы ряд $z$ не содержал степеней $(\varphi \psi)^k \varphi$, а ряд $\eta$ не содержал степеней $(\varphi \psi)^k \psi$. Данное требование необходимо для однознчной разрешимости уравнений на коэффициенты при соответветствующих степенях $\varphi,\psi$ \cite{siegel}. 
+
+Подставив анзац в уравнения (\ref{new_eq}) получается система уравнений на коэффициенты:
+\begin{equation}
+\begin{cases}
+\left((p-q)i\omega - i\omega \right)\{z\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{z\}_{p-r,q-r}} = \{\v{\mathcal{G}}_z(z,\eta,a,b)\}_{p,q}, \\
+\left((p-q)i\omega + i\omega \right)\{\eta\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{\eta\}_{p-r,q-r}} = \{\v{\mathcal{G}}_\eta(z,\eta,a,b)\}_{p,q}, \\
+\left((p-q)i\omega - \xi \right)\{a\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{a\}_{p-r,q-r}} = \{\v{\mathcal{G}}_a(z,\eta,a,b)\}_{p,q}, \\
+\left((p-q)i\omega + \xi \right)\{b\}_{p,q} + \sum_{r=1}^{+\infty}{(p-q)i\theta_r \{b\}_{p-r,q-r}} = \{\v{\mathcal{G}}_b(z,\eta,a,b)\}_{p,q}. \\
+\end{cases}
+\label{pq_eq}
+\end{equation}
+
+Под $\{\v{\mathcal{G}}_\rho(z,\eta,a,b)\}_{p,q}, \rho \in \{z,\eta,a,b\}$ здесь подразумевается коэффициент в разложении при $\varphi^p \psi^q$ соответствующей компоненты вектора $\v{\mathcal{G}}$.
+
+В оставшихся случаях когда $p=q+1, p+q>1$ для $z$ получаем, что $\{z\}_{p,q}=0$. Аналогично при $q=p+1$ для $\eta$ получаем, что $\{\eta\}_{p,q}=0$ (здесь используется требование об отсутствии слагаемых вида $(\varphi \psi)^k \varphi$ в $z$ и слагаемых вида $(\varphi \psi)^k \psi$ в $\eta$). В то же время $\{z\}_{1,0} = \{\eta\}_{0,1} = 1$. Следовательно,
+\begin{equation*}
+\begin{cases}
+\theta_p = \{ \v{\mathcal{G}}_z\}_{p,q} \quad p=q+1>1, \\
+\theta_q = - \{ \v{\mathcal{G}}_\eta \}_{p,q} \quad q=p+1>1.
+\end{cases}
+\end{equation*}
+
+Потребовав вещественность решения в старых переменных $(\Lambda,\lambda,x,y)$, получаем, что амплитуды экспонент должны быть вещественные и равные:
+$$\varphi_0 = \psi_0 \equiv h.$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

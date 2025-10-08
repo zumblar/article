@@ -1,0 +1,37 @@
+Трансверсальные гомоклинические и гетероклинические траектории играют ключевую роль в теории гладких динамических систем, поскольку их наличие приводит к сложной хаотической динамике и неинтегрируемости системы. В настоящей работе для анализа пересечений устойчивого и неустойчивого многообразий применяется метод Мельникова, изложенный в работах Виггинса и соавторов \cite{wiggins}.
+
+Рассмотрим систему уравнений вида:
+\begin{equation}
+    \begin{cases}
+        \frac{dX}{dt} = J D_X H_1(X,I) + \varepsilon g^X(X,I), \\
+        \frac{dI}{dt} = \varepsilon g^I(X,I),
+    \end{cases}
+    \label{wiggs}
+\end{equation}
+где $X \in \mathbb{R}^2$, $I \in \mathbb{R}^m$, $D_X, D_I$ - градиенты по соответствующим переменным, $J$ - симплектическая единица.
+
+Согласно методу Мельникова \cite{wiggins}, пусть $V \subset M_0$ - инвариантное гиперболическое подмножество медленного многообразия $M_0$ системы (\ref{wiggs}), а $V_\varepsilon$ - локально инвариантное множество в $\varepsilon$-окрестности $V$, существование которого гарантируется теоремой Феничеля. Рассмотрим $\Gamma = W^s(V) \cap W^u(V) \setminus V$.
+
+Расстояние между $W^s(V_\varepsilon)$ и $W^u(V_\varepsilon)$ вблизи точки $p \in \Gamma$ определяется выражением:
+\begin{equation}
+d^I(p, t_0, \varepsilon) = \varepsilon\frac{M^I(p,t_0)}{||D_X H(X_0^I, I)||} + O(\varepsilon^2),
+\end{equation}
+где $M^I$ - функция Мельникова, имеющая вид:
+%\begin{align*}
+%M^I(p,t_0) &= \int_{-\infty}^{\infty} \Big( \langle D_X H_1, g^X \rangle + \langle D_X H_1, (D_I J D_X)\int_{t_0}^t g^I dt \rangle \Big) \big(X_0^I(t-t_0,I),I \big)dt \\
+%&= \int_{- \infty}^{\infty} \Big( \langle D_X H_1, g^X \rangle + \langle D_I H_1, g^I \rangle \Big)\big(X_0^I(t-t_0,I), I \big)dt \\
+%&\quad - \langle D_I H_1 \big(v(I), I \big), \int_{- \infty}^{\infty} g^I \big(X_0^I(t-t_0,I), I \big)dt \rangle.
+%\end{align*}
+\begin{align*}
+M^I(p,t_0) = \int_{- \infty}^{\infty} \Big( \langle D_X H_1, g^X \rangle + \langle D_I H_1, g^I \rangle \Big)\big(X_0^I(t-t_0,I), I \big)dt - \\
+\quad - \langle D_I H_1 \big(v(I), I \big), \int_{- \infty}^{\infty} g^I \big(X_0^I(t-t_0,I), I \big)dt \rangle.
+\end{align*}
+Здесь $X = v(I)$ - параметризация $V$, $\langle \cdot, \cdot \rangle$ - стандартное скалярное произведение в $\mathbb{R}^2$.
+
+Для обеспечения трансверсального пересечения многообразий $W^s(V_\varepsilon)$ и $W^u(V_\varepsilon)$ при малых $\varepsilon > 0$ необходимо выполнение условий:
+\begin{equation}
+M^I = 0, \quad \nabla M^I \neq 0.
+\end{equation}
+В случаях, когда градиент функции Мельникова также обращается в ноль, требуется анализ членов при старших степенях $\varepsilon$ в разложении $d^I$ для определения характера пересечения.
+
+Изложенный аппарат метода Мельникова будет использован для анализа трансверсальных пересечений в рассматриваемой резонансной системе.
