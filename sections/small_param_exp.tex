@@ -1,24 +1,20 @@
-В данном разделе построим формальные решения системы (\ref{fulltn}), параметризующие устойчивое и неустойчивое многообразия $W^{s,u}(0)$ неподвижной точки. Для этого рассмотрим в дополнение к уравнениям (\ref{fulltn}) следующие начальные условия:
+Построим формальные решения системы (\ref{fulltn}), параметризующие устойчивое и неустойчивое многообразия $W^{s,u}(0)$ неподвижной точки. Для этого рассмотрим в дополнение к уравнениям (\ref{fulltn}) следующие начальные условия:
     
 \begin{itemize}
 \item Решения принадлежащие $W^s(0)$:
 \begin{equation*}
-    \begin{cases}
         \Lambda^{s}(+ \infty) = 0, \quad
         \lambda^{s}(+ \infty) = 0, \quad
         x^{s}(+ \infty) = 0, \quad
         y^{s}(+ \infty) = 0,
-    \end{cases}
     \label{border}
 \end{equation*}
 \item Решения принадлежащие $W^u(0)$:
 \begin{equation*}
-    \begin{cases}
         \Lambda^{u}(- \infty) = 0, \quad
         \lambda^{u}(- \infty) = 0, \quad
         x^{u}(- \infty) = 0, \quad
         y^{u}(- \infty) = 0.
-    \end{cases}
 \end{equation*}
 \end{itemize}
 
@@ -240,4 +236,7 @@ $$\v{ {u_1}}(\tau) \in \mathcal{F}_{s_0}, \qquad \qquad \v{ \tilde{u_1}}(\tau) \
 В частности $G_2^x(\tau), \tilde G_2^x(\tau), G_2^\Lambda$ - нечетные, $G_2^y(\tau), \tilde G_2^y(\tau)$ - четные.
 
 Как следствие, в силу нечетности подынтегральной функции, следующий интеграл обращается в ноль:
-$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau = 0.$$
+\begin{equation}
+\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau = 0.
+\label{zeroint}
+\end{equation}
