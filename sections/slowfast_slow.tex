@@ -47,9 +47,9 @@ x_0^{\pm} = -\frac{e_J (G \mp D)}{2(F \mp C)}.
 $$
 
 Линеаризуя правую часть уравнений в окрестности этой точки, получаем,
-что собственные значения матрицы линеаризации равны $+\xi_0, -\xi_0$
+что собственные значения матрицы линеаризации равны $+\xi_0^\pm, -\xi_0^\pm$ (верхний индекс соответствует выбору листа $M_0$),
 \begin{equation}
-    \xi_0 = \sqrt{4(C^2-F^2) + \frac{(2C \hat x_0^\pm + e_J D)^2}{2 U(\hat x_0^\pm,0)}(\pm F - C)},
+    \xi_0^\pm = \sqrt{4(C^2-F^2) + 2\frac{(2C \hat x_0^\pm + e_J D)^2}{ U(\hat x_0^\pm,0)}(\pm F - C)} \in \mathbb{R},
 \label{slowsyseigen}
 \end{equation}
 причем, в силу \textit{Предположения 1}, они являются вещественными для обоих листов.
@@ -86,16 +86,16 @@ $$A = 2U(\hat x_0^\pm) (\pm F - C), \qquad B = (2C \hat x_0^\pm + e_J D) (\pm F 
 Тогда переходя к координатам $(X,Y)$:
 $$x = \hat x_0^\pm + \frac{X-B/A}{(X-B/A)^2+Y^2}, \qquad y = \frac{Y}{(X-B/A)^2+Y^2}$$
 линия уровня сепаратрисы принимает вид:
-$$AX^2 - JY^2 = \xi_0^2/4.$$
+$$AX^2 - JY^2 = (\xi_0^\pm)^2/4.$$
 
 Как следствие \textit{Предположения 1}, эта кривая является гиперболой и допускает параметризацию с помощью параметра $f \in \mathbb{R}$ вида:
 $$X = \frac{\cosh f}{s_1}, \qquad
 Y = \frac{\sinh f}{s_2}, \qquad
-s_1 \equiv \sqrt{4A/\xi_0^2} \in \mathbb{R}, \qquad
-s_2 \equiv \sqrt{4J/\xi_0^2} \in \mathbb{R}.$$
+s_1 \equiv \sqrt{4A/(\xi_0^\pm)^2} \in \mathbb{R}, \qquad
+s_2 \equiv \sqrt{4J/(\xi_0\pm)^2} \in \mathbb{R}.$$
 
 Для нахождения сепаратрисного решения определим зависимость $f$ от времени $\tau$. Используя цепное правило и преобразования $(x,y)\mapsto (X,Y)$, получаем
-$$f' = \frac{\pm |U(\hat x_0^\pm)| \xi_0}{\beta(x(f),y(f))} = {\pm |U(\hat x_0^\pm)| \xi_0} \frac{ P(\cosh f)}{S(\cosh f)}$$
+$$f' = \frac{\pm |U(\hat x_0^\pm)| \xi_0^\pm}{\beta(x(f),y(f))} = {\pm |U(\hat x_0^\pm)| \xi_0^\pm} \frac{ P(\cosh f)}{S(\cosh f)}$$
 
 где
 $$S(s) = - U_0 P(s) \mp F - (2C \hat x_0^\pm + e_J D) \left(\frac{s}{s_1}-\frac BA \right),$$
@@ -104,17 +104,17 @@ $$P =\frac{s_2^2+s_1^2}{s_2^2} \left( \left( \frac{s}{s_1} \right)^2 - s \frac{2
 Интегрируя, получаем зависимость времени от параметра $f$:
 \begin{equation}
 \label{f_tau}
-\tau - \tau_0 = \frac{\pm 1}{|U(\hat x_0^\pm)| \xi_0} \int_{f_0}^f \frac{S(\cosh f)}{P(\cosh f)} df = 
+\tau - \tau_0 = \frac{\pm 1}{|U(\hat x_0^\pm)| \xi_0^\pm} \int_{f_0}^f \frac{S(\cosh f)}{P(\cosh f)} df = 
 \end{equation}
 $$
-\frac{\pm 1}{\xi_0}(f-f_0) \pm \frac{s_1 s_2^2 (2C \hat x_0^\pm + e_J D)}{|U(\hat x_0^\pm,0)| \xi_0 (s_1^2+s_2^2)(X_2-X_1)} \Bigg( \left( X_1 - \left(\frac BA \mp \frac{F}{2C \hat x_0^\pm + e_J D} \right) \right) I(f, X_1 s_1) -
+\frac{\pm 1}{\xi_0^\pm}(f-f_0) \pm \frac{s_1 s_2^2 (2C \hat x_0^\pm + e_J D)}{|U(\hat x_0^\pm,0)| \xi_0^\pm (s_1^2+s_2^2)(X_2-X_1)} \Bigg( \left( X_1 - \left(\frac BA \mp \frac{F}{2C \hat x_0^\pm + e_J D} \right) \right) I(f, X_1 s_1) -
 $$
 $$
  - \left( X_2 - \left( \frac BA \mp \frac{F}{2C \hat x_0^\pm + e_J D} \right) \right) I(f, X_2 s_1) \Bigg),
 $$
 $$I(f,a) \equiv \int_{f_0}^f \frac{dx}{\cosh x - a} = \frac{2}{\sqrt{1-a^2}} \arctan \sqrt{\frac{1+a}{1-a}} \tanh \frac{x}{2}\Big|_{f_0}^f.$$
 где $X_1, X_2$ корни полинома $P$:
-$$X_{1,2} = \frac{B s_2^2}{A(s_1^2+s_2^2)} \pm \frac{2 s_2^2 (\pm F - C)}{(s_1^2+s_2^2) \xi_0} \sqrt{\frac{-C}{U_0}}$$
+$$X_{1,2} = \frac{B s_2^2}{A(s_1^2+s_2^2)} \pm \frac{2 s_2^2 (\pm F - C)}{(s_1^2+s_2^2) \xi_0^\pm} \sqrt{\frac{-C}{U_0}}$$
 
 Таким образом, на каждом листе $M_{0,+}$ и $M_{0,-}$ медленная система (\ref{slow_sys}) имеет гиперболическое (неустойчивое) положение равновесия $(x_0^\pm,0)$, которое порождает двумерную сепаратрису:
 \[
