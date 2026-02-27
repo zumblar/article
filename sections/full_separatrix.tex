@@ -20,7 +20,7 @@
         \v{ \tilde{u_1}}(\tau) \bigint_{\text{ } \tau}^{+\infty} \left( x_1(\tau) \tilde G_2^y(\tau) - y_1(\tau) \tilde G_2^x(\tau) \right) d \tau, \\
     \end{cases}
 \end{equation*}
-получаем, что в силу равенства нулю интеграла (\ref{u2int})
+получаем, что в силу равенства нулю интеграла (\ref{zeroint})
 $$\v u_2^s(\tau) = \v u_2^u(\tau) \equiv \v u_2^0(\tau).$$
 
 В силу такого выбора вид неодноростей $\tilde G_k^\rho, \rho \in \{\Lambda,\lambda,x,y\}$ заметно упрощается. В частности вырождается неоднородность в 3 порядке. Тогда решение такого уравнения можно снова выбрать тривиальным:
@@ -28,26 +28,25 @@ $$\v u_2^s(\tau) = \v u_2^u(\tau) \equiv \v u_2^0(\tau).$$
     \v u^0_3(\tau) \equiv \begin{pmatrix} x^0_3(\tau) \\ y^0_3(\tau) \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \qquad
 (\lambda^0_3(\tau), \Lambda^0_3(\tau)) = (0,0).
 \end{align*}
-Продолжая данное построение по индукции получаем следующее
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{utv} Для любого целого $k\ge 0$ имеем
+Продолжая данное построение по индукции получаем, что для любого целого $k\ge 0$ выполнено:
 
 $$G_{2k+1}^\rho = 0, \rho \in \{\Lambda,\lambda,x,y\}, \qquad G_{2k+2}^x, y_{2k+2} \text{ -- нечетные}, \qquad G_{2k+2}^y, x_{2k+2} \text{ -- четные}.$$
-Нечетные приближения выбираются тривиальными:
+Нечетные приближения в рассматриваемом решении выбираются тривиальными:
 $$({\lambda^0_{2k+1}, \Lambda^0_{2k+1}, x^0_{2k+1}, y^0_{2k+1}}) = (0,0,0,0).$$
 
-\end{utv}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 В итоге построенное \textit{каноническое} решение имеет вид:
-
 \begin{equation*}
-\begin{cases}
-\lambda^0(\tau) = (\lambda_0(\tau) - \pi) + \sum_{k=1}^{+\infty} \varepsilon^{2k} \lambda^0_{2k}(\tau),\\
-\Lambda^0(\tau) = \frac{1}{\alpha} \sum_{k=1}^{+\infty} \varepsilon^{2k} (\lambda^0_{2k-1})'(\tau),\\
-x^0(\tau) = x_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} x^0_{2k}(\tau),\\
-y^0(\tau) = y_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} y^0_{2k}(\tau),
-\end{cases}
+    \left\{
+    \begin{aligned}
+        \lambda^0(\tau) &= (\lambda_0(\tau) - \pi) + \sum_{k=1}^{+\infty} \varepsilon^{2k} \lambda^0_{2k}(\tau),
+        &\quad
+        \Lambda^0(\tau) &= \frac{1}{\alpha} \sum_{k=1}^{+\infty} \varepsilon^{2k} (\lambda^0_{2k-1})'(\tau), \\[-1.5ex]
+        x^0(\tau) &= x_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} x^0_{2k}(\tau),
+        &\quad
+        y^0(\tau) &= y_0(\tau) + \sum_{k=1}^{+\infty} \varepsilon^{2k} y^0_{2k}(\tau),
+    \end{aligned}
+    \right.
 \end{equation*}
 
 \begin{equation*}
@@ -89,11 +88,11 @@ $$\int_{\text{ } 0}^\tau \left( \tilde y_1(\tau) \tilde G_{2k}^x(\tau) - \tilde 
 равномерно ограничены $\forall k \in \mathbb{N}$, т.к. подынтегральное выражение принадлежит классу $\mathcal{F}_{s_0}$.
 
 В силу нечетности подынтегрального выражения (по \textit{Утверждению 2}) следущие интегралы равны 0:
-$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau, \quad k \in \mathbb{N}$$
+$$\int_{-\infty}^{+\infty} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau =0, \qquad k \in \mathbb{N}$$
 
 Тогда, учитывая что подынтегральное выражение принадлежит классу $\mathcal{F}_{3s_0}$, функции
 $$\int_{-\infty}^{\tau} \left( x_1(\tau) \tilde G_{2k}^y(\tau) - y_1(\tau) \tilde G_{2k}^x(\tau) \right) d \tau$$
-будут принадлежать классу $\mathcal{F}_{2s_0}$. Причем их убывание будет подавлять рост $\v{ \tilde{u_1}}$.
+будут принадлежать классу $\mathcal{F}_{2\xi_0^+}$. Причем их убывание будет подавлять рост $\v{ \tilde{u_1}}$.
 
 Таким образом, $(\Lambda^0(\tau),\lambda^0(\tau),x^0(\tau),y^0(\tau))$ стремится к нулю при $\tau \to \pm \infty$.
 

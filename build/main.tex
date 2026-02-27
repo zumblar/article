@@ -6,11 +6,11 @@
 
     % Титульная информация (можно вынести в отдельный файл, если она громоздкая)
     \title{Хаотическая динамика и трансверсальные гомоклинические структуры в окрестности резонанса 3:1 в плоской эллиптической ограниченной задаче трех тел}
-    %\author{И.~О.~Фамилия}
+    \author{И.~О.~Фамилия}
     \date{\today}
     \maketitle
 
-
+    
     \tableofcontents
 
     % Аннотация и ключевые слова
@@ -55,8 +55,8 @@
         \subsection{Применение теории Мельникова к плоской эллиптической ограниченной задаче трех тел}
         \input{../sections/melnikov_application}
 
-        \subsection{Результаты для неустойчивого листа}
-        \input{../sections/unstable_result}
+        %\subsection{Результаты для неустойчивого листа}
+        %\input{../sections/unstable_result}
     
 
     \section{Динамика в окрестности устойчивого листа}
@@ -79,18 +79,20 @@
             \input{../sections/conv_radius}
 
         \subsection{Устойчивое и нестойчивое многообразия периодических траекторий}
-        \input{../sections/periodic_W.tex}
-            \subsubsection{Гетероклническое пересечение $W^s$ и $W^u$}
+        \input{../sections/periodic_W}
+            \subsubsection{Гетероклническое пересечение устойчивого и неустойчивого многообразий}
             \input{../sections/heteroclinic}
 
 
-    \section{Заключение}
-
+            
+            \section{Заключение}
     \section{Приложение}
     \input{../sections/appendix}
 
+    %\input{../sections/appendix2}
+
     % Библиография
-    \bibliographystyle{plain} % или unsrt, alpha, etc.
-    \bibliography{bibliography} % Указываем имя файла без .bib
+    %\bibliographystyle{plain} % или unsrt, alpha, etc.
+    \bibliography{mybib} % Указываем имя файла без .bib
 
 \end{document}

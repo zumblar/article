@@ -1,0 +1,181 @@
+$$H = F(x^2+y^2) + e_J G x \pm \beta$$
+
+$$x \equiv h + x_0$$
+
+$$H = F(h^2+y^2) + (2Fx_0+e_JG)h \pm \beta + (Fx_0^2 + e_JGx_0)$$
+$$H_0 = H(x_0,0) = Fx_0^2 + e_JGx_0 \pm |U_0|$$
+Определение $x_0$:
+$$2Fx_0+e_JG = \pm(2Cx_0+e_JD)$$
+
+Тогда на линии уровня сепаратрисы
+$$F(h^2+y^2) \pm(2Cx_0 + e_JD)h \mp |U_0| = \mp \beta $$
+Обозначим
+$$V_y = V_y(x_0,0) = 2Cx_0 + e_J D$$
+Возводим в квадрат
+$$(F^2-C^2)(h^2+y^2)^2+ 2h (h^2+y^2) V_y (\pm F - C) + 2 h^2 U_0 (\pm F - C) + y^2 (2U_0(\pm F + C) - V_y^2) = 0$$
+Вводим обозначения
+$$A = 2U_0 (\pm F - C)$$
+$$B = V_y (\pm F - C)$$
+$$J = V_y^2 - 2U_0 (\pm F + C)$$
+
+$$(F^2-C^2)(h^2+y^2)^2+ 2Bh (h^2+y^2) + A h^2 - y^2 J = 0$$
+
+Вводим инверсию
+$$h = \frac{X-B/A}{(X-B/A)^2+Y^2}$$
+$$y = \frac{Y}{(X-B/A)^2+Y^2}$$
+$$P \equiv (X-B/A)^2 + Y^2$$
+$$h^2+y^2 = 1/P$$
+
+Подставляем
+$$(F^2-C^2)/P^2 + 2B(X-B/A)/P^2 + A(X-B/A)^2/P^2 - JY^2/P^2 = 0$$
+$$F^2-C^2 - B^2/A + AX^2 - J^2 = 0$$
+
+Заметим ($\xi_0$ -- собственное число медленной системы)
+$$F^2-C^2 - B^2/A = -\xi_0^2/4$$
+
+$$U_0 = \frac{1}{4C}(V_y^2 - e_J^2 (D^2-4CE))$$
+
+
+$$AX^2 - JY^2 = C^2-F^2 + B^2/A = xi_0^2/4$$
+
+Тогда 
+$$s_1^2 X^2 - s_2^2 Y^2 = 1$$
+$$s_1 \equiv \sqrt{4A/\xi_0^2}$$
+$$s_2 \equiv \sqrt{4J/\xi_0^2}$$
+
+$$C > |F|, \quad (\pm F - C) < 0, \quad U_0<0, \quad A>0, \quad J>0$$
+
+Параметризация гиперболы
+$$X = \cosh f / s_1$$
+$$Y = \sinh f /s_2$$
+
+Ищем диффур на $f$
+$$df/dt = \frac{dx/dt}{dx/df}$$
+
+$$dx/df = \frac{d((X-B/A)/P)}{df} = \frac{1}{P^2}(-X' (X-B/A)^2 + Y^2 X' - 2YY' (X-B/A))$$
+
+$$X' = \sinh f/s_1 = s_2/s_1 Y$$
+$$Y' = \cosh f/s_2 = s_1/s_2 X$$
+
+$$dx/df = \frac{Y}{P^2} (-s_2/s_1 X^2 + 2s_2/s_1 X \frac{B}{A} - s_2/s_1 B^2/A^2 + s_2/s_1 Y^2 - 2s_1/s_2X^2 + 2s_1/s_2 \frac{B}{A}X)$$
+
+Используем уравнение гиперболы
+
+$$dx/df = \frac{Y}{P^2} (-X^2 (s_2/s_1 + 2s_1/s_2) + 2 X \frac{B}{A} (s_2/s_1 + s_1/s_2) - s_2/s_1 B^2/A^2 + (s_2/s_1)(1/s_2^2) s_1^2 X^2 - (s_2/s_1)(1/s_2^2)) =$$
+$$= \frac{Y}{P^2}(X^2(-s_1/s_2-s_2/s_1) + 2\frac{B}{A}X (s_2/s_1 + s_1/s_2) - (\frac{B^2}{A^2}\frac{s_2}{s_1}+ \frac{1}{s_1 s_2}))$$
+
+$$(\frac{B^2}{A^2}\frac{s_2}{s_1}+ \frac{1}{s_1 s_2}) = \frac{s_1^2+s_2^2}{s_1 s_2} (\frac{B^2 s_2^2}{A^2(s_1^2+s_2^2)} + \frac{1}{s_1^2+s_2^2}) = (s_2/s_1 + s_1/s_2) \frac{s_2^2}{s_1^2+s_2^2} (B^2/A^2 + 1/s_2^2)$$
+
+$$dx/df = \frac{Y}{P^2}(s_2/s_1 + s_1/s_2) \left(-X^2 + 2 \frac{B}{A}X - \frac{s_2^2}{s_1^2+s_2^2}(B^2/A^2+1/s_2^2) \right)$$
+
+
+$$dx/dt = -2Fy \mp \beta_y = -2Fy \mp \frac{UU_y+VV_y}{\beta}$$
+
+$$UU_y+VV_y = 2C^2 (h^2+y^2)y + 2Chy V_y(x_0,0) + y (V_y(x_0,0)-2CU_0) = $$
+$$\frac{1}{P^2} \left( 2C^2Y + 2C(X-B/A)Y V_y(x_0,0) + P Y (V_y^2-2CU_0) \right)$$
+
+$$-2Fy = \frac{-2FY}{P} = \frac{-2FY (P \beta)}{P^2 \beta} = \frac{1}{P^2 \beta} \left( 2FU_0PY \pm 2F^2 Y + 2FY (X-B/A) V_y \right)$$
+$$=\frac{Y}{P^2 \beta} \left( 2FU_0P \pm 2F^2  + 2F (X-B/A) V_y \right)$$
+
+$$dx/dt = \frac{Y}{P^2 \beta} \left( 2FU_0 P \pm 2F^2 + 2F(X_B/A)V_y \mp 2C^2 \mp 2C(X-B/A)V_y \mp P(V_y-2CU_0) \right) = $$
+$$=\frac{\mp Y}{P^2 \beta} \left( 2(C^2-F^2) - 2(X-B/A)V_y (\pm F - V) + P(V_y^2 - 2U_0 (\pm F + C)) \right) = $$
+$$=\frac{\mp Y}{P^2 \beta} \left( 2(\xi_0^2/4 - B^2/A) - 2B(X-B/A) + PJ \right)= $$
+$$=\frac{\pm J Y}{P^2 \beta} \left( \frac{-2 \xi_0^2}{4J} + \frac{2BX}{J} - P \right) = $$
+$$=\frac{\pm J Y}{P^2 \beta} \left( \frac{-2}{s_2^2} + \frac{2BX}{\xi_0^2} \frac{4}{s_2^2} - P \right)$$
+
+
+$$P = (X-B/A)^2 +Y^2 = X^2(\frac{s_1^2}{s_2^2}+1) -2X \frac{B}{A} + (B^2/A^2 - 1/s_2^2)=$$
+$$=\frac{s_2^2+s_1^2}{s_2^2} \left( X^2 - \frac{2BX}{A} \frac{s_2^2}{s_1^2+s_2^2} + (\frac{B^2}{A^2}-1/s_2^2)\frac{s_2^2}{s_1^2+s_2^2} \right)$$
+
+$$J = \frac{s_2^2 \xi_0^2}{4}$$
+
+$$dx/dt = \frac{\pm J Y}{P^2 \beta} \frac{s_2^2+s_1^2}{s_2^2} \left( \frac{-2}{s_1^2+s_2^2} + \frac{2BX}{A} \frac{s_1^2}{s_2^2} \frac{s_2^2}{s_1^2+s_2^2} -X^2 + \frac{2BX}{A}\frac{s_2^2}{s_1^2+s_2^2} - (\frac{B^2}{A^2} - 1/s_2^2) \frac{s_2^2}{s_1^2+s_2^2} \right)=$$
+$$=\frac{\pm J Y}{P^2 \beta} \frac{s_2^2+s_1^2}{s_2^2} \left( -X^2 + \frac{2BX}{A} - \frac{s_2^2}{s_1^2+s_2^2}(\frac{B^2}{A^2}+1/s_2^2) \right)$$
+
+Полиномы в скобках для $dx/dt$ и $df/dt$ в точности совпадают, тогда
+
+$$df/dt = (dx/dt)/(dx/df) = \left( \frac{\pm J Y}{P^2 \beta} \frac{s_2^2+s_1^2}{s_2^2} \right) / \left( \frac{Y}{P^2}(s_2/s_1 + s_1/s_2) \right) = $$
+$$=(\frac{\pm J}{\beta} \frac{s_2^2+s_1^2}{s_2^2})/(s_2/s_1+s_1/s_2) = $$
+$$=\frac{\pm(\frac{J}{s_2^2}) s_1s_2}{\beta} = \frac{\pm \frac{\xi_0^2}{4} s_1s_2}{\beta}$$
+
+$$s_1 s_2 = \sqrt{\frac{4A}{\xi_0^2}} \sqrt{\frac{4J}{\xi_0^2}} = \frac{4}{\xi_0^2} \sqrt{AJ}$$
+
+$$\sqrt{AJ} = |U_0| \xi_0$$
+
+$$df/dt = \frac{\pm \sqrt{AJ}}{\beta}$$
+
+Из линии уровня следует:
+$$P \beta = - U_0 P \mp F - V_y (X-B/A) \equiv S(\cosh f)$$
+
+$$df/dt = \frac{\pm \sqrt{AJ} P}{S}$$
+
+Решаем диффур
+
+$$P = (X-B/A)^2 +Y^2 = X^2(\frac{s_1^2}{s_2^2}+1) -2X \frac{B}{A} + (B^2/A^2 - 1/s_2^2)=$$
+$$=\frac{s_2^2+s_1^2}{s_2^2} \left( X^2 - \frac{2BX}{A} \frac{s_2^2}{s_1^2+s_2^2} + (\frac{B^2}{A^2}-1/s_2^2)\frac{s_2^2}{s_1^2+s_2^2} \right)$$
+
+Обозначим эксцентриситет гиперболы $e$
+
+$$e^2 = \frac{s_1^2+s_2^2}{s_2^2}$$
+
+$$P = e^2 (X^2 - 2BX/(Ae^2) + 1/e^2 (B^2/A^2-1/s_2^2))$$
+
+
+
+Корни $P$
+
+$$P = (eX)^2 - 2BX/A + (B^2/A^2-1/s_2^2) = (eX-B/(Ae))^2 - B^2/(A^2e^2) + (B^2/A^2-1/s_2^2)=$$
+
+$$=(eX-B/(Ae))^2 + \frac{1}{A^2e^2}(B^2(e^2-1)-e^2A^2/s_2^2) = (eX-B/(Ae))^2 + \frac{1}{A^2e^2}(B^2(s_1^2/s_2^2)-e^2A^2/s_2^2) = $$
+$$= (eX-B/(Ae))^2 + \frac{1}{A^2e^2}(B^2(A/J)-(A+J)A^2/(s_2^2))$$
+
+$$A = s_2^2 (\pm F - C)^2$$
+
+$$A+J = e_J^2 (D^2-4CE)$$
+
+$$AJ = U_0^2 \xi_0^2$$
+
+$$P = (eX-B/(Ae))^2 + \frac{1}{A^2e^2} (A/J) (B^2-(A+J)(\pm F-C)^2)=$$
+$$ = (eX-B/(Ae))^2 + \frac{(\pm F- C)^2}{AJ e^2} ((2C \hat{x_0} + e_J D)^2 - e_J^2 (D^2-4CE) ) = $$
+$$ = (eX-B/(Ae))^2 + \frac{(\pm F- C)^2}{AJ e^2} 4CU_0 = (eX-B/(Ae))^2 + \frac{4(\pm F- C)^2}{e^2 \xi_0^2} (C/U_0)$$
+
+$$X_{1,2} = \frac{B}{Ae^2} \pm \frac{2(\pm F - C)}{e \xi_0} \sqrt{\frac{-C}{U_0}}$$
+
+$$\frac{-C}{U_0} > 0$$
+
+Решение диффура
+
+$$df/dt = \frac{\pm \sqrt{AJ} P}{S}$$
+
+$$dt = \frac{S}{\pm \sqrt{AJ} P} df $$
+
+$$t - t_0 = \frac{\pm1}{\sqrt{AJ}} \int_{f_0}^f \frac{S(\cosh f)}{P(\cosh f)} df$$
+
+$$\frac SP = \frac{-U_0 P \mp F - V_y (X-\frac{B}{A})}{e^2(X-X_1)(X-X_2)}$$
+$$X = \frac{\cosh f}{s_1}$$
+
+$$\frac SP = -U_0 + \frac{\cosh f (-V_y s_1 / e^2) + \frac{s_1^2}{e^2}(V_y B/A \mp F)}{(\cosh f - X_1 s_1)(\cosh f - X_2 s_2)} = -U_0 + \frac{A_1}{\cosh f - X_1 s_1} + \frac{A_2}{\cosh f - X_2 s_1}$$
+
+$$A_1+A_2 = \frac{-V_y s_1}{e^2}$$
+
+$$A X_2 + B X_1 = \frac{-s_1}{e^2} (V_y B/A \mp F)$$
+
+$$A_1 = \frac{s_1}{e^2(X_2-X_1)} (V_y X_1 - (V_y B/A \mp F))$$
+
+$$A_2 = \frac{-s_1}{e^2(X_2-X_1)} (V_y X_2 - (V_y B/A \mp F))$$
+
+$$\frac SP = -U_0 + \frac{s_1}{e^2(X_2-X_1)} \left( \frac{V_y X_1 - (V_y B/A \mp F)}{\cosh f - X_1 s_1} - \frac{V_y X_2 - (V_y B/A \mp F)}{\cosh f - X_2 s_1} \right)$$
+
+Тогда
+
+$$t-t_0 = -U_0 (f-f_0) + \frac{s_1 V_y}{e^2(X_2-X_1)} \Bigg( \big( X_1 - (B/A \mp F/V_y) \big) I(f, X_1 s_1) - \big( X_2 - (B/A \mp F/V_y) \big) I(f, X_2 s_1) \Bigg)$$
+
+$$I(f,a) \equiv \int_{f_0}^f \frac{dx}{\cosh x - a} = \int \frac{2du}{u^2-2au + 1} = \int \frac{2dz}{(u-a)^2 - a^2 + 1} = \int \frac{2dz}{z^2+(1-a^2)} = $$
+
+$$u = e^x, du/u = dx$$
+$$z = u-a$$
+
+$$= \frac{2}{\sqrt{1-a^2}} \arctan \frac{z}{\sqrt{1-a^2}}\Big|_{f_0}^f + c_1 = \frac{2}{\sqrt{1-a^2}} \arctan \frac{e^x-a}{\sqrt{1-a^2}}\Big|_{f_0}^f + c_1 = $$
+$$= \frac{2}{\sqrt{1-a^2}} \arctan \sqrt{\frac{1+a}{1-a}} \tanh \frac{x}{2}\Big|_{f_0}^f + c_2$$
+
+Формально верно и при $|a|>1$ и при $|a|<1$, $i$ выносится из корня и $\arctan$ заменяется на $artanh$
