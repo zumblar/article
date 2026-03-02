@@ -22,7 +22,7 @@
 \contentsline {subsubsection}{\numberline {4.2.2.\relax }Радиус сходимости рядов}{15}{subsubsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.3.\relax }Устойчивое и нестойчивое многообразия периодических траекторий}{17}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1.\relax }Гетероклническое пересечение устойчивого и неустойчивого многообразий}{18}{subsubsection.4.3.1}%
-\contentsline {section}{\numberline {5.\relax }Заключение}{22}{section.5}%
-\contentsline {section}{\numberline {6.\relax }Приложение}{22}{section.6}%
-\contentsline {subsection}{\numberline {6.1.\relax }Доказательство Утверждения 1}{22}{subsection.6.1}%
+\contentsline {section}{\numberline {5.\relax }Заключение}{23}{section.5}%
+\contentsline {section}{\numberline {6.\relax }Приложение}{23}{section.6}%
+\contentsline {subsection}{\numberline {6.1.\relax }Доказательство Утверждения 1}{23}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2.\relax }Об однородности и неоднородности уравнений первого приближения}{24}{subsection.6.2}%
