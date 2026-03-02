@@ -77,47 +77,48 @@ $$g^\rho(\lambda,\Lambda,x,y) = g^\rho(\lambda_0,\Lambda_0,x_0,y_0) + \sum_{k=1}
 %\textbf{Доказательство:}\nopagebreak[4]
 \begin{enumerate}
 
-\item Рассмотрим абстрактную 4 мерную быстро-медленную систему:
-
-\begin{equation*}
-    \begin{cases}
-        \dot \Lambda(t)=g^\Lambda(\Lambda,\lambda,x,y), \\
-        \dot \lambda(t)=g^\lambda(\Lambda,\lambda,x,y), \\
-        \dot x(t)=\varepsilon g^x(\Lambda,\lambda,x,y), \\
-        \dot y(t)=\varepsilon g^y(\Lambda,\lambda,x,y), \\
-    \end{cases}
-\end{equation*}
-
-Переходя к медленному времени $\tau = \varepsilon t$ получаем:
-\begin{equation*}
-    \begin{cases}
-        \varepsilon \Lambda'(\tau)=g^\Lambda(\Lambda,\lambda,x,y), \\
-        \varepsilon \lambda'(\tau)=g^\lambda(\Lambda,\lambda,x,y), \\
-        x'(\tau)=g^x(\Lambda,\lambda,x,y), \\
-        y'(\tau)=g^y(\Lambda,\lambda,x,y), \\
-    \end{cases}
-\end{equation*}
+\item Рассмотрим абстрактную 4 мерную быстро-медленную систему в медленном времени $\tau = \varepsilon t$:
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \varepsilon \frac{d \Lambda}{d\tau} &= g^\Lambda(\Lambda,\lambda,x,y),
+        &\quad
+        \varepsilon \frac{d \lambda}{d\tau} &= g^\lambda(\Lambda,\lambda,x,y),\\
+        \frac{d x}{d\tau} &= g^x(\Lambda,\lambda,x,y),
+        &\quad
+        \frac{d y}{d\tau} &= g^y(\Lambda,\lambda,x,y).
+    \end{aligned}
+    \right.
+\end{equation}
 
 Обозначим $\v X = (\Lambda,\lambda,x,y)$ и будем искать формальное решение в виде:
 $\v X = \sum_{k=0}^\infty \varepsilon^k \v X_k.$
 Подставляя это представление в систему и приравнивая члены при одинаковых степенях $\varepsilon$ получаем для младших порядков:
 
 \begin{equation}
-    \begin{cases}
-        0=g^\Lambda(\v X_0), \\
-        0=g^\lambda(\v X_0), \\
-        x_0'(\tau)=g^x(\v X_0), \\
-        y_0'(\tau)=g^y(\v X_0), \\
-    \end{cases}
+    \left\{
+    \begin{aligned}
+        0 &= g^\Lambda(\v X_0),
+        &\quad
+        0 &= g^\lambda(\v X_0),\\
+        \frac{d x_0}{d\tau} &= g^x(\v X_0),
+        &\quad
+        \frac{d y_0}{d\tau} &= g^y(\v X_0).
+    \end{aligned}
+    \right.
 \end{equation}
 
 \begin{equation}
-    \begin{cases}
-        \Lambda_0'(\tau)=(\nabla g^\Lambda(\v X_0),\v X_1), \\
-        \lambda_0'(\tau)=(\nabla g^\lambda(\v X_0),\v X_1), \\
-        x_1'(\tau)=(\nabla g^x(\v X_0),\v X_1), \\
-        y_1'(\tau)=(\nabla g^y(\v X_0),\v X_1), \\
-    \end{cases}
+    \left\{
+    \begin{aligned}
+        \frac{d \Lambda_0}{d\tau} &= (\nabla g^\Lambda(\v X_0),\v X_1),
+        &\quad
+        \frac{d \lambda_0}{d\tau} &= (\nabla g^\lambda(\v X_0),\v X_1),\\
+        \frac{d x_1}{d\tau} &= (\nabla g^x(\v X_0),\v X_1),
+        &\quad
+        \frac{d y_1}{d\tau} &= (\nabla g^y(\v X_0),\v X_1).
+    \end{aligned}
+    \right.
     \label{1st_order}
 \end{equation}
 
@@ -130,15 +131,12 @@ $\v X = \sum_{k=0}^\infty \varepsilon^k \v X_k.$
 \end{pmatrix}
 \begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix}
 = A \begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix} =
-\begin{pmatrix} \Lambda_0' - (\nabla g^\Lambda)_x x_1 - (\nabla g^\Lambda)_y y_1 \\ \lambda_0' - (\nabla g^\lambda)_x x_1 - (\nabla g^\lambda)_y y_1 \end{pmatrix},
-\end{align*}
-
-\begin{equation*}
-A = \begin{pmatrix}
+\begin{pmatrix} \Lambda_0' - (\nabla g^\Lambda)_x x_1 - (\nabla g^\Lambda)_y y_1 \\ \lambda_0' - (\nabla g^\lambda)_x x_1 - (\nabla g^\lambda)_y y_1 \end{pmatrix}, \qquad
+A \equiv \begin{pmatrix}
 (\nabla g^\Lambda)_\Lambda & (\nabla g^\Lambda)_\lambda \\
 (\nabla g^\lambda)_\Lambda & (\nabla g^\lambda)_\lambda
 \end{pmatrix}.
-\end{equation*}
+\end{align*}
 
 Тогда решение этой системы имеет вид:
 \begin{align*}
@@ -188,8 +186,7 @@ $$\Lambda_0 = 0 \quad \Rightarrow \quad \v C = \begin{pmatrix} \frac{\lambda_0'}
 
 Также заметим, что компоненты правой части $g^x, g^y$ не зависят от $\Lambda$, поэтому векторы, входящие в неоднородность в уравнениях (\ref{x1y1_eq}) имеют вид:
 
-$$\begin{pmatrix} (\nabla g^x)_\Lambda \\ (\nabla g^x)_\lambda \end{pmatrix} = \begin{pmatrix} 0 \\ * \end{pmatrix},$$
-$$\begin{pmatrix} (\nabla g^y)_\Lambda \\ (\nabla g^y)_\lambda \end{pmatrix} = \begin{pmatrix} 0 \\ * \end{pmatrix}.$$
+$$\begin{pmatrix} (\nabla g^x)_\Lambda \\ (\nabla g^x)_\lambda \end{pmatrix} = \begin{pmatrix} 0 \\ * \end{pmatrix},\qquad \begin{pmatrix} (\nabla g^y)_\Lambda \\ (\nabla g^y)_\lambda \end{pmatrix} = \begin{pmatrix} 0 \\ * \end{pmatrix}.$$
 
 Тогда неоднородность в системе (\ref{x1y1_eq}) вырождается:
 
@@ -253,16 +250,9 @@ $$
 
 Заметим, что данные частные производные в точности совпадают с коэффициентами матрицы $M$:
 $$
-\frac{\partial \Lambda_0}{\partial x} = M_{11},
-$$
-$$
-\frac{\partial \lambda_0}{\partial x} = M_{21},
-$$
-Аналогично можно показать следующее:
-$$
-\frac{\partial \Lambda_0}{\partial y} = M_{12},
-$$
-$$
+\frac{\partial \Lambda_0}{\partial x} = M_{11}, \qquad
+\frac{\partial \lambda_0}{\partial x} = M_{21}, \qquad
+\frac{\partial \Lambda_0}{\partial y} = M_{12}, \qquad
 \frac{\partial \lambda_0}{\partial y} = M_{22}.
 $$
 
@@ -276,33 +266,6 @@ $$
 \end{multline}
 
 Учитывая, что в системе (\ref{fulltn}) неоднородность в уравнениях (\ref{x1y1_eq}) вырождается, вид уравнений (\ref{xdd_eq2}) и (\ref{x1y1_eq}) полностью совпадает.
-
-Заметим, что асимптотика сепаратрисы медленной системы при $\tau \to \pm \infty$ имеет вид: 
-\begin{equation*}
-    \begin{dcases}
-        x_0(\tau) = \frac{\text{const}}{\cosh(f_\pm \cdot \tau)} + \mathcal{O}(e^{-2 f_\pm |\tau|}), \quad \tau \to \pm \infty,\\
-        y_0(\tau) = \frac{\text{const} \cdot \sinh(f_\pm \cdot \tau)}{\cosh^2(f_\pm \cdot \tau)} + \mathcal{O}(e^{-2 f_\pm |\tau|}), \quad \tau \to \pm \infty,
-    \end{dcases}
-\end{equation*}
-где $f_\pm = \lim_{\tau \to \pm \infty} \frac{d f^\pm(\tau)}{d\tau} = \frac{J^{+} \chi^{+}}{\sigma^{+}}  \lim_{\tau \to \pm \infty} \frac{P^{+}(f^{+}(\tau))}{S^{+}(f^{+}(\tau))}$. Так как $P^\pm$ и $S^\pm$ являются полиномами второй степени от $\cosh f^\pm$, то пределы существуют и  равны:
- 
-$$f_+ = f_- = \frac{J^{+} \chi^{+}}{\sigma^{+}} \cdot \frac{1}{U_0} >0$$
-
-Тогда получаем:
-$$x_0,y_0 \in \mathcal{F}_{s_0}, \quad s_0 = f_+ = f_- > 0$$
-
-Решение для первого приближения имеет аналогичное поведение на обеих бесконечностях:
-\begin{equation*}
-    \begin{cases}
-        x_1(\pm \infty) = 0, \\
-        
-        y_1(\pm \infty) = 0. \\
-    \end{cases}
-\end{equation*}
-$$x_1, y_1 \in \mathcal{F}_{s_0}$$
-
-Отсюда получаем, что $(x_1,y_1)$ удовлетворяет граничным условиям и для $W^s(0)$, и для $W^u(0)$, поэтому индексы $s,u$ будем для него опускать. 
-
 $\blacksquare$
 
 \end{enumerate}%
@@ -319,9 +282,9 @@ $\blacksquare$
 G_{k+1}^\rho = \frac12 \sum_{m=1}^k \mathfrak{D}_m \mathfrak{D}_{k+1-m} g^\rho + \sum_{m=1}^k \mathfrak{D}_m \hat G_{k+1-m}^\rho,
 \end{equation*}
 где $\hat G_{k+1}^\rho$ отличается от $G_{k+1}^\rho$ нормировкой:
-$$G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{j!},$$
-$$\hat G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{(j+1)!},$$
-$$\rho \in {\lambda, \Lambda, x, y}.$$
+$$G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{j!}, \qquad
+\hat G_k^\rho = \sum_{j=2}^{k} \frac{\mathcal{L}_k^{(j)} g^\rho }{(j+1)!}, \qquad
+\rho \in {\lambda, \Lambda, x, y}.$$
 \end{utv}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{Доказательство:}\nopagebreak[4]
