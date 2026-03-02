@@ -108,33 +108,26 @@ $$\left(z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0)$$
 \label{xy_eq_new}
 \end{equation}
 где:
+\begingroup
+\small
 \begin{multline*}
 \mathfrak{G}_2^x = \frac{\partial H_1}{\partial z_y} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big),
 \end{multline*}
 \begin{multline*}
-\mathfrak{G}_2^y = \frac{\partial H_1}{\partial z_x} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -(2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big).
+\mathfrak{G}_2^y = \frac{\partial H_1}{\partial z_x} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -(2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big),
 \end{multline*}
+а функции $\tilde G_2^x, \tilde G_2^y$ -- построенные ранее неоднородности из (\ref{xy_eq}), зависящие от $\v z_0, \v z_1$.
 
 \begin{equation*}
     \begin{dcases}
         z_{\Lambda,2}(\tau) = \frac{1}{\alpha} z_{\lambda,1}'(\tau), \\
-        z_{\lambda,2}(\tau) = \frac1\beta \Big( \alpha^{-1} z_{\lambda,0}'' 
-        %- G_2^\Lambda
-         + \frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} + \\ +z_{x,2} \big( (2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\
+        z_{\lambda,2}(\tau) = \frac1\beta \Big( \alpha^{-1} z_{\lambda,0} + \frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} +z_{x,2} \big( (2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\ \qquad
 + z_{y,2} \big( -2C z_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big) \Big).\\
     \end{dcases}
 \end{equation*}
+\endgroup
 
 Заметим, что по построению $\mathfrak{G}_2^x(\tau)$ -- нечетная, а $\mathfrak{G}_2^y(\tau)$ -- четная.
-
-Кроме того, выражения $\tilde G_2^x, \tilde G_2^y$ вычисляются с использованием $\v z_0, \v z_1$:
-\begin{equation*}
-\tilde{G}_2^x = -\beta^{-1} \left(\alpha^{-1} z_{\lambda,0}'' \right) \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big),
-\end{equation*}
-\begin{equation*}
-\tilde{G}_2^y = -\beta^{-1} \left(\alpha^{-1} z_{\lambda,0}'' \right) \big( -(2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big).
-\end{equation*}
-
 
 В силу того, что новые уравнения (\ref{xy_eq_new}) отличаются от уравнений (\ref{xy_eq}) только добавкой к неоднородности, решения (\ref{xy_eq_new}) можно искать в виде:
 \begin{equation*}
@@ -155,7 +148,7 @@ $$\left(z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0)$$
 \label{xy_eq_new2}
 \end{equation*}
 
-Обозначим для краткости $\v u_2 = (x_2,y_2)$, $\v u_2^0 = (x_2^0,y_2^0)$, $\v {\hat u_2} = (\hat x_2, \hat y_2)$.
+Обозначим здесь для краткости $\v u_2 = (z_{x,2},z_{y,2})$, $\v u_2^0 = (z_{x,2}^0,z_{y,2}^0)$, $\v {\hat u_2} = (\hat z_{x,2}, \hat z_{y,2})$.
 Тогда $\v {\hat u_2^{s,u}}$ строятся по известным формулам (индексы $s$ и $u$ обозначают выполнение соответствующих граничных условий):
 \begin{equation*}
     \begin{cases}
@@ -171,13 +164,13 @@ $$\left(z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0)$$
     \label{neodnor_h}
 \end{equation*}
 
-Для того, чтобы исследовать вопрос существования пересечения $W^u(\Gamma_{h_1})$ и $W^s(\Gamma_{h_2})$, рассмотрим разность 
+Для того, чтобы исследовать вопрос существования пересечения $W^u(\Gamma_{h_1})$ и $W^s(\Gamma_{h_2})$, будем исследовать уравнение
 \begin{equation}
-\v u_2^u (\tau_1,\mu_1) - \v u_2^s (\tau_2,\mu_2) = \left(\v u_2^{0,u} (\tau_1) - \v u_2^{0,s} (\tau_2)\right) + \left(\v {\hat u_2^u} (\tau_1, \mu_1) - \v {\hat u_2^s} (\tau_2, \mu_2)\right).
+\v u_2^u (\tau_1,\mu_1) - \v u_2^s (\tau_2,\mu_2) = \left(\v u_2^{0,u} (\tau_1) - \v u_2^{0,s} (\tau_2)\right) + \left(\v {\hat u_2^u} (\tau_1, \mu_1) - \v {\hat u_2^s} (\tau_2, \mu_2)\right) = 0,
 \label{rasshep_h}
 \end{equation}
-
-%В силу утверждения 4 для любых $\tau_1, \tau_2$ можно выбрать соответствующие решения (\ref{xy_eq}) $\v u_2^{0,u},\v u_2^{0,s}$, такие, что $\v u_2^{0,u} (\tau_1) - \v u_2^{0,s} (\tau_2)=0$.
+относительно неизвестных $\mu_1^2, \mu_2^2$ и положим для простоты
+$$\tau^u = \tau_1, \qquad \tau^s = \tau_2.$$
 
 Подставим явный вид $\v {\hat u_2^u},\v {\hat u_2^s}$ в (\ref{rasshep_h}) и перепишем это уравнение в матричной форме:
 \begin{equation}
@@ -193,56 +186,39 @@ f_1(\tau_1,\tau_2) \\ f_2(\tau_1,\tau_2)
 \label{hetero_sol}
 \end{equation}
 
-$$B_{1,1} = x_1(\tau_1)\int_{\text{ } \tau^u}^{\tau_1} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
-        \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
+\[
+\begin{array}{c@{\qquad}c}
+B_{1,1} = \tilde x_1(\tau_1) \displaystyle\int_{-\infty}^{\tau_1} \bigl( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \bigr) d\tau,
+&
+B_{1,2} = \tilde x_1(\tau_2) \displaystyle\int_{\tau_2}^{+\infty} \bigl( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \bigr) d\tau, \\[10mm]
+B_{2,1} = \tilde y_1(\tau_1) \displaystyle\int_{-\infty}^{\tau_1} \bigl( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \bigr) d\tau,
+&
+B_{2,2} = \tilde y_1(\tau_2) \displaystyle\int_{\tau_2}^{+\infty} \bigl( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \bigr) d\tau.
+\end{array}
+\]
 
-$$B_{1,2} = - x_1(\tau_2)\int_{\text{ } \tau^s}^{\tau_2} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
-        \tilde x_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
-
-$$B_{2,1} = y_1(\tau_1)\int_{\text{ } \tau^u}^{\tau_1} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
-        \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
-        
-$$B_{2,2} = -y_1(\tau_2)\int_{\text{ } \tau^s}^{\tau_2} \left( \tilde y_1 \mathfrak{G}_2^x - \tilde x_1 \mathfrak{G}_2^y \right) d \tau + 
-        \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
-     
-\begin{multline*}
-f_1 = - x_2^{0,u}(\tau_1) + x_2^{0,s}(\tau_1) = \\
-= - x_1(\tau_1)\int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
-        \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau + \\
-  + x_1(\tau_2)\int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
+\begin{equation*}
+f_1(\tau_1, \tau_2) = - x_2^{0,u}(\tau_1) + x_2^{0,s}(\tau_2) = - \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau - 
         \tilde x_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau,
-\end{multline*}     
+\end{equation*}     
 
-\begin{multline*}
-f_2 = - y_2^{0,u}(\tau_1) + y_2^{0,s}(\tau_1) = \\
-= - y_1(\tau_1)\int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
-        \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau + \\
-  + y_1(\tau_2)\int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau - 
-        \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau.
-\end{multline*}     
+\begin{equation*}
+f_2(\tau_1, \tau_2) = - y_2^{0,u}(\tau_1) + y_2^{0,s}(\tau_2) = - \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau - \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau.
+\end{equation*}     
 
-Таким образом, получаем линейное алгебраическое уравнение (\ref{hetero_sol}) на $\mu_1^2, \mu_2^2$, коэффициенты которого зависят от набора параметров 
-$\{ \tau_1, \tau_2, \tau^s, \tau^u, \tau_2^s, \tau_2^u \}$.
+Таким образом, получаем линейное алгебраическое уравнение (\ref{hetero_sol}) на $\mu_1^2, \mu_2^2$, коэффициенты которого зависят от параметров $\tau_1, \tau_2$.
  
-Условием разрешимости неоднородного уравнения (\ref{hetero_sol}) является $\det B(\tau_1,\tau_2) \neq 0$.
+Условием разрешимости такого уравнеия является требование $\det B(\tau_1,\tau_2) \neq 0$.
 
-Положим $\tau^u = \tau_1$, $\tau^s = \tau_2$, тогда:
-\begin{multline*}
+\begin{equation*}
 \det B(\tau_1,\tau_2) = 
 \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau 
 \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau
-\left( \tilde x_1(\tau_1) \tilde y_1(\tau_2) - \tilde x_1(\tau_2) \tilde y_1(\tau_1) \right) \equiv \\
-\equiv F(\tau_1, \tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau 
-\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,
-\end{multline*}
-
-$$B_{1,1} = \tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
-
-$$B_{1,2} = \tilde x_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
-
-$$B_{2,1} = \tilde y_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,$$
-        
-$$B_{2,2} = \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau.$$
+\left( \tilde x_1(\tau_1) \tilde y_1(\tau_2) - \tilde x_1(\tau_2) \tilde y_1(\tau_1) \right) 
+%\equiv \\
+%\equiv F(\tau_1, \tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau 
+%\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau,
+\end{equation*}
 
 %Также необходимо требовать 
 %$$\frac{-B_{1,1}}{B_{1,2}} = \frac{\tilde x_1(\tau_1) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}{\tilde x_1(\tau_2) \int_{-\infty}^{\tau_2} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} > 0$$
@@ -271,53 +247,62 @@ $$B_{2,2} = \tilde y_1(\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \math
 
 %Это достаточно сильные условия и можно считать, что такая точка $\tau_0$ существует
 
-Так как предполагается, что $\mu_1, \mu_2 > 0$, необходимо чтобы обе компоненты решения (\ref{hetero_sol}) были положительны  $\mu_1^2>0, \mu_2^2>0$. Для этого необходимо выполнение следующих неравенств на коэффициенты:
+Так как предполагается, что $\mu_1, \mu_2 \in \mathbb{R}$, необходимо чтобы обе компоненты решения (\ref{hetero_sol}) были положительны:  $\mu_1^2>0, \mu_2^2>0$. Для этого необходимо выполнение следующих неравенств на коэффициенты:
 
-$$\frac{B_{1,1}f_2 - B_{2,1}f_1}{\det B} > 0,$$
-$$\frac{B_{2,2}f_1 - B_{1,2}f_2}{\det B} > 0,$$
-
-\begin{multline*}
-B_{1,1}f_2 - B_{2,1}f_1 = \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau \Bigg(\\
-  \int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau \Big( 
-        \underbrace{x_1(\tau_1) \tilde y_1(\tau_1) - \tilde x_1(\tau_1) y_1(\tau_1)}_{W(\v u_1, \v{\tilde u_1}) = 1}
-    \Big)+\\
-+ \int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau\Big( 
-        \tilde x_1(\tau_1) y_1(\tau_2) - \tilde y_1(\tau_1) x_1(\tau_2)
-    \Big)+\\
-+ \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau\Big( 
-        \underbrace{\tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2)}_{-F(\tau_1,\tau_2)}
-    \Big)
-\Bigg),
-\end{multline*}
-
-\begin{multline*}
-B_{2,2}f_1 - B_{1,2}f_2 = \int_{\tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau \Bigg(\\
-  \int_{\text{ } \tau_2^u}^{\tau_1} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau \Big( 
-        \tilde x_1(\tau_2) y_1(\tau_1) - \tilde y_1(\tau_2) x_1(\tau_1)
-    \Big)+\\
-+ \int_{\text{ } \tau_2^s}^{\tau_2} \left( \tilde y_1 \tilde{G}_2^x - \tilde x_1 \tilde{G}_2^y \right) d \tau\Big( 
-        \underbrace{x_1(\tau_2) \tilde y_1(\tau_2) - \tilde x_1(\tau_2) y_1(\tau_2)}_{W(\v u_1, \v{\tilde u_1}) = 1}
-    \Big)+\\
-+ \int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau\Big( 
-        \underbrace{\tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2)}_{-F(\tau_1,\tau_2)}
-    \Big)
-\Bigg).
-\end{multline*}
-
-Таким образом, получаем итоговые требования на коэффициенты:
-
-\begin{multline*}
+\begin{equation}
+\frac{B_{1,1}f_2 - B_{2,1}f_1}{\det B} > 0, \\ \qquad
+\frac{B_{2,2}f_1 - B_{1,2}f_2}{\det B} > 0,
+\label{crit}
+\end{equation}
+ 
+\begin{equation*}
 \frac{B_{1,1}f_2 - B_{2,1}f_1}{\det B} = 
-- \frac{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + 
-\frac{\int_{\tau_2^u}^{\tau_1} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau}{F(\tau_1,\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + \\
-+ \frac{\int_{\tau_2^s}^{\tau_2} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau \left( \tilde x_1(\tau_1) y_1(\tau_2) - \tilde y_1(\tau_1) x_1(\tau_2) \right)}{F(\tau_1,\tau_2) \int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} > 0,
-\end{multline*}
-
-\begin{multline*}
+- \frac{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}  > 0, \qquad
 \frac{B_{2,2}f_1 - B_{1,2}f_2}{\det B} = 
-- \frac{\int_{-\infty}^{\tau_1} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + 
-\frac{\int_{\tau_2^s}^{\tau_2} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau}{F(\tau_1,\tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} + \\
-+ \frac{\int_{\tau_2^u}^{\tau_1} \left( \tilde x_1 \tilde{G}_2^y - \tilde y_1 \tilde{G}_2^x \right) d \tau \left( \tilde x_1(\tau_2) y_1(\tau_1) - \tilde y_1(\tau_2) x_1(\tau_1) \right)}{F(\tau_1,\tau_2) \int_{-\infty}^{\tau_1} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau} > 0,
-\end{multline*}
+- \frac{\int_{\text{ } \tau_1}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_1}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}  > 0.
+\end{equation*}
 
-$$F(\tau_1,\tau_2) \equiv \tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2).$$
+Таким образом, получаем следующее
+\begin{utv}
+Пусть выполнено:
+\begin{equation} 
+\frac{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}  < 0, \quad \frac{\int_{\text{ } \tau_1}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_1}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}  < 0,
+\label{integrals}
+\end{equation}
+$$\tilde y_1(\tau_1) \tilde x_1(\tau_2) - \tilde x_1(\tau_1) \tilde y_1(\tau_2) \neq 0,$$
+для $\tau_1 \neq \tau_2$.
+
+Тогда уравнение (\ref{hetero_sol}) разрешимо и имеет решение, обе компоненты которого положительны и различны.
+
+\end{utv}
+
+\textbf{Доказательство}
+
+При выполнении требований утверждения, $\det B$ отличен от нуля, что гарантирует разрешимость уравнения (\ref{hetero_sol}) для произвольной правой части.
+
+
+При правой части уравнения, выбор которой описан выше и при выполнении условий утверждения положительность обеих компонент решения очевидна. $\blacksquare$
+
+\begin{consequence}
+Если условия \textit{утверждения 1} выполнены при некоторых $\tau_1 \neq \tau_2$, то в системе (\ref{fulltn}) существует гетероклиническая траектория, между периодическими решениями $\Gamma_{h_1}$ и $\Gamma_{h_2}$, где
+
+$$h_1 = \varepsilon \sqrt{- \frac{\int_{\text{ } \tau_1}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_1}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}},$$
+$$h_2 = \varepsilon \sqrt{- \frac{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau_2}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}}.$$
+\end{consequence}
+
+\textbf{Доказательство}
+
+В условиях \textit{утверждения 1} существуют значения $h_{1}, h_{2}$ такие, что неустойчивое многообразие $W^{u}(0)$ гамильтоновой системы (\ref{cut_ham}), отвечающей $h=h_{1}$, и устойчивое многообразие $W^{s}(0)$ гамильтоновой системы (\ref{cut_ham}), отвечающей $h=h_{2}$, пересекаются. Решения системы (\ref{ready_avg_ham}) дают асимптотику $W^{s,u}(\Gamma_h)$ с точностью до $\mathcal{O}(h^4)$. Таким образом, для системы (\ref{fulltn}) существуют значения параметра $\hat h_{1}, \hat h_{2}$ такие, что 
+$$
+\hat h_{k} = h_{k} + \mathcal{O}(\varepsilon^4)
+$$
+и неустойчивое многообразие $W^{u}(\Gamma_{\hat h_1})$ пересекается с устойчивым многообразием $W^{s}(\Gamma_{\hat h_2})$. Последнее гарантирует выполнение доказываемого следствия. $\blacksquare$
+
+Рассмотрим подробнее величины в (\ref{integrals}). Заметим, что обе дроби имеет схожую структуру и отличаются только значениями $\tau_1, \tau_2$. Тогда в силу монотонности подынтегральных выржений при больших и достаточно близких $\tau_1$ и $\tau_2$ обе дроби будут иметь одинаковый знак. Таким образом для выполнения требований \textit{утверждения 11} достаточно определить знак выражения
+\begin{equation*} 
+\frac{\int_{\text{ } \tau}^{+\infty} \left( x_1 \tilde{G}_2^y - y_1 \tilde{G}_2^x \right) d \tau}{\int_{\text{ } \tau}^{+\infty} \left( x_1 \mathfrak{G}_2^y - y_1 \mathfrak{G}_2^x \right) d \tau}  < 0
+\end{equation*}
+при большом положительном $\tau$.
+
+Численно было показано что для констант в системе Висдома \cite{wis1} условия \textit{Следствия 2} выполняются.
+ 

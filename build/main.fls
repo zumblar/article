@@ -449,6 +449,9 @@ INPUT ../sections/heteroclinic.tex
 INPUT ../sections/heteroclinic.tex
 INPUT ../sections/heteroclinic.tex
 INPUT ../sections/heteroclinic.tex
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb10.tfm
 INPUT ../sections/appendix.tex
 INPUT ../sections/appendix.tex
 INPUT ../sections/appendix.tex
