@@ -1,10 +1,52 @@
-В данной главе рассмотрим вопрос %существования гомоклинических и гетероклинических орбит
-пересечения устойчивого и неустойчивого многообразий построенных ранее периодических траекторий в окрестности положения равновесия \textit{седло-центр}.
 
-Обозначим построенные ранее Ляпуновские периодические решения как: 
-$$\Gamma_h(t)=(\Lambda^*(h,t),\lambda^*(h,t),x^*(h,t),y^*(h,t)).$$
+Напомним, что в главе~\ref{chap:prev} было построено однопараметрическое семейство периодических
+решений $\Gamma_h(t)=(\Lambda^*(h,t),\lambda^*(h,t),x^*(h,t),y^*(h,t))$, где $h$ — малый параметр
+(например, значение интеграла или амплитуда), причём решения существуют при $|h|\le R(\varepsilon)$
+с $R(\varepsilon)=O(\varepsilon)$ ($\varepsilon$ — малый параметр исходной быстро-медленной системы).
 
-Будем искать формальные решения, принадлежащие $W^{s,u}(\Gamma_h)$, в следующем виде:
+Для каждого такого решения определены его устойчивое $W^s(\Gamma_h)$ и неустойчивое $W^u(\Gamma_h)$
+многообразия. Будем искать решения, лежащие на этих многообразиях, в виде суммы периодического
+решения и малой добавки, затухающей при удалении от $\Gamma_h$ вдоль многообразия:
+\begin{equation}
+    \begin{cases}
+        \Lambda^{s,u}(h,t) = \Lambda^*(h,t) + z^{s,u}_\Lambda(h,t), \\[2mm]
+        \lambda^{s,u}(h,t) = \lambda^*(h,t) + z^{s,u}_\lambda(h,t), \\[2mm]
+        x^{s,u}(h,t) = x^*(h,t) + z_x^{s,u}(h,t), \\[2mm]
+        y^{s,u}(h,t) = y^*(h,t) + z_y^{s,u}(h,t),
+    \end{cases}
+    \label{het_predst}
+\end{equation}
+где верхний индекс $s$ соответствует решениям на устойчивом многообразии, а $u$ — на неустойчивом.
+Добавки $z_\Lambda^{s,u}, z_\lambda^{s,u}, z_x^{s,u}, z_y^{s,u}$ предполагаются малыми и удовлетворяют
+следующим граничным условиям:
+\begin{itemize}
+    \item для решений на $W^s(\Gamma_h)$:
+        \[
+        z_\Lambda^{s}(t)\to 0,\; z_\lambda^{s}(t)\to 0,\; z_x^{s}(t)\to 0,\; z_y^{s}(t)\to 0 \quad\text{при}\quad t\to +\infty;
+        \]
+    \item для решений на $W^u(\Gamma_h)$:
+        \[
+        z_\Lambda^{u}(t)\to 0,\; z_\lambda^{u}(t)\to 0,\; z_x^{u}(t)\to 0,\; z_y^{u}(t)\to 0 \quad\text{при}\quad t\to -\infty.
+        \]
+\end{itemize}
+
+
+
+
+
+
+
+
+
+В данной главе рассмотрим вопрос о существовании гомоклинических и гетероклинических орбит, образуемых пересечением устойчивых и неустойчивых многообразий периодических траекторий, построенных ранее в окрестности положения равновесия типа \textit{седло-центр}.
+
+Обозначим построенное ранее однопараметрическое семейство периодических Ляпуновских решений как: 
+\begin{equation}
+\Gamma_h(t)=(\Lambda^*(h,t),\lambda^*(h,t),x^*(h,t),y^*(h,t)).
+\label{lap_sol}
+\end{equation}
+Для каждого такого решения определены его устойчивое $W^s(\Gamma_h)$ и неустойчивое $W^u(\Gamma_h)$
+многообразия. Будем искать решения, лежащие на этих многообразиях, в следующем виде:
 \begin{equation}
     \begin{cases}
         \Lambda^{s,u}(h,t) = \Lambda^*(h,t) + z^{s,u}_\Lambda(h,t), \qquad \qquad
@@ -14,57 +56,78 @@ $$\Gamma_h(t)=(\Lambda^*(h,t),\lambda^*(h,t),x^*(h,t),y^*(h,t)).$$
     \end{cases}
     \label{het_predst}
 \end{equation}
-Также будем требовать выполнение следующих граничных условий:
+
+Добавки $z_\Lambda^{s,u}, z_\lambda^{s,u}, z_x^{s,u}, z_y^{s,u}$ удовлетворяют
+следующим граничным условиям:
 \begin{itemize}
-\item Решения принадлежащие $W^s(\Gamma_h)$:
-\begin{equation*}
-        z_\Lambda^{s}(k,+ \infty) = 0, \qquad
-        z_\lambda^{s}(k,+ \infty) = 0, \qquad
-        z_x^{s}(k,+ \infty) = 0, \qquad
-        z_y^{s}(k,+ \infty) = 0.
-    \label{border2}
-\end{equation*}
-\item Решения принадлежащие $W^u(\Gamma_h)$:
-\begin{equation*}
-        z_\Lambda^{u}(k,- \infty) = 0, \qquad
-        z_\lambda^{u}(k,- \infty) = 0, \qquad
-        z_x^{u}(k,- \infty) = 0, \qquad
-        z_y^{u}(k,- \infty) = 0.
-    \label{border3}
-\end{equation*} 
+    \item для решений на $W^s(\Gamma_h)$:
+        \[
+        z_\Lambda^{s}(t)\to 0,\; z_\lambda^{s}(t)\to 0,\; z_x^{s}(t)\to 0,\; z_y^{s}(t)\to 0 \quad\text{при}\quad t\to +\infty;
+        \]
+    \item для решений на $W^u(\Gamma_h)$:
+        \[
+        z_\Lambda^{u}(t)\to 0,\; z_\lambda^{u}(t)\to 0,\; z_x^{u}(t)\to 0,\; z_y^{u}(t)\to 0 \quad\text{при}\quad t\to -\infty.
+        \]
 \end{itemize}
+
+
+%Также будем требовать выполнение следующих граничных условий:
+%\begin{itemize}
+%\item Решения принадлежащие $W^s(\Gamma_h)$:
+%\begin{equation*}
+%        z_\Lambda^{s}(k,+ \infty) = 0, \qquad
+%        z_\lambda^{s}(k,+ \infty) = 0, \qquad
+%        z_x^{s}(k,+ \infty) = 0, \qquad
+%        z_y^{s}(k,+ \infty) = 0.
+%    \label{border2}
+%\end{equation*}
+%\item Решения принадлежащие $W^u(\Gamma_h)$:
+%\begin{equation*}
+%        z_\Lambda^{u}(k,- \infty) = 0, \qquad
+%        z_\lambda^{u}(k,- \infty) = 0, \qquad
+%        z_x^{u}(k,- \infty) = 0, \qquad
+%        z_y^{u}(k,- \infty) = 0.
+%    \label{border3}
+%\end{equation*} 
+%\end{itemize}
 %\begin{thm}
 %Теорема Нейштадта про экспоненциальную близость
 %\end{thm}
 
+Частота Ляпуновских решений $\Theta(h)$ зависит от параметра $h$. Для дальнейшего анализа удобно будет ввести новое время $\tilde t = \frac{\theta(h)}{\omega} t = (1+\mathcal{O}(h^2))t$. Такая замена переменных, зависящая от $h$ позволяет сделать частоту периодических решений не зависящей от $h$ и в точности равной ${\omega}$, при этом новый гамильтониан будем обозначть как $\hat H \left( \v z, \tilde t \right)$ в терминах переменных $\v z$, при этом стоит отметить, что новый гамильтнониан является неавтономной системой.
 
-Введем новое медленное время $\tilde \tau = \frac{\theta(h)}{\omega} \tau = (1+\mathcal{O}(h^2))\tau$. Такая замена переменных, зависящая от $h$ позволяет сделать частоту периодических решений не зависящей от $h$ и в точности равной ${\omega}/{\varepsilon}$, при этом новый гамильтониан будем обозначть как $H(\v z)$, а старый как $H_{old}(\v z) \equiv H_{old}\big|_{\Lambda = z_\Lambda, \lambda=z_\lambda, x = z_x, y = z_y}$, причем стоит отметить, что новый гамильтнониан является неавтономной системой.
+%а старый как $H_{old}(\v z) \equiv H_{old}\big|_{\Lambda = z_\Lambda, \lambda=z_\lambda, x = z_x, y = z_y}$, причем стоит отметить, что новый гамильтнониан является неавтономной системой.
 
-Частота $\omega / {\varepsilon}=\mathcal{O}(1/\varepsilon)$ много больше характерного гиперблического масштаба ${\xi}/{\varepsilon} = \mathcal{O}(1)$, поэтому можно произвести усреднение по периоду периодических решений (обозначется $\langle \rangle$), получая таким образом усредненный гамильтониан:
+Частота $\omega=\mathcal{O}(1)$ системы $\hat H$ много больше характерного гиперблического масштаба ${\xi} = \mathcal{O}(\varepsilon)$, поэтому можно произвести усреднение по периоду периодических решений (обозначется $\langle \cdot \rangle$), получая таким образом усредненный гамильтониан:
 \begin{multline}
-\langle H \rangle = H_{old}(\v z) - h^2 \theta_1 H_{old}(\v z) + \alpha \langle \Lambda^* \rangle_0 z_\Lambda + 2F \langle x^* \rangle_0 z_x - \\ - \langle \cos \lambda^* -1 \rangle_0 \Big( U(z_x,z_y) \cos z_\lambda + V(z_x,z_y) \sin z_\lambda \Big) - \\
-- \cos z_\lambda \Big( (2C \hat x_0 + e_J D) \langle y^* \sin \lambda^* \rangle_0 + z_x 2C \left( \left\langle x^* \cos \lambda^* \right\rangle_0 + \left\langle y^* \sin \lambda^* \right\rangle_0 \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle_0 \Big) - \\
-- \sin z_\lambda \Big( z_y 2C \left( \left\langle x^* \cos \lambda^* \right\rangle_0 + \left\langle y^* \sin \lambda^* \right\rangle_0 \right) \Big) + \mathcal{O}(h^4).
+\langle \hat H \rangle = H(\v z) - h^2 \theta_1 H(\v z) + \alpha \langle \Lambda^* \rangle z_\Lambda + 2F \langle x^* \rangle z_x - \\ - \langle \cos \lambda^* -1 \rangle \Big( U(z_x,z_y) \cos z_\lambda + V(z_x,z_y) \sin z_\lambda \Big) - \\
+- \cos z_\lambda \Big( (2C \hat x_0 + e_J D) \langle y^* \sin \lambda^* \rangle_0 + z_x 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle \Big) - \\
+- \sin z_\lambda \Big( z_y 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) \Big) + \mathcal{O}(h^4).
 \label{avg_ham}
 \end{multline}
-Здесь $\langle \cdot \rangle_0$ означает что в среднем значении учитываются только поправки порядка $h^2$, а старшие порядки отбрасываются.
 
-Также введем усеченный усредненный гамильтониан $\langle H \rangle_0$, в котором отброшены все поправки старше $h^2$.
+%Здесь $\langle \cdot \rangle_0$ означает что в среднем значении учитываются только поправки порядка $h^2$, а старшие порядки отбрасываются.
+
+%Также введем усеченный усредненный гамильтониан $\langle H \rangle_0$, в котором отброшены все поправки старше $h^2$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-При достаточно малых значениях параметра $h$, системы $\langle H \rangle$ и $\langle H \rangle_0$ имеют неподвижные точки 
-$$(\hat \Lambda_0^*(h), \hat \lambda_0^*(h), \hat x_0^*(h), \hat y_0^*(h)) \quad \text{и} \quad (\hat \Lambda_0^{**}(h), \hat \lambda_0^{**}(h), \hat x_0^{**}(h), \hat y_0^{**}(h)),$$
-соответственно, расположенные в $\mathcal{O}(h^2)$ окрестности нуля. 
+При достаточно малых значениях параметра $h$, система $\langle \hat H \rangle$ имеют неподвижную точку 
+\begin{equation}
+(\hat \Lambda_0^*(h), \hat \lambda_0^*(h), \hat x_0^*(h), \hat y_0^*(h)),
+\label{hatHfp}
+\end{equation}
+расположенную в $\mathcal{O}(h^2)$ окрестности нуля. 
 
 Данный результат вытекает из применения теоремы о неявной функции, обеспечивающей существование гладкого семейства неподвижных точек при малом параметрическом возмущении, а также теоремы о непрерывной зависимости собственных значений от параметров \cite{arnold,horn}, гарантирующей сохранение их качественного расположения (вещественные и мнимые пары сохраняют тип и знак). 
-Следовательно, при малых $h$ характер равновесия не изменяется, и указанные неподвижные точки сохраняют тип \textit{седло–центр}.
+Следовательно, при малых $h$ характер равновесия не изменяется, и неподвижная точка сохраняет тип \textit{седло–центр}.
 
-Сместим положение равновесия \textit{седло–центр} системы $\langle H \rangle_0$ в точку 0. Тогда ее гамильтониан принимает вид: 
+Сместим положение равновесия (\ref{hatHfp}) в точку 0 и отбросим все слагаемые порядка $\mathcal{O}(h^4)$, получаю следующий редуцированный гамильтониан: 
 \begin{multline}
-\langle H \rangle_0 = \frac{\alpha \omega z_\Lambda^2}{2 \theta(h)} - \hat U(z_x,z_y)\cos{z_\lambda} - \hat V(z_x,z_y)\sin{z_\lambda} + \frac{F \omega}{\theta(h)} \left((z_x+\hat x_0 + \hat x_0^*(h))^2+z_y^2 \right) + \\ + \frac{\omega}{\theta(h)}\left(e_J G + 2F \langle x^* \rangle_0 + 2F \hat x_0^*(h) \right) z_x ,
+\hat H_0 = \frac{\alpha \omega z_\Lambda^2}{2 \theta(h)} - \hat U(z_x,z_y)\cos{z_\lambda} - \hat V(z_x,z_y)\sin{z_\lambda} + \frac{F \omega}{\theta(h)} \left((z_x+\hat x_0 + \hat x_0^*(h))^2+z_y^2 \right) + \\ + \frac{\omega}{\theta(h)}\left(e_J G + 2F \langle x^* \rangle_0 + 2F \hat x_0^*(h) \right) z_x ,
 \label{final_avg_ham}
 \end{multline}
 где функции $\hat U$ и $\hat V$ отличаются от функций $U, V$ лишь значением констант на величину порядка $\mathcal{O}(h^2)$.
+Здесь $[ \cdot ]_0$ обозначает отбрасывание всех членов порядка $\mathcal{O}(h^4)$.
 
-Таким образом, при достаточно малых $h$ системы (\ref{H}) и (\ref{final_avg_ham}) имеют одинаковый вид и для обоих выполнено \textit{Предположение 1}, тогда система (\ref{final_avg_ham}) наследует результат о том, что для неподвижной точки $0$ типа седло-центр системы (\ref{final_avg_ham}) существуют одномерные устойчивое и неустойчивое многообразия, расщепление которых не более чем экспоненциально мало.
+Таким образом, при достаточно малых $h$ системы (\ref{H}) и (\ref{final_avg_ham}) имеют одинаковый вид (отличаются только значением констант на величину порядка $\mathcal{O}(h^2)$) и для обоих выполнено \textit{Предположение 1}, тогда система (\ref{final_avg_ham}) наследует результат о том, что для неподвижной точки $0$ типа седло-центр системы (\ref{final_avg_ham}) существуют одномерные устойчивое и неустойчивое многообразия, расщепление которых не более чем экспоненциально мало.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

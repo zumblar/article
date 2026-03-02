@@ -1,9 +1,9 @@
-Так как радиус сходимости рядов для периодических решений имеет порядок $\mathcal{O}(\varepsilon)$ (т.е. $|h| \le R(\varepsilon) = \mathcal{O}(\varepsilon)$), введем масштабированный параметр $\mu \equiv h/\varepsilon$:
+Так как радиус сходимости рядов для Ляпуновских периодических решений (\ref{lap_sol}) имеет порядок $\mathcal{O}(\varepsilon)$ (т.е. $|h| \le R(\varepsilon) = \mathcal{O}(\varepsilon)$), введем масштабированный параметр $\mu \equiv h/\varepsilon$:
 $$|\mu| \le \frac{R(\varepsilon)}{\varepsilon} = \mathcal{O}(1)$$
 
-Тогда систему (\ref{final_avg_ham}) можно рассматривать как малое возмущение исходного гамильтониана $H_{old}(\v z)$:
+Тогда систему (\ref{final_avg_ham}) можно рассматривать как малое возмущение исходного гамильтониана $H(\v z)$:
 \begin{equation}
-\langle H \rangle_0(\v z) = H_{old}(\v z) + \varepsilon^2 \mu^2 H_1(\v z) + \mathcal{O}(\varepsilon^4),
+\hat H_0(\v z) = H(\v z) + \varepsilon^2 \mu^2 H_1(\v z),
 \label{cut_ham}
 \end{equation}
 где возмущающая функция равна:
@@ -16,7 +16,6 @@ H_1(\v z) \equiv \Bigg[ -\theta_1 H_{old}(\v z) + 2F z_x \underbrace{(-2 \vareps
     - \sin z_\lambda
         2C z_y \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} \Bigg]_0.
 \end{multline*}
-Здесь $[ \cdot ]_0$ обозначает взятие свободного коэффициента в разложении по степеням $\varepsilon$.
 
 Будем искать формальное решение системы (\ref{cut_ham}) в виде аналогичном (\ref{predst}):
 \begingroup
@@ -48,7 +47,7 @@ z_y^{s,u}(\tau, \mu) =       \sum_{k=0}^\infty \varepsilon^k z_{y,k}^{s,u}(\tau,
 \end{equation*}
 \end{itemize}
 
-Подставим представление (\ref{predst_h}) в уравнения Гамильтона системы (\ref{ready_avg_ham}):
+Подставим представление (\ref{predst_h}) в уравнения Гамильтона системы (\ref{cut_ham}):
 \begingroup
 \footnotesize
 \begin{equation}
@@ -89,8 +88,8 @@ z_{\Lambda,0}(\tau) = 0 , \qquad z_{\lambda,0}(\tau) = \lambda_- (x_{sep}(\tau),
 
 Здесь матрица $\mathcal{A}(\tau)$ - матрица введенная в (\ref{xy_eq}). Базисом решений этой системы является пара введенных ранее вектор-функций $\v u_1 (\tau), \v{ \tilde{u_1}} (\tau)$.
 
-По \textit{утверждению 10} $W^s$ и $W^u$ одномерны, поэтому при их параметризации достаточно рассматривать лишь одно частное решение. Для простоты выберем тривиальное решение однородного уравнения:
-$$\left(z_{\Lambda,1}(\tau), z_{\lambda,1}(\tau), z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0,0,0)$$
+Многообразия $W^s(\Gamma_h)$ и $W^u(\Gamma_h)$ одномерны, поэтому при их параметризации достаточно рассматривать лишь одно частное решение. Для простоты выберем тривиальное решение однородного уравнения:
+$$\left(z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0)$$
 
 %По \textit{утверждению 10} $W^s$ и $W^u$ одномерны, поэтому при их параметризации достаточно рассматривать лишь одно частное решение. Для простоты выберем:
 %$$\begin{pmatrix} z_{x,1} \\ z_{y,1} \end{pmatrix} = 1 \cdot \v u_1$$
