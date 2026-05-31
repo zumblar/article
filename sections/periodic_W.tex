@@ -61,7 +61,7 @@
 Частота $\omega=\mathcal{O}(1)$ системы $\hat H$ много больше характерного гиперблического масштаба ${\xi} = \mathcal{O}(\varepsilon)$, поэтому можно произвести усреднение по периоду периодических решений (обозначется $\langle \cdot \rangle$), получая таким образом усредненный гамильтониан:
 \begin{multline}
 \langle \hat H \rangle = H(\v z) - h^2 \theta_1 H(\v z) + \alpha \langle \Lambda^* \rangle z_\Lambda + 2F \langle x^* \rangle z_x - \\ - \langle \cos \lambda^* -1 \rangle \Big( U(z_x,z_y) \cos z_\lambda + V(z_x,z_y) \sin z_\lambda \Big) - \\
-- \cos z_\lambda \Big( (2C \hat x_0 + e_J D) \langle y^* \sin \lambda^* \rangle_0 + z_x 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle \Big) - \\
+- \cos z_\lambda \Big( (2C \hat x_0 +  D) \langle y^* \sin \lambda^* \rangle_0 + z_x 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) + \left\langle \big( U(x^*,y^*) - U_0 \big) \cos \lambda^* \right\rangle \Big) - \\
 - \sin z_\lambda \Big( z_y 2C \left( \left\langle x^* \cos \lambda^* \right\rangle + \left\langle y^* \sin \lambda^* \right\rangle \right) \Big) + \mathcal{O}(h^4).
 \label{avg_ham}
 \end{multline}
@@ -83,7 +83,7 @@
 
 Сместим положение равновесия (\ref{hatHfp}) в точку 0 и отбросим все слагаемые порядка $\mathcal{O}(h^4)$, получаем следующий редуцированный гамильтониан: 
 \begin{multline}
-\hat H_0 = \left[ \frac{\alpha \omega}{2 \theta(h)} \right]_0 z_\Lambda^2 - \hat U(z_x,z_y)\cos{z_\lambda} - \hat V(z_x,z_y)\sin{z_\lambda} + \left[ \frac{F \omega}{\theta(h)} \right]_0 \left((z_x+\hat x_0 + \left[ \hat x_0^*(h) \right]_0 )^2+z_y^2 \right) + \\ + \left[ \frac{\omega}{\theta(h)} \right]_0 \left(e_J G + \left[ 2F \langle x^* \rangle_0 \right]_0 + 2F \hat x_0^*(h) \right) z_x ,
+\hat H_0 = \left[ \frac{\alpha \omega}{2 \theta(h)} \right]_0 z_\Lambda^2 - \hat U(z_x,z_y)\cos{z_\lambda} - \hat V(z_x,z_y)\sin{z_\lambda} + \left[ \frac{F \omega}{\theta(h)} \right]_0 \left((z_x+\hat x_0 + \left[ \hat x_0^*(h) \right]_0 )^2+z_y^2 \right) + \\ + \left[ \frac{\omega}{\theta(h)} \right]_0 \left( G + \left[ 2F \langle x^* \rangle_0 \right]_0 + 2F \hat x_0^*(h) \right) z_x ,
 \label{final_avg_ham}
 \end{multline}
 где функции $\hat U$ и $\hat V$ отличаются от функций $U, V$ лишь значением констант на величину порядка $\mathcal{O}(h^2)$.
