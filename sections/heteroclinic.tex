@@ -8,11 +8,11 @@ $$|\mu| \le \frac{R(\varepsilon)}{\varepsilon} = \mathcal{O}(1)$$
 \end{equation}
 где возмущающая функция равна:
 \begin{multline*}
-H_1(\v z) \equiv \Bigg[ -\theta_1 H_{old}(\v z) + 2F z_x \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} - \underbrace{\frac{1}{4}\left( \frac{2(\xi^2-\alpha U_0)}{(2C \hat x_0 + e_J D)} \right)^2}_{\mathcal{O}(1)}\Big( 
+H_1(\v z) \equiv \Bigg[ -\theta_1 H_{old}(\v z) + 2F z_x \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} - \underbrace{\frac{1}{4}\left( \frac{2(\xi^2-\alpha U_0)}{(2C \hat x_0 +  D)} \right)^2}_{\mathcal{O}(1)}\Big( 
         U(z_x,z_y) \cos z_\lambda + 
         V(z_x,z_y) \sin z_\lambda \Big) - \\
     - \cos z_\lambda
-        \left(2C z_x +(2C \hat x^0 + e_J D) \right) \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)}
+        \left(2C z_x +(2C \hat x^0 +  D) \right) \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)}
     - \sin z_\lambda
         2C z_y \underbrace{(-2 \varepsilon \xi ) \{a\}_{1,1}}_{\mathcal{O}(1)} \Bigg]_0.
 \end{multline*}
@@ -57,7 +57,7 @@ z_y^{s,u}(\tau, \mu) =       \sum_{k=0}^\infty \varepsilon^k z_{y,k}^{s,u}(\tau,
         \frac{d z_x}{dt} &=-\varepsilon \left(2Fz_y-\frac{\partial U}{\partial z_y}\cos z_\lambda-\frac{\partial V}{\partial z_y} \sin z_\lambda+\varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_y}+\mathcal{O}(\varepsilon^4)\right),\\
         \frac{d z_\lambda}{dt} &= \alpha z_\Lambda + \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_\Lambda} + \mathcal{O}(\varepsilon^4),
         &
-        \frac{d z_y}{dt} &= \varepsilon \left( 2F(z_x + \hat x_0) + e_J G - \frac{\partial U}{\partial z_x} \cos z_\lambda - \frac{\partial V}{\partial z_x} \sin z_\lambda + \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_x} + \mathcal{O}(\varepsilon^4) \right).
+        \frac{d z_y}{dt} &= \varepsilon \left( 2F(z_x + \hat x_0) +  G - \frac{\partial U}{\partial z_x} \cos z_\lambda - \frac{\partial V}{\partial z_x} \sin z_\lambda + \varepsilon^2 \mu^2 \frac{\partial H_1}{\partial z_x} + \mathcal{O}(\varepsilon^4) \right).
     \end{aligned}
     \label{fulltn2}
 \end{equation}
@@ -76,8 +76,8 @@ z_{\Lambda,0}(\tau) = 0 , \qquad z_{\lambda,0}(\tau) = \lambda_- (x_{sep}(\tau),
     \begin{cases}
         z_{\Lambda,1}(\tau) = z_{\lambda,0}', \\
         
-        z_{\lambda,1}(\tau) = \frac1\beta \Big( z_{x,1} \big( (2Cz_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\
-        +z_{y,1} \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2Cz_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big) \Big),
+        z_{\lambda,1}(\tau) = \frac1\beta \Big( z_{x,1} \big( (2Cz_{x,0}+2C \hat x_0+D) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\
+        +z_{y,1} \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2Cz_{x,0}+2C \hat x_0+D) \cos z_{\lambda,0} \big) \Big),
     \end{cases}
     %\label{fulltint}
 \end{equation*}
@@ -111,18 +111,18 @@ $$\left(z_{x,1}(\tau), z_{y,1}(\tau) \right) \equiv (0,0)$$
 \begingroup
 \small
 \begin{multline*}
-\mathfrak{G}_2^x = \frac{\partial H_1}{\partial z_y} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big),
+\mathfrak{G}_2^x = \frac{\partial H_1}{\partial z_y} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -2Cz_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+D) \cos z_{\lambda,0} \big),
 \end{multline*}
 \begin{multline*}
-\mathfrak{G}_2^y = \frac{\partial H_1}{\partial z_x} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -(2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big),
+\mathfrak{G}_2^y = \frac{\partial H_1}{\partial z_x} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} - \\ -\beta^{-1} \left(\frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} \right) \big( -(2C z_{x,0}+2C \hat x_0+D) \sin z_{\lambda,0} + 2C z_{y,0} \cos z_{\lambda,0} \big),
 \end{multline*}
 а функции $\tilde G_2^x, \tilde G_2^y$ -- построенные ранее неоднородности из (\ref{xy_eq}), зависящие от $\v z_0, \v z_1$.
 
 \begin{equation*}
     \begin{dcases}
         z_{\Lambda,2}(\tau) = \frac{1}{\alpha} z_{\lambda,1}'(\tau), \\
-        z_{\lambda,2}(\tau) = \frac1\beta \Big( \alpha^{-1} z_{\lambda,0} + \frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} +z_{x,2} \big( (2C z_{x,0}+2C \hat x_0+e_JD) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\ \qquad
-+ z_{y,2} \big( -2C z_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+e_JD) \cos z_{\lambda,0} \big) \Big).\\
+        z_{\lambda,2}(\tau) = \frac1\beta \Big( \alpha^{-1} z_{\lambda,0} + \frac{\partial H_1}{\partial z_\lambda} \Big|_{z_{\Lambda,0},z_{\lambda,0},z_{x,0},z_{y,0}} +z_{x,2} \big( (2C z_{x,0}+2C \hat x_0+D) \sin z_{\lambda,0} - 2C z_{y,0} \cos z_{\lambda,0} \big) + \\ \qquad
++ z_{y,2} \big( -2C z_{y,0} \sin z_{\lambda,0} - (2C z_{x,0}+2C \hat x_0+D) \cos z_{\lambda,0} \big) \Big).\\
     \end{dcases}
 \end{equation*}
 \endgroup

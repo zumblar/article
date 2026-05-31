@@ -24,7 +24,7 @@
 %        \Lambda(t) = \int\limits_{\pm\infty}^t u \big(x(t'),y(t') \big) \sin \lambda(t') - v \big(x(t'),y(t') \big) \cos \lambda(t') dt', \\
 %        \lambda(t) = \lambda(\hat x_0,0) + \int\limits_{\pm\infty}^t \alpha \Lambda(t') dt', \\
 %        x(t) = \hat x_0 - \varepsilon \int\limits_{\pm\infty}^t \Big( 2Fy(t')+\frac{\partial u}{\partial y} \cos \lambda(t') + \frac{\partial v}{\partial y} \sin \lambda(t') \Big) dt', \\
-%        y(t) = \varepsilon \int\limits_{\pm\infty}^t \Big( 2F \big(x(t')+ \hat x_0 \big)+e_JG +\frac{\partial u}{\partial x} \cos \lambda(t') + \frac{\partial v}{\partial x} \sin \lambda(t') \Big)dt'. \\
+%        y(t) = \varepsilon \int\limits_{\pm\infty}^t \Big( 2F \big(x(t')+ \hat x_0 \big)+G +\frac{\partial u}{\partial x} \cos \lambda(t') + \frac{\partial v}{\partial x} \sin \lambda(t') \Big)dt'. \\
 %    \end{cases}
 %    \label{fulltint}
 %\end{equation}
@@ -48,7 +48,7 @@ y^{s,u}(\tau) =       \sum_{k=0}^\infty \varepsilon^k y^{s,u}_k(\tau),
     \begin{cases}
         \Lambda_k(\tau) = \frac{1}{\alpha} \lambda_{k-1}', \\
         
-        \lambda_k(\tau) = \frac1\beta \Big( \alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda + x_k \big( (2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 - 2Cy_0 \cos\lambda_0 \big) + \\ \qquad \qquad + y_k \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big) \Big),\\
+        \lambda_k(\tau) = \frac1\beta \Big( \alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda + x_k \big( (2Cx_0+2C \hat x_0+D) \sin\lambda_0 - 2Cy_0 \cos\lambda_0 \big) + \\ \qquad \qquad + y_k \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+D) \cos\lambda_0 \big) \Big),\\
         \lambda_{-1}=0,
     \end{cases}
     }
@@ -60,24 +60,24 @@ y^{s,u}(\tau) =       \sum_{k=0}^\infty \varepsilon^k y^{s,u}_k(\tau),
 \label{xy_eq}
 \end{equation}
 где:
-$$ \tilde G_k^x = G_k^x - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+e_JD) \cos\lambda_0 \big), $$
-$$ \tilde G_k^y = G_k^y - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -(2Cx_0+2C \hat x_0+e_JD) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \big). $$
+$$ \tilde G_k^x = G_k^x - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -2Cy_0 \sin\lambda_0 - (2Cx_0+2C \hat x_0+D) \cos\lambda_0 \big), $$
+$$ \tilde G_k^y = G_k^y - \beta^{-1} (\alpha^{-1} \lambda_{k-2}'' - G_k^\Lambda) \big( -(2Cx_0+2C \hat x_0+D) \sin\lambda_0 + 2Cy_0 \cos\lambda_0 \big). $$
 
 
 Здесь $a,b,c$ - функции зависящие от $x_0(\tau), y_0(\tau), \lambda_0(\tau), \Lambda_0(\tau)$:
 \begin{equation}
 \mathsmaller{
-a(\tau) = \frac{\left( e_J^2 D^2 - 4CEe_J^2\right) \sin \lambda_0 \cos \lambda_0}{\beta(x_0,y_0)},
+a(\tau) = \frac{\left( ^2 D^2 - 4CE^2\right) \sin \lambda_0 \cos \lambda_0}{\beta(x_0,y_0)},
 }
 \end{equation}
 \begin{equation}
 \mathsmaller{
-b(\tau) = -2F - 2C \cos \lambda_0 - \frac{1}{\beta(x_0,y_0)} \big( (2Cy_0)\sin \lambda_0 + (2Cx_0+2C \hat x_0 + e_JD)\cos \lambda_0  \big)^2,
+b(\tau) = -2F - 2C \cos \lambda_0 - \frac{1}{\beta(x_0,y_0)} \big( (2Cy_0)\sin \lambda_0 + (2Cx_0+2C \hat x_0 + D)\cos \lambda_0  \big)^2,
 }
 \end{equation}
 \begin{equation}
 \mathsmaller{
-c(\tau) = 2F - 2C \cos \lambda_0 + \frac{1}{\beta(x_0,y_0)} \big( (2Cx_0+2C \hat x_0 + e_JD)\sin \lambda_0 - (2Cy_0)\cos \lambda_0  \big)^2.
+c(\tau) = 2F - 2C \cos \lambda_0 + \frac{1}{\beta(x_0,y_0)} \big( (2Cx_0+2C \hat x_0 + D)\sin \lambda_0 - (2Cy_0)\cos \lambda_0  \big)^2.
 }
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,7 +142,7 @@ $$W(\tau) = x_1(\tau) \tilde y_1 (\tau) - y_1 (\tau) \tilde x_1 (\tau) = 1$$
 Рассмотрим поведение решений $\v u_1(\tau)$ и $\v{ \tilde{u_1}}(\tau)$ на бесконечностях. Для этого рассмотрим асимптотику матрицы $\mathcal{A}(\tau)$ при больших $|\tau|$:
 \begin{equation}
 \mathcal{A}(\tau) = \begin{pmatrix} 
-0 & -2F-2C + \frac{(2C \hat x_0 + e_J D)^2}{U_0}\\
+0 & -2F-2C + \frac{(2C \hat x_0 +  D)^2}{U_0}\\
 2F-2C & 0
 \end{pmatrix} + \mathcal{O}(e^{-\xi_0^+ |\tau|}) \equiv 
 \begin{pmatrix} 

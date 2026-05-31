@@ -1,0 +1,296 @@
+Без потери общности можно сместить положение равновесия седло-седло в точку 0, тогда система \eqref{fullt} принимает вид:
+\begin{equation}
+    \begin{aligned}
+        \dot{\Lambda} &= U \sin \lambda - V \cos \lambda,
+        &\quad
+        \dot{\lambda} &= \alpha \Lambda, \\[1.5ex]
+        \dot{x} &= -\varepsilon \big( 2Fy + \frac{\partial U}{\partial y} \cos \lambda + \frac{\partial V}{\partial y} \sin \lambda \big),
+        &\quad
+        \dot{y} &= \varepsilon \big( 2Fx + (2Fx_0^- + G) + \frac{\partial U}{\partial x} \cos \lambda + \frac{\partial V}{\partial x} \sin \lambda \big).
+    \end{aligned},
+    \label{fullt2}
+\end{equation}
+$$U(x,y) = C(x^2-y^2) +Dx + \left(E+Dx_0^-+C(x_0^-)^2+2Cx_0^- \right) \equiv C(x^2-y^2) +Dx + U_0,$$
+$$V(x,y) = 2C(x+x_0^-)y + Dy$$
+
+Для малых значений параметра $\varepsilon$ будем искать приближённые решения, используя комбинацию двух подходов: разложение в регулярный асимптотический ряд по $\varepsilon$ в ограниченной области времени и представление в виде ряда по экспонентам в окрестности неподвижной точки.
+
+\subsubsection{Регулярное асимптотическое разложение}
+
+Будем искать решение системы в виде
+\begin{equation}
+    \begin{aligned}
+        \Lambda(t) &= \Lambda_0(t) + \varepsilon \Lambda_1(t) + O(\varepsilon^2), \qquad
+        \lambda(t) = \lambda_0(t) + \varepsilon \lambda_1(t) + O(\varepsilon^2), \\[1ex]
+        x(t) &= x_0(t) + \varepsilon x_1(t) + O(\varepsilon^2), \qquad
+        y(t) = y_0(t) + \varepsilon y_1(t) + O(\varepsilon^2).
+    \end{aligned}
+    \label{asympexp}
+\end{equation}
+Подставляя \eqref{asympexp} в \eqref{fullt2} и приравнивая члены при одинаковых степенях $\varepsilon$, получаем последовательность задач.
+
+Для нулевого порядка имеем:
+\begin{equation}
+    \begin{aligned}
+        \dot{\Lambda}_0 &= U(\lambda_0) \sin\lambda_0 - V(\lambda_0) \cos\lambda_0, \qquad
+        \dot{\lambda}_0 = \alpha \Lambda_0, \\[1.5ex]
+        \dot{x}_0 &= 0, \qquad \dot{y}_0 = 0
+    \end{aligned}
+    \label{leadorder}
+\end{equation}
+Уравнения для $\Lambda_0$ и $\lambda_0$ образуют автономную систему матемаатического маятника, параметрически зависящего от постоянных $x_0, y_0$. Нас будет интересовать сепаратрисное решение, которое удовлетворяет условию $\Lambda_0(t) \to 0$, $\lambda_0(t) \to \pi \pm \pi$ при $t \to \pm\infty$. Конкретный вид сепаратрисы задаётся в явной форме, но для дальнейшего достаточно знать её асимптотическое поведение.
+Переменные $x_0$ и $y_0$ выбираем:
+$$
+x_0(t) \equiv  y_0(t) \equiv 0.
+$$
+
+Для краткости будем опускать зависимость всех величин от $x_0,y_0$
+
+В первом порядке получаем
+\begin{equation}
+    \frac{d}{dt} \begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix}
+    = \begin{pmatrix}
+        0 & U\cos\lambda_0 + V\sin\lambda_0 \\
+        \alpha & 0
+    \end{pmatrix}
+    \begin{pmatrix} \Lambda_1 \\ \lambda_1 \end{pmatrix}
+    +
+    \begin{pmatrix} G_{1 \Lambda} \\ 0 \end{pmatrix},
+    \label{1order}
+\end{equation}
+$$
+G_{1 \Lambda}(t) = x_1(t) V_y \sin \lambda_0(t) - y_1(t) V_y \cos \lambda_0(t).
+$$
+
+Эта система линейна относительно $\Lambda_1,\lambda_1$, но коэффициенты зависят от сепаратрисного решения $(\Lambda_0(t),\lambda_0(t))$.
+
+Для $(x_1,y_1)$ имеем:
+\begin{equation}
+    \begin{aligned}
+        \dot{x}_1 &= -V_y \sin \lambda_0(t), \\[1.5ex]
+        \dot{y}_1 &= (2F x_0^- + G) + V_y \cos \lambda_0(t).
+    \end{aligned}
+    \label{eq:x1y1}
+\end{equation}
+Интегрирование \eqref{eq:x1y1} даёт $x_1(t)$ и $y_1(t)$ с точностью до констант интегрирования.
+
+Регулярное разложение \eqref{asympexp} справедливо при $|\varepsilon t e^{\omega |t|}| < 1$, но становится непригодным при больших t из-за экспоненциального роста секулярных членов. Таким образом, построенный ряд является асимптотическим, но не равномерно пригодным на бесконечном интервале времени.
+
+\subsubsection{Локализованное решение в окрестности нуля}
+
+Линеаризуем систему \eqref{fullt2} в окрестности нуля:
+\begin{equation}
+    \frac{d}{dt} \begin{pmatrix} \Lambda\\ \lambda \\x \\y\end{pmatrix} = A \begin{pmatrix} \Lambda\\ \lambda \\x \\y\end{pmatrix} + \mathcal{G}(\Lambda,\lambda,x,y),
+\end{equation}
+здесь $A$ -- градиент правой части \eqref{fullt2} в подстановке неподвижной точки, $\mathcal{G}$ -- нелинейный вклад в правую часть.
+
+Будем искать решения, локализованные вблизи нуля и стремящиеся к нулю при $t \to +\infty$ (устойчивое многообразие) или при $t \to -\infty$ (неустойчивое многообразие). В силу вещественности собственных чисел, такие решения можно представить в виде рядов по убывающим экспонентам. 
+
+Введем матрицу $R$, состоящую из собственных векторов $A$ и преобразующую $A$ в диагональный вид $\text{diag} (\omega, -\omega, \xi, -\xi)$:
+\begin{equation}
+R = \begin{pmatrix}
+    a & -a & b & -b \\
+    c & c & d & d \\
+    -g & g & -e & e \\
+    1 & 1 & 1 & 1
+    \end{pmatrix},
+\end{equation}
+
+$a,b,c,d,e$ -- известные коэффициенты, явный вид которых будет опущен. Единицы в последней строке гарантируют однозначную нормировку собственных векторов
+
+Для устойчивого и неустойчивого решений используем следующий анзац:
+
+$$X_s(t) = R \begin{pmatrix}
+0 \\
+c_1 e^{-\omega t}\\
+0\\    
+c_2 e^{-\xi t}
+\end{pmatrix}
++
+R \sum_{k+j \geq 2}^\infty T_{k,j}^s c_1^k c_2^j e^{-(k \omega + j \xi)t},
+$$
+
+$$X_u(t) = R \begin{pmatrix}
+c_3 e^{\omega t}\\
+0\\    
+c_4 e^{\xi t} \\
+0
+\end{pmatrix}
++
+R \sum_{k+j \geq 2}^\infty T_{k,j}^u c_3^k c_4^j e^{-(k \omega + j \xi)t}
+$$
+где $(c_1, c_2)$ -- локальная параметризация устойчивого многообразия положения равновесия $W^s(0)$, $(c_3, c_4)$ -- локальная параметризация неустойчивого многообразия положения равновесия $W^u(0)$, $T_{k,j}^{s,u}$ -- векторные коэффициенты рядов определяемые рекуррентными уравнениями.
+
+Радиус сходимости этих рядов задается соотношениями:
+$$|c_1| e^{-\omega t} + \varepsilon |c_2| e^{-\xi t} < 1,$$
+$$|c_1| e^{\omega t} + \varepsilon  |c_2| e^{\xi t} < 1.$$
+
+Подробный вывод этих условий будет опущен т.к. он аналогичен рассуждениям приведенным в главе посвященной Ляпуновским решениям.
+
+\subsubsection{Область перекрытия и процедура сшивки}
+
+Существует область в расширенном фазовом пространстве $(\Lambda,\lambda,x,y,t)$, где оба типа приближений -- регулярное асимптотическое разложение \eqref{asympexp} (описывающее движение вблизи сепаратрисы маятника) и локализованное экспоненциальное решение (описывающее движение вблизи нуля) -- дают одинаковое описание с точностью до экспоненциально малых членов. Эта область соответствует промежуточным временам, когда $t$ велико, но не настолько, чтобы возмущения $x,y$ успели уйти далеко от нуля.
+
+Так как нас интересуют решения из устойчивого и неустойчивого многообразий при конечных, а не только достаточно больших $t$, будем сшивать локализованное решение с асимптотическим рядом.
+
+Выберем фиксированное, но достаточно большое время $t^* > 0$. В окрестности $t = t^*$ потребуем, чтобы асимптотическое разложение \eqref{asympexp} и устойчивое локализованное экспоненциальное решение совпадали с заданной точностью по $\varepsilon$ и по экспоненциально малым членам, аналогично потребуем совпадение в оерестности $t = -t^*$ для неустойчивого решения. Это даёт систему уравнений сшивки.
+
+Решения уравнения для $(\Lambda_1, \lambda_1)$ даются известными формулами для неоднородного линейного уравнения:
+
+\begin{equation}
+    \begin{pmatrix} \Lambda_1^s(t) \\ \lambda_1^s(t) \end{pmatrix}
+    = \mathbf{\Omega}(t,t*) \begin{pmatrix} \Delta_{s,\Lambda} \\ \Delta_{s, \lambda} \end{pmatrix} - \int_{t}^{t*} \mathbf{\Omega}(t, \tau) \begin{pmatrix} G_{1, \Lambda} \\ 0 \end{pmatrix} d\tau,
+    \label{fs1}
+\end{equation}
+
+\begin{equation}
+    \begin{pmatrix} \Lambda_1^u(t) \\ \lambda_1^u(t) \end{pmatrix}
+    = \mathbf{\Omega}(t,-t*) \begin{pmatrix} \Delta_{u,\Lambda} \\ \Delta_{u, \lambda} \end{pmatrix} + \int_{-t*}^{t} \mathbf{\Omega}(t, \tau) \begin{pmatrix} G_{1, \Lambda} \\ 0 \end{pmatrix} d\tau,
+    \label{fu1}
+\end{equation}
+
+где матрицант $\mathbf{\Omega}(t, \tau)$ строится по матрице в уравнении \eqref{1order}.
+
+Отставшиеся компоненты для поправки определяются интегралами:
+\begin{equation}
+    \begin{pmatrix} x_1^s(t) \\ y_1^s(t) \end{pmatrix}
+    = 
+    \begin{pmatrix} \Delta_{s,x} \\ \Delta_{s,y} \end{pmatrix}
+    - \int_{t}^{t*} \begin{pmatrix} -V_y \sin \lambda_0(\tau) \\ (2F x_0^- + G) + V_y \cos \lambda_0(\tau) \end{pmatrix} d\tau,
+    \label{ss1}
+\end{equation}
+
+\begin{equation}
+    \begin{pmatrix} x_1^u(t) \\ y_1^u(t) \end{pmatrix}
+    = 
+    \begin{pmatrix} \Delta_{u,x} \\ \Delta_{u,y} \end{pmatrix}
+    + \int_{-t*}^{t} \begin{pmatrix} -V_y \sin \lambda_0(\tau) \\ (2F x_0^- + G) + V_y \cos \lambda_0(\tau) \end{pmatrix} d\tau.
+    \label{su1}
+\end{equation}
+
+Параметры $\Delta_{s, \rho}, \Delta_{u, \rho}, \quad \rho \in \{ \Lambda,\lambda,x,y\}$ определяются из условий сшивки главных порядков обоих разложений в точках $t*$ (для устойчивого) и $-t*$ (для нейсточивого):
+
+\begin{equation}
+\begin{pmatrix}
+\Lambda_0(t*) \\ \lambda_0(t*) \\ 0 \\ 0
+\end{pmatrix}
++ \varepsilon 
+\begin{pmatrix}
+\Delta_{s,\Lambda} \\ \Delta_{s,\lambda} \\ \Delta_{s,x} \\ \Delta_{s,y}
+\end{pmatrix}
+=
+c_1 e^{- \omega t*}
+\begin{pmatrix}
+-a \\ c \\ g \\ 1
+\end{pmatrix}
++ c_2
+\begin{pmatrix}
+-b \\ d \\ e \\ 1
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\begin{pmatrix}
+\Lambda_0(-t*) \\ \lambda_0(-t*) \\ 0 \\ 0
+\end{pmatrix}
++ \varepsilon 
+\begin{pmatrix}
+\Delta_{u,\Lambda} \\ \Delta_{u,\lambda} \\ \Delta_{u,x} \\ \Delta_{u,y}
+\end{pmatrix}
+=
+c_3 e^{- \omega t*}
+\begin{pmatrix}
+a \\ c \\ -g \\ 1
+\end{pmatrix}
++ c_4
+\begin{pmatrix}
+b \\ d \\ -e \\ 1
+\end{pmatrix}
+\end{equation}
+
+Таким образом, описанная процедура сшивки позволяет построить два различных класса приближённых решений, каждое из которых является асимптотическим при $\varepsilon\to 0$ при конечных $t$ и удовлетворяет условиям стремления к нулю на одном из концов.
+
+\subsubsection{Пересечение $W^u(0)$ и $W^s(0)$}
+
+Построенные решения параметризуют устойчивое и неустойчивое многообразия положения равновесия седло-седло. Рассмотрим вопрос их пересечения, введя следующую разность:
+
+\begin{equation}
+\begin{pmatrix} \Lambda^u(t) \\ \lambda^u(t) \\ x^u(t) \\ y^u(t) \end{pmatrix}
+-
+\begin{pmatrix} \Lambda^s(t) \\ \lambda^s(t) \\ x^s(t) \\ y^s(t) \end{pmatrix}
+\label{eq_rashep}
+\end{equation}
+
+Существование пересечения устойчивого и неустойчивого многообразий положения равновесия означает существование нулей \eqref{eq_rashep} при некоторых $c_1,c_2,c_3,c_4, t$.
+
+Полагая \eqref{eq_rashep} равным нулю, подставляя \eqref{fs1}--\eqref{su1} и используя уравнения сшивки получаем:
+
+\begin{multline}
+\varepsilon \int_{-t*}^{t*} \begin{pmatrix} -V_y \sin \lambda_0(\tau) \\ (2F x_0^- + G) + V_y \cos \lambda_0(\tau) \end{pmatrix} d\tau
+=
+e^{-\omega t*} \begin{pmatrix}
+g(c_1+c_3) \\ c_1-c_3
+\end{pmatrix}
++
+\begin{pmatrix}
+e(c_2+c_4) \\ c_2-c_4
+\end{pmatrix}
+=\\[1.5ex]
+=e^{-\omega t*} \begin{pmatrix}
+0 & g \\ -1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+c_3-c_1 \\ c_1+c_3
+\end{pmatrix}
++
+\begin{pmatrix}
+0 & e \\ -1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+c_2-c_2 \\ c_2+c_4
+\end{pmatrix}
+\end{multline}
+
+\begin{equation}
+\int_{-t*}^{t*} \mathbf{\Omega}(t, \tau) \begin{pmatrix} G_{1, \Lambda} \\ 0 \end{pmatrix} d\tau
+=\mathbf{\Omega}(t, t*) \begin{pmatrix} \Delta_{s,\Lambda} \\ \Delta_{s,\lambda} \end{pmatrix}
+- \mathbf{\Omega}(t, -t*) \begin{pmatrix} \Delta_{u,\Lambda} \\ \Delta_{u,\lambda} \end{pmatrix}
+\end{equation}
+
+Заметим, что для однородного уравнения с матрицей из \eqref{1order} есть инволюция
+$$
+(\Lambda,\lambda,t)
+\mapsto
+(\Lambda,-\lambda,-t).
+$$
+Тогда матрицант однородного уравнения обладает свойством:
+$$
+\mathbf{\Omega}(-t,-s)=R \, \mathbf{\Omega}(t,s) \, R, \qquad \qquad R = \text{diag}(1,-1).
+$$
+
+Учитывая это и подставляя $\Delta_{s,u,\Lambda,\lambda}$ из уравнений сшивки получаем:
+\begin{multline}
+\varepsilon \int_{-t*}^{t*} \mathbf{\Omega}(t, \tau) \begin{pmatrix} G_{1, \Lambda} \\ 0 \end{pmatrix} d\tau
+=
+e^{- \omega t*} \left( - c_1 \, R \, \mathbf{\Omega}(0,-t*) - c_3 \, \mathbf{\Omega}(0,t*) \right) \begin{pmatrix} a \\ c \end{pmatrix} + \\
++ \left( - c_2 \, R \, \mathbf{\Omega}(0,-t*) - c_4 \, \mathbf{\Omega}(0,t*) \right) \begin{pmatrix} b \\ f \end{pmatrix} +
+\left( - R \, \mathbf{\Omega}(0,-t*) + \mathbf{\Omega}(0,t*) \right) \begin{pmatrix} \Lambda_0(-t*) \\ \lambda_0(-t*) \end{pmatrix}.
+\label{rashep_prefin}
+\end{multline}
+
+Обзначим
+$$
+\mathbf{\Omega}(0, -t*) \equiv \begin{pmatrix}
+\varphi_{11} & \varphi_{12} \\
+\varphi_{21} & \varphi_{22}
+\end{pmatrix},
+$$
+тогда \eqref{rashep_prefin} принимает вид:
+\begin{multline}
+\varepsilon \int_{-t*}^{t*} \mathbf{\Omega}(t, \tau) \begin{pmatrix} G_{1, \Lambda} \\ 0 \end{pmatrix} d\tau
+=
+e^{- \omega t*} \begin{pmatrix} a \varphi_{11}+ c \varphi_{12} & 0 \\ 0 & a \varphi_{21}+ c \varphi_{22} \end{pmatrix} \begin{pmatrix} c_3-c_1 \\ c_1+c_3 \end{pmatrix} + \\
+\begin{pmatrix} b \varphi_{11}+ d \varphi_{12} & 0 \\ 0 & b \varphi_{21}+ d \varphi_{22} \end{pmatrix} \begin{pmatrix} c_2-c_2 \\ c_2+c_4 \end{pmatrix} + \\
+\begin{pmatrix} 0 & 2 \varphi_{21} \Lambda_0(-t*) + 2 \varphi_{22} \lambda_0(-t*) \end{pmatrix}.
+\label{rashep_fin}
+\end{multline}
